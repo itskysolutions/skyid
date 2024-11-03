@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
-import { Accordion, Container, Row, Col} from 'react-bootstrap';
+import { Accordion, Row, Col} from 'react-bootstrap';
 import {Header} from '../components/Header';
 import {Footer} from '../components/Footer';
 import SKY_ID_WORKS_IMAGE from '/Users/ummiaishaibrahim/Downloads/github/sky-id-landingpage/src/assets/Frame 3975.png';
