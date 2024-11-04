@@ -1,4 +1,4 @@
-import whiteLogo from '/Users/ummiaishaibrahim/Downloads/github/sky-id-landingpage/src/assets/white-logo.png'
+import whiteLogo from '/Users/ummiaishaibrahim/Downloads/github/sky-id-landingpage/public/white-logo.png'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 

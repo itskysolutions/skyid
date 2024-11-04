@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
-import logo from '/Users/ummiaishaibrahim/Downloads/github/sky-id-landingpage/src/assets/logo.png';
+import logo from '/Users/ummiaishaibrahim/Downloads/github/sky-id-landingpage/public/logo.png';
 
 export const Header = () => {
   return (
