@@ -4,9 +4,9 @@ import Card from 'react-bootstrap/Card';
 import { Accordion, Row, Col} from 'react-bootstrap';
 import {Header} from '../components/Header';
 import {Footer} from '../components/Footer';
-import SKY_ID_WORKS_IMAGE from '/Users/ummiaishaibrahim/Downloads/github/sky-id-landingpage/public/Frame3975.png';
-import image2 from '/Users/ummiaishaibrahim/Downloads/github/sky-id-landingpage/public/image2.png';
-import backgroundImage from '/Users/ummiaishaibrahim/Downloads/github/sky-id-landingpage/public/69701.png';
+import SKY_ID_WORKS_IMAGE from '../../public/Frame3975.png';
+import image2 from '../../public/image2.png';
+import backgroundImage from '../../public/69701.png';
 //import Container from 'react-bootstrap';
 
 
