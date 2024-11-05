@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {Home} from "./pages/Home";
-//import Application from "./pages/Application";
+import {Policies} from "./pages/Policies";
 //import { ProtectedRoutes } from "./utils/ProtectedRoutes";
 
 function App() {
@@ -9,14 +9,16 @@ function App() {
       path: "/",
       element: <Home />,
     },
-
     // {
-    //   path: "app/",
-    //   element: <ProtectedRoutes />,
-    //   // element: <DashboardLayout />,
-    //   children: [
-    //   ],
+    //   path: "/policies",
+    //   element: <Policies/>,
     // },
+    {
+      path: "policies/",
+      element: <Policies />,                   
+      children: [
+      ],
+    },
   ]);
 
   return (

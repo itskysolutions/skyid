@@ -30,10 +30,10 @@ export const Footer = () => {
                     </div>
                     <div className="col-md-2">
                         <h5 style={{fontSize:'14px', color:'#FFFFFFCC'}}>LEGAL</h5>
-                        <p><a style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0 " href="">Privacy Policy</a></p>
-                        <p><a style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" href="">Terms of Service </a></p>
-                        <p><a style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" href="">Cookie Policy</a></p>
-                        
+                        <p><a style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" href="/policies/#tos">Terms of Service </a></p>
+                        <p><a style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0 " href="/policies/#privacy">Privacy Policy</a></p>
+                        <p><a style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" href="/policies/#refund">Refund Policy</a></p>
+                        <p><a style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" href="/policies/#cookie">Cookie Policy</a></p>
                     </div>
                     <div className="col-md-2">
                         <h5 style={{fontSize:'14px', color:'#FFFFFFCC'}}>CONTACT</h5>

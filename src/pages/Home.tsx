@@ -1,4 +1,5 @@
-import Button from 'react-bootstrap/Button';
+import React, { useState } from 'react';
+import { Form, FormControl, Button, InputGroup } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
 import { Accordion, Row, Col} from 'react-bootstrap';
@@ -11,8 +12,12 @@ import backgroundImage from '../../public/69701.png';
 
 
 export const Home = () => {
-
-
+    const [query, setQuery] = useState('');
+    const handleSearch = () => {
+        alert(`Searching for: ${query}`);
+        // You can replace this alert with actual search logic.
+      };
+    
   return (
     <div style={{minHeight: "100vh", display: "flex", flexDirection:"column", minWidth: "100%", fontFamily:'Poppins, sans-serif'}}>
         <Header/>
@@ -52,26 +57,33 @@ export const Home = () => {
                         </p>
                     </div>
                     <div className=" mt-4 ms-3 d-flex justify-content-center">
-                        <Button 
-                            className="me-3 px-4 py-3 rounded-md" 
-                            style={{ 
-                                backgroundColor: '#D92027', 
-                                border: 'none',}}>
-                            Get Started
-                        </Button>
-                        <Button 
-                            className="px-5 py-3 rounded-md" 
-                            style={{  
-                                backgroundColor: 'white', 
-                                color: '#D92027', 
-                                borderColor: "#D92027",}}>
-                            Sign In
-                        </Button>
+                        <Form className="d-flex flex-wrap justify-content-center" style={{width:'55%'}} onSubmit={(e) => e.preventDefault()}>
+                            <InputGroup className="w-100">
+                                <FormControl
+                                    type="search"
+                                    placeholder="Search For Availability"
+                                    className="me-2"
+                                    aria-label="Search "
+                                    value={query}
+                                    onChange={(e) => setQuery(e.target.value)}
+                                    style={{borderRadius:"10px",  minWidth: '250px', flex: '1 1 auto'}}
+                                />
+                                <Button onClick={handleSearch} className="rounded-md" style={{  
+                                backgroundColor: '#515151', 
+                                color: 'white', 
+                                borderColor: "#515151",
+                                minWidth: '120px',
+                                height:'56px',
+                                borderRadius:'20px',
+                                marginTop: '5px'
+                                }}> Search</Button>
+                            </InputGroup>
+                        </Form>
                     </div>
                 </div>
             </div>
             {/**Image section */}
-            <div className=" container mt-10 space-y-6 transition-all duration-500 justify-content-center">
+            <div className=" container mt-7 space-y-6 transition-all duration-500 justify-content-center">
                  <Image 
                         src={image2} 
                         alt="Layered Image" 
@@ -88,12 +100,17 @@ export const Home = () => {
                         //Index: 0, // Ensure the image is behind the content
                         borderRadius: '20px' 
                     }}rounded/> 
+                    <style>{`.img-fluid {
+                                max-width: 100%;
+                                height: auto;
+                                }
+                    `}</style>
             </div>
             <div className="container mt-5" style={{ marginTop: '50%', paddingTop: '25%', width: 'auto', maxWidth: '1000px'}}>
                 <div className="" style={{}}>
                     <div className="pt-5">
-                        <h1 className="text-3xl md:text-5xl font-bold mb-6" style={{ color:'#00000099',width:'auto', height:'auto', maxWidth:'650px', maxHeight:'174px', fontWeight: 'bold'}}>
-                        SKY ID, ENSURING YOU ARE REACHABLE ANYTIME, ANYWHERE...
+                        <h1 className="text-3xl md:text-5xl" style={{ color:'#00000099',width:'auto', height:'auto', maxWidth:'650px', maxHeight:'174px', fontWeight: 'bold', marginBottom:'5%'}}>
+                            ONE CALL CAN CHANGE THE NARRATIVE - MISSING A CALL COULD COST YOU YOUR BUSINESS!
                         </h1>
                         <p className="text-lg text-gray-600 mb-8" style={{width:'auto', height:'auto', maxWidth:'650px', maxHeight:'81px'}}>
                         Call mapping is the process of masking/hiding/mapping phone numbers behind a 0700 
@@ -104,38 +121,20 @@ export const Home = () => {
                      {/**Features section */}
                     <div id="features" style={{ paddingTop: '9%', paddingBottom: '10%' }}>
                         <Card style={{ border:'none' , width: 'auto', maxWidth: '1000px', height:'auto', maxHeight:'100%'}}>
-                            <Card.Body style={{background: "#04D02A0F"}}>
-                            <Card.Title className="text-2xl font-semibold" style={{ color: '#333333' }}><h2 className="text-2xl font-semibold ps-4 pt-3" style={{color:'#333333'}}>Key Features</h2></Card.Title>
+                            <Card.Body style={{background: "#04D02A0F",  borderRadius:'20px'}}>
+                            <Card.Title className="text-2xl font-semibold" style={{ color: '#333333' }}><h2 className="text-2xl font-semibold ps-4 pt-3" style={{color:'#333333'}}>The Benefits</h2></Card.Title>
                                 <Row className="gx-4 gy-4">
                                     {/* First Column with Three Features */}
                                     <Col xs={12} md={6}>
                                         <Card style={{ border: 'none'}}>
                                             <Card.Body style={{ background: "#04D02A0F" }}>
                                                 <Row className="mt-3">
-                                                    {/* Feature 1 */}
-                                                    <Col xs={12} className="mb-4">
-                                                        <Card style={{ border: 'none' }}>
-                                                            <Card.Body style={{ backgroundColor: "#04D02A0F" }}>
-                                                                <svg style={{paddingBottom:'2%', paddingRight:'2%'}} width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Contact Icon">
-                                                                    <path fillRule="evenodd" clipRule="evenodd" d="M9.84417 3.10743C11.026 1.89713 12.9725 1.89713 14.1543 3.10743L14.8049 3.77372C15.0747 4.05001 15.4458 4.20376 15.832 4.19916L16.7632 4.18807C18.4546 4.16792 19.831 5.5443 19.8109 7.23577L19.7998 8.16695C19.7952 8.55309 19.9489 8.92426 20.2252 9.19406L20.8915 9.84465C22.1018 11.0265 22.1018 12.973 20.8915 14.1548L20.2252 14.8054C19.9489 15.0751 19.7952 15.4463 19.7998 15.8325L19.8109 16.7636C19.831 18.4551 18.4546 19.8315 16.7632 19.8113L15.832 19.8003C15.4458 19.7957 15.0747 19.9494 14.8049 20.2257L14.1543 20.892C12.9725 22.1023 11.026 22.1023 9.84417 20.892L9.19357 20.2257C8.92378 19.9494 8.5526 19.7957 8.16646 19.8003L7.23528 19.8113C5.54381 19.8315 4.16743 18.4551 4.18758 16.7636L4.19867 15.8325C4.20327 15.4463 4.04952 15.0751 3.77323 14.8054L3.10694 14.1548C1.89664 12.973 1.89664 11.0265 3.10694 9.84465L3.77323 9.19405C4.04952 8.92426 4.20327 8.55309 4.19867 8.16695L4.18758 7.23577C4.16743 5.5443 5.54381 4.16792 7.23528 4.18807L8.16646 4.19916C8.5526 4.20376 8.92378 4.05001 9.19357 3.77372L9.84417 3.10743ZM15.6256 10.6252C15.9381 10.3128 15.9381 9.80622 15.6256 9.4938C15.3132 9.18138 14.8067 9.18138 14.4943 9.4938L11.482 12.5061C11.2775 12.7105 11.1526 12.8339 11.0591 12.9137C10.9656 12.8339 10.8406 12.7105 10.6362 12.5061L9.56482 11.4347C9.2524 11.1223 8.74586 11.1223 8.43344 11.4347C8.12103 11.7471 8.12103 12.2537 8.43345 12.5661L9.53408 13.6667C9.74144 13.8742 9.94954 14.0824 10.1457 14.2321C10.3696 14.4029 10.6691 14.5708 11.0591 14.5708C11.4491 14.5708 11.7486 14.4029 11.9725 14.2321C12.1686 14.0824 12.3767 13.8742 12.5841 13.6667L15.6256 10.6252Z" fill="green"></path>
-                                                                </svg>
-                                                                <div className="d-flex align-items-start">
-                                                                    <div className="">
-                                                                    <Card.Title>Single-Number Contact</Card.Title>
-                                                                    <Card.Text style={{ color: '#5b5b5b', fontSize: '18px' }}>
-                                                                        Simplify customer experience by using a single 0700 number for all your team members.
-                                                                    </Card.Text>
-                                                                    </div>
-                                                                </div>
-                                                            </Card.Body>
-                                                        </Card>
-                                                    </Col>
                                                     {/* Feature 2 */}
                                                     <Col xs={12} className="mb-4">
                                                         <Card style={{ border: 'none' }}>
                                                             <Card.Body style={{ backgroundColor: "#04D02A0F" }}>
                                                                 <svg style={{paddingBottom:'2%', paddingRight:'2%'}} width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Contact Icon">
-                                                                    <path fillRule="evenodd" clipRule="evenodd" d="M9.84417 3.10743C11.026 1.89713 12.9725 1.89713 14.1543 3.10743L14.8049 3.77372C15.0747 4.05001 15.4458 4.20376 15.832 4.19916L16.7632 4.18807C18.4546 4.16792 19.831 5.5443 19.8109 7.23577L19.7998 8.16695C19.7952 8.55309 19.9489 8.92426 20.2252 9.19406L20.8915 9.84465C22.1018 11.0265 22.1018 12.973 20.8915 14.1548L20.2252 14.8054C19.9489 15.0751 19.7952 15.4463 19.7998 15.8325L19.8109 16.7636C19.831 18.4551 18.4546 19.8315 16.7632 19.8113L15.832 19.8003C15.4458 19.7957 15.0747 19.9494 14.8049 20.2257L14.1543 20.892C12.9725 22.1023 11.026 22.1023 9.84417 20.892L9.19357 20.2257C8.92378 19.9494 8.5526 19.7957 8.16646 19.8003L7.23528 19.8113C5.54381 19.8315 4.16743 18.4551 4.18758 16.7636L4.19867 15.8325C4.20327 15.4463 4.04952 15.0751 3.77323 14.8054L3.10694 14.1548C1.89664 12.973 1.89664 11.0265 3.10694 9.84465L3.77323 9.19405C4.04952 8.92426 4.20327 8.55309 4.19867 8.16695L4.18758 7.23577C4.16743 5.5443 5.54381 4.16792 7.23528 4.18807L8.16646 4.19916C8.5526 4.20376 8.92378 4.05001 9.19357 3.77372L9.84417 3.10743ZM15.6256 10.6252C15.9381 10.3128 15.9381 9.80622 15.6256 9.4938C15.3132 9.18138 14.8067 9.18138 14.4943 9.4938L11.482 12.5061C11.2775 12.7105 11.1526 12.8339 11.0591 12.9137C10.9656 12.8339 10.8406 12.7105 10.6362 12.5061L9.56482 11.4347C9.2524 11.1223 8.74586 11.1223 8.43344 11.4347C8.12103 11.7471 8.12103 12.2537 8.43345 12.5661L9.53408 13.6667C9.74144 13.8742 9.94954 14.0824 10.1457 14.2321C10.3696 14.4029 10.6691 14.5708 11.0591 14.5708C11.4491 14.5708 11.7486 14.4029 11.9725 14.2321C12.1686 14.0824 12.3767 13.8742 12.5841 13.6667L15.6256 10.6252Z" fill="green"></path>
+                                                                    <path fillRule="evenodd" clipRule="evenodd" d="M9.84417 3.10743C11.026 1.89713 12.9725 1.89713 14.1543 3.10743L14.8049 3.77372C15.0747 4.05001 15.4458 4.20376 15.832 4.19916L16.7632 4.18807C18.4546 4.16792 19.831 5.5443 19.8109 7.23577L19.7998 8.16695C19.7952 8.55309 19.9489 8.92426 20.2252 9.19406L20.8915 9.84465C22.1018 11.0265 22.1018 12.973 20.8915 14.1548L20.2252 14.8054C19.9489 15.0751 19.7952 15.4463 19.7998 15.8325L19.8109 16.7636C19.831 18.4551 18.4546 19.8315 16.7632 19.8113L15.832 19.8003C15.4458 19.7957 15.0747 19.9494 14.8049 20.2257L14.1543 20.892C12.9725 22.1023 11.026 22.1023 9.84417 20.892L9.19357 20.2257C8.92378 19.9494 8.5526 19.7957 8.16646 19.8003L7.23528 19.8113C5.54381 19.8315 4.16743 18.4551 4.18758 16.7636L4.19867 15.8325C4.20327 15.4463 4.04952 15.0751 3.77323 14.8054L3.10694 14.1548C1.89664 12.973 1.89664 11.0265 3.10694 9.84465L3.77323 9.19405C4.04952 8.92426 4.20327 8.55309 4.19867 8.16695L4.18758 7.23577C4.16743 5.5443 5.54381 4.16792 7.23528 4.18807L8.16646 4.19916C8.5526 4.20376 8.92378 4.05001 9.19357 3.77372L9.84417 3.10743ZM15.6256 10.6252C15.9381 10.3128 15.9381 9.80622 15.6256 9.4938C15.3132 9.18138 14.8067 9.18138 14.4943 9.4938L11.482 12.5061C11.2775 12.7105 11.1526 12.8339 11.0591 12.9137C10.9656 12.8339 10.8406 12.7105 10.6362 12.5061L9.56482 11.4347C9.2524 11.1223 8.74586 11.1223 8.43344 11.4347C8.12103 11.7471 8.12103 12.2537 8.43345 12.5661L9.53408 13.6667C9.74144 13.8742 9.94954 14.0824 10.1457 14.2321C10.3696 14.4029 10.6691 14.5708 11.0591 14.5708C11.4491 14.5708 11.7486 14.4029 11.9725 14.2321C12.1686 14.0824 12.3767 13.8742 12.5841 13.6667L15.6256 10.6252Z" fill="#04D02ACC"></path>
                                                                 </svg>
                                                                 <div className="d-flex align-items-start">
                                                                     <div className="">
@@ -148,18 +147,18 @@ export const Home = () => {
                                                             </Card.Body>
                                                         </Card>
                                                     </Col>
-                                                    {/* Feature 3 */}
+                                                    {/* Feature 1 */}
                                                     <Col xs={12} className="mb-4">
                                                         <Card style={{ border: 'none' }}>
                                                             <Card.Body style={{ backgroundColor: "#04D02A0F" }}>
                                                                 <svg style={{paddingBottom:'2%', paddingRight:'2%'}} width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Contact Icon">
-                                                                    <path fillRule="evenodd" clipRule="evenodd" d="M9.84417 3.10743C11.026 1.89713 12.9725 1.89713 14.1543 3.10743L14.8049 3.77372C15.0747 4.05001 15.4458 4.20376 15.832 4.19916L16.7632 4.18807C18.4546 4.16792 19.831 5.5443 19.8109 7.23577L19.7998 8.16695C19.7952 8.55309 19.9489 8.92426 20.2252 9.19406L20.8915 9.84465C22.1018 11.0265 22.1018 12.973 20.8915 14.1548L20.2252 14.8054C19.9489 15.0751 19.7952 15.4463 19.7998 15.8325L19.8109 16.7636C19.831 18.4551 18.4546 19.8315 16.7632 19.8113L15.832 19.8003C15.4458 19.7957 15.0747 19.9494 14.8049 20.2257L14.1543 20.892C12.9725 22.1023 11.026 22.1023 9.84417 20.892L9.19357 20.2257C8.92378 19.9494 8.5526 19.7957 8.16646 19.8003L7.23528 19.8113C5.54381 19.8315 4.16743 18.4551 4.18758 16.7636L4.19867 15.8325C4.20327 15.4463 4.04952 15.0751 3.77323 14.8054L3.10694 14.1548C1.89664 12.973 1.89664 11.0265 3.10694 9.84465L3.77323 9.19405C4.04952 8.92426 4.20327 8.55309 4.19867 8.16695L4.18758 7.23577C4.16743 5.5443 5.54381 4.16792 7.23528 4.18807L8.16646 4.19916C8.5526 4.20376 8.92378 4.05001 9.19357 3.77372L9.84417 3.10743ZM15.6256 10.6252C15.9381 10.3128 15.9381 9.80622 15.6256 9.4938C15.3132 9.18138 14.8067 9.18138 14.4943 9.4938L11.482 12.5061C11.2775 12.7105 11.1526 12.8339 11.0591 12.9137C10.9656 12.8339 10.8406 12.7105 10.6362 12.5061L9.56482 11.4347C9.2524 11.1223 8.74586 11.1223 8.43344 11.4347C8.12103 11.7471 8.12103 12.2537 8.43345 12.5661L9.53408 13.6667C9.74144 13.8742 9.94954 14.0824 10.1457 14.2321C10.3696 14.4029 10.6691 14.5708 11.0591 14.5708C11.4491 14.5708 11.7486 14.4029 11.9725 14.2321C12.1686 14.0824 12.3767 13.8742 12.5841 13.6667L15.6256 10.6252Z" fill="green"></path>
+                                                                    <path fillRule="evenodd" clipRule="evenodd" d="M9.84417 3.10743C11.026 1.89713 12.9725 1.89713 14.1543 3.10743L14.8049 3.77372C15.0747 4.05001 15.4458 4.20376 15.832 4.19916L16.7632 4.18807C18.4546 4.16792 19.831 5.5443 19.8109 7.23577L19.7998 8.16695C19.7952 8.55309 19.9489 8.92426 20.2252 9.19406L20.8915 9.84465C22.1018 11.0265 22.1018 12.973 20.8915 14.1548L20.2252 14.8054C19.9489 15.0751 19.7952 15.4463 19.7998 15.8325L19.8109 16.7636C19.831 18.4551 18.4546 19.8315 16.7632 19.8113L15.832 19.8003C15.4458 19.7957 15.0747 19.9494 14.8049 20.2257L14.1543 20.892C12.9725 22.1023 11.026 22.1023 9.84417 20.892L9.19357 20.2257C8.92378 19.9494 8.5526 19.7957 8.16646 19.8003L7.23528 19.8113C5.54381 19.8315 4.16743 18.4551 4.18758 16.7636L4.19867 15.8325C4.20327 15.4463 4.04952 15.0751 3.77323 14.8054L3.10694 14.1548C1.89664 12.973 1.89664 11.0265 3.10694 9.84465L3.77323 9.19405C4.04952 8.92426 4.20327 8.55309 4.19867 8.16695L4.18758 7.23577C4.16743 5.5443 5.54381 4.16792 7.23528 4.18807L8.16646 4.19916C8.5526 4.20376 8.92378 4.05001 9.19357 3.77372L9.84417 3.10743ZM15.6256 10.6252C15.9381 10.3128 15.9381 9.80622 15.6256 9.4938C15.3132 9.18138 14.8067 9.18138 14.4943 9.4938L11.482 12.5061C11.2775 12.7105 11.1526 12.8339 11.0591 12.9137C10.9656 12.8339 10.8406 12.7105 10.6362 12.5061L9.56482 11.4347C9.2524 11.1223 8.74586 11.1223 8.43344 11.4347C8.12103 11.7471 8.12103 12.2537 8.43345 12.5661L9.53408 13.6667C9.74144 13.8742 9.94954 14.0824 10.1457 14.2321C10.3696 14.4029 10.6691 14.5708 11.0591 14.5708C11.4491 14.5708 11.7486 14.4029 11.9725 14.2321C12.1686 14.0824 12.3767 13.8742 12.5841 13.6667L15.6256 10.6252Z" fill="#04D02ACC"></path>
                                                                 </svg>
                                                                 <div className="d-flex align-items-start">
                                                                     <div className="">
-                                                                        <Card.Title>Brand Visibility</Card.Title>
+                                                                        <Card.Title>Seamless Call Routing</Card.Title>
                                                                         <Card.Text style={{ color: '#5b5b5b', fontSize: '18px' }}>
-                                                                            Stand out with a recognizable number that reinforces your brand.
+                                                                            Our call mapping technology ensures calls are directed to the next available line without hassle
                                                                         </Card.Text>
                                                                     </div>
                                                                 </div>
@@ -175,18 +174,18 @@ export const Home = () => {
                                         <Card style={{border: 'none' }}>
                                             <Card.Body style={{ background: "#04D02A0F" }}>
                                                 <Row className="mt-3">
-                                                    {/* Feature 1 */}
+                                                    {/* Feature 3 */}
                                                     <Col xs={12} className="mb-4">
                                                         <Card style={{ border: 'none' }}>
                                                             <Card.Body style={{ backgroundColor: "#04D02A0F" }}>
                                                                 <svg style={{paddingBottom:'2%', paddingRight:'2%'}} width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Contact Icon">
-                                                                    <path fillRule="evenodd" clipRule="evenodd" d="M9.84417 3.10743C11.026 1.89713 12.9725 1.89713 14.1543 3.10743L14.8049 3.77372C15.0747 4.05001 15.4458 4.20376 15.832 4.19916L16.7632 4.18807C18.4546 4.16792 19.831 5.5443 19.8109 7.23577L19.7998 8.16695C19.7952 8.55309 19.9489 8.92426 20.2252 9.19406L20.8915 9.84465C22.1018 11.0265 22.1018 12.973 20.8915 14.1548L20.2252 14.8054C19.9489 15.0751 19.7952 15.4463 19.7998 15.8325L19.8109 16.7636C19.831 18.4551 18.4546 19.8315 16.7632 19.8113L15.832 19.8003C15.4458 19.7957 15.0747 19.9494 14.8049 20.2257L14.1543 20.892C12.9725 22.1023 11.026 22.1023 9.84417 20.892L9.19357 20.2257C8.92378 19.9494 8.5526 19.7957 8.16646 19.8003L7.23528 19.8113C5.54381 19.8315 4.16743 18.4551 4.18758 16.7636L4.19867 15.8325C4.20327 15.4463 4.04952 15.0751 3.77323 14.8054L3.10694 14.1548C1.89664 12.973 1.89664 11.0265 3.10694 9.84465L3.77323 9.19405C4.04952 8.92426 4.20327 8.55309 4.19867 8.16695L4.18758 7.23577C4.16743 5.5443 5.54381 4.16792 7.23528 4.18807L8.16646 4.19916C8.5526 4.20376 8.92378 4.05001 9.19357 3.77372L9.84417 3.10743ZM15.6256 10.6252C15.9381 10.3128 15.9381 9.80622 15.6256 9.4938C15.3132 9.18138 14.8067 9.18138 14.4943 9.4938L11.482 12.5061C11.2775 12.7105 11.1526 12.8339 11.0591 12.9137C10.9656 12.8339 10.8406 12.7105 10.6362 12.5061L9.56482 11.4347C9.2524 11.1223 8.74586 11.1223 8.43344 11.4347C8.12103 11.7471 8.12103 12.2537 8.43345 12.5661L9.53408 13.6667C9.74144 13.8742 9.94954 14.0824 10.1457 14.2321C10.3696 14.4029 10.6691 14.5708 11.0591 14.5708C11.4491 14.5708 11.7486 14.4029 11.9725 14.2321C12.1686 14.0824 12.3767 13.8742 12.5841 13.6667L15.6256 10.6252Z" fill="green"></path>
+                                                                    <path fillRule="evenodd" clipRule="evenodd" d="M9.84417 3.10743C11.026 1.89713 12.9725 1.89713 14.1543 3.10743L14.8049 3.77372C15.0747 4.05001 15.4458 4.20376 15.832 4.19916L16.7632 4.18807C18.4546 4.16792 19.831 5.5443 19.8109 7.23577L19.7998 8.16695C19.7952 8.55309 19.9489 8.92426 20.2252 9.19406L20.8915 9.84465C22.1018 11.0265 22.1018 12.973 20.8915 14.1548L20.2252 14.8054C19.9489 15.0751 19.7952 15.4463 19.7998 15.8325L19.8109 16.7636C19.831 18.4551 18.4546 19.8315 16.7632 19.8113L15.832 19.8003C15.4458 19.7957 15.0747 19.9494 14.8049 20.2257L14.1543 20.892C12.9725 22.1023 11.026 22.1023 9.84417 20.892L9.19357 20.2257C8.92378 19.9494 8.5526 19.7957 8.16646 19.8003L7.23528 19.8113C5.54381 19.8315 4.16743 18.4551 4.18758 16.7636L4.19867 15.8325C4.20327 15.4463 4.04952 15.0751 3.77323 14.8054L3.10694 14.1548C1.89664 12.973 1.89664 11.0265 3.10694 9.84465L3.77323 9.19405C4.04952 8.92426 4.20327 8.55309 4.19867 8.16695L4.18758 7.23577C4.16743 5.5443 5.54381 4.16792 7.23528 4.18807L8.16646 4.19916C8.5526 4.20376 8.92378 4.05001 9.19357 3.77372L9.84417 3.10743ZM15.6256 10.6252C15.9381 10.3128 15.9381 9.80622 15.6256 9.4938C15.3132 9.18138 14.8067 9.18138 14.4943 9.4938L11.482 12.5061C11.2775 12.7105 11.1526 12.8339 11.0591 12.9137C10.9656 12.8339 10.8406 12.7105 10.6362 12.5061L9.56482 11.4347C9.2524 11.1223 8.74586 11.1223 8.43344 11.4347C8.12103 11.7471 8.12103 12.2537 8.43345 12.5661L9.53408 13.6667C9.74144 13.8742 9.94954 14.0824 10.1457 14.2321C10.3696 14.4029 10.6691 14.5708 11.0591 14.5708C11.4491 14.5708 11.7486 14.4029 11.9725 14.2321C12.1686 14.0824 12.3767 13.8742 12.5841 13.6667L15.6256 10.6252Z" fill="#04D02ACC"></path>
                                                                 </svg>
                                                                 <div className="d-flex align-items-start">
                                                                     <div className="">
-                                                                        <Card.Title>Seamless Call Routing</Card.Title>
+                                                                        <Card.Title>Brand Visibility</Card.Title>
                                                                         <Card.Text style={{ color: '#5b5b5b', fontSize: '18px' }}>
-                                                                            Our call mapping technology ensures calls are directed to the next available line without hassle
+                                                                            Stand out with a recognizable number that reinforces your brand.
                                                                         </Card.Text>
                                                                     </div>
                                                                 </div>
@@ -198,16 +197,15 @@ export const Home = () => {
                                                         <Card style={{ border: 'none' }}>
                                                             <Card.Body style={{ backgroundColor: "#04D02A0F" }}>
                                                                 <svg style={{paddingBottom:'2%', paddingRight:'2%'}} width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Contact Icon">
-                                                                    <path fillRule="evenodd" clipRule="evenodd" d="M9.84417 3.10743C11.026 1.89713 12.9725 1.89713 14.1543 3.10743L14.8049 3.77372C15.0747 4.05001 15.4458 4.20376 15.832 4.19916L16.7632 4.18807C18.4546 4.16792 19.831 5.5443 19.8109 7.23577L19.7998 8.16695C19.7952 8.55309 19.9489 8.92426 20.2252 9.19406L20.8915 9.84465C22.1018 11.0265 22.1018 12.973 20.8915 14.1548L20.2252 14.8054C19.9489 15.0751 19.7952 15.4463 19.7998 15.8325L19.8109 16.7636C19.831 18.4551 18.4546 19.8315 16.7632 19.8113L15.832 19.8003C15.4458 19.7957 15.0747 19.9494 14.8049 20.2257L14.1543 20.892C12.9725 22.1023 11.026 22.1023 9.84417 20.892L9.19357 20.2257C8.92378 19.9494 8.5526 19.7957 8.16646 19.8003L7.23528 19.8113C5.54381 19.8315 4.16743 18.4551 4.18758 16.7636L4.19867 15.8325C4.20327 15.4463 4.04952 15.0751 3.77323 14.8054L3.10694 14.1548C1.89664 12.973 1.89664 11.0265 3.10694 9.84465L3.77323 9.19405C4.04952 8.92426 4.20327 8.55309 4.19867 8.16695L4.18758 7.23577C4.16743 5.5443 5.54381 4.16792 7.23528 4.18807L8.16646 4.19916C8.5526 4.20376 8.92378 4.05001 9.19357 3.77372L9.84417 3.10743ZM15.6256 10.6252C15.9381 10.3128 15.9381 9.80622 15.6256 9.4938C15.3132 9.18138 14.8067 9.18138 14.4943 9.4938L11.482 12.5061C11.2775 12.7105 11.1526 12.8339 11.0591 12.9137C10.9656 12.8339 10.8406 12.7105 10.6362 12.5061L9.56482 11.4347C9.2524 11.1223 8.74586 11.1223 8.43344 11.4347C8.12103 11.7471 8.12103 12.2537 8.43345 12.5661L9.53408 13.6667C9.74144 13.8742 9.94954 14.0824 10.1457 14.2321C10.3696 14.4029 10.6691 14.5708 11.0591 14.5708C11.4491 14.5708 11.7486 14.4029 11.9725 14.2321C12.1686 14.0824 12.3767 13.8742 12.5841 13.6667L15.6256 10.6252Z" fill="green"></path>
+                                                                    <path fillRule="evenodd" clipRule="evenodd" d="M9.84417 3.10743C11.026 1.89713 12.9725 1.89713 14.1543 3.10743L14.8049 3.77372C15.0747 4.05001 15.4458 4.20376 15.832 4.19916L16.7632 4.18807C18.4546 4.16792 19.831 5.5443 19.8109 7.23577L19.7998 8.16695C19.7952 8.55309 19.9489 8.92426 20.2252 9.19406L20.8915 9.84465C22.1018 11.0265 22.1018 12.973 20.8915 14.1548L20.2252 14.8054C19.9489 15.0751 19.7952 15.4463 19.7998 15.8325L19.8109 16.7636C19.831 18.4551 18.4546 19.8315 16.7632 19.8113L15.832 19.8003C15.4458 19.7957 15.0747 19.9494 14.8049 20.2257L14.1543 20.892C12.9725 22.1023 11.026 22.1023 9.84417 20.892L9.19357 20.2257C8.92378 19.9494 8.5526 19.7957 8.16646 19.8003L7.23528 19.8113C5.54381 19.8315 4.16743 18.4551 4.18758 16.7636L4.19867 15.8325C4.20327 15.4463 4.04952 15.0751 3.77323 14.8054L3.10694 14.1548C1.89664 12.973 1.89664 11.0265 3.10694 9.84465L3.77323 9.19405C4.04952 8.92426 4.20327 8.55309 4.19867 8.16695L4.18758 7.23577C4.16743 5.5443 5.54381 4.16792 7.23528 4.18807L8.16646 4.19916C8.5526 4.20376 8.92378 4.05001 9.19357 3.77372L9.84417 3.10743ZM15.6256 10.6252C15.9381 10.3128 15.9381 9.80622 15.6256 9.4938C15.3132 9.18138 14.8067 9.18138 14.4943 9.4938L11.482 12.5061C11.2775 12.7105 11.1526 12.8339 11.0591 12.9137C10.9656 12.8339 10.8406 12.7105 10.6362 12.5061L9.56482 11.4347C9.2524 11.1223 8.74586 11.1223 8.43344 11.4347C8.12103 11.7471 8.12103 12.2537 8.43345 12.5661L9.53408 13.6667C9.74144 13.8742 9.94954 14.0824 10.1457 14.2321C10.3696 14.4029 10.6691 14.5708 11.0591 14.5708C11.4491 14.5708 11.7486 14.4029 11.9725 14.2321C12.1686 14.0824 12.3767 13.8742 12.5841 13.6667L15.6256 10.6252Z" fill="#04D02ACC"></path>
                                                                 </svg>
                                                                 <div className="d-flex align-items-start">
                                                                     <div>
                                                                         <Card.Title>Additional Add-Ons</Card.Title>
                                                                         <Card.Text style={{ color: '#5b5b5b', fontSize: '18px' }}>
                                                                             <ul style={{color: '#5b5b5b', fontSize: '18px'}}>
-                                                                            <li className='pb-4'>Interactive Voice Response: Enhance customer engagement with self-service options.</li>
-                                                                            <li className='pb-4'>Call Center Solutions: Tailor your customer support with our 24/7 call center services.</li>
-                                                                            <li className='pb-4'>Virtual PBX: Get a fully virtual switchboard for managing incoming calls.</li>
+                                                                            <li className='pb-4'>Interactive Voice Response</li>
+                                                                            <li className='pb-4'>Integrated Voice Meassaging (IVM) </li>
                                                                         </ul>
                                                                         </Card.Text>
                                                                     </div>
@@ -223,6 +221,83 @@ export const Home = () => {
                             </Card.Body>
                         </Card>
                     </div> 
+                </div>
+                {/** Additional features explanation */}
+                <div>
+                <Card style={{ border:'none' , width: 'auto', maxWidth: '1000px', height:'auto', maxHeight:'100%'}}>
+                            <Card.Body style={{background: "#515151",  borderRadius:'20px'}}>
+                            <Card.Title className="text-2xl font-semibold" style={{ color: 'white' }}><h2 className="text-2xl font-semibold ps-4 pt-3" style={{color:'white'}}>Additional Features</h2></Card.Title>
+                                <Row className="gx-4 gy-4">
+                                    {/* First Column with Three Features */}
+                                    <Col xs={12} md={6}>
+                                        <Card style={{ border: 'none'}}>
+                                            <Card.Body style={{ background: "#515151" }}>
+                                                <Row className="mt-3">
+                                                    {/* Feature 2 */}
+                                                    <Col xs={12} className="mb-4">
+                                                        <Card style={{ border: 'none' }}>
+                                                            <Card.Body style={{ backgroundColor: "#515151" }}>
+                                                                <div className="d-flex align-items-start">
+                                                                    <div className="">
+                                                                        <Card.Title  style={{color:'white'}}>1. Interactive Voice Response (IVR)</Card.Title>
+                                                                        <Card.Text style={{ color: 'white', fontSize: '18px' }}>
+                                                                            IVR is a feature that lets customers choose options by pressing numbers on their
+                                                                            phone when they call. It helps route the caller to the right person or department
+                                                                            without needing a receptionist.
+                                                                        </Card.Text>
+                                                                        <Card.Text style={{ color: 'white', fontSize: '18px' }}>
+                                                                            <b>Example:</b> When a customer calls a textile shop, they hear, “Thank you for calling
+                                                                            ABC Textiles! Press 1 for new orders, press 2 for delivery inquiries, or press 3 to
+                                                                            speak with a sales representative.” This way, customers can quickly get connected
+                                                                            to the right person based on their needs, keeping operations smooth even during
+                                                                            busy times.
+                                                                        </Card.Text>
+                                                                    </div>
+                                                                </div>
+                                                            </Card.Body>
+                                                        </Card>
+                                                    </Col>
+                                                </Row>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    {/* Second Column with Two Features */}
+                                    <Col xs={12} md={6}>
+                                        <Card style={{border: 'none' }}>
+                                            <Card.Body style={{ background: "#515151" }}>
+                                                <Row className="mt-3">
+                                                    {/* Feature 3 */}
+                                                    <Col xs={12} className="mb-4">
+                                                        <Card style={{ border: 'none' }}>
+                                                            <Card.Body style={{ backgroundColor: "#515151" }}>
+                                                                <div className="d-flex align-items-start">
+                                                                    <div className="">
+                                                                        <Card.Title style={{color:'white'}}>2. Integrated Voice Messaging (IVM)</Card.Title>
+                                                                        <Card.Text style={{ color: 'white', fontSize: '18px' }}>
+                                                                            IVM plays recorded messages to callers, sharing useful information if no one can
+                                                                            answer immediately or while the caller is on hold. It’s often paired with IVR to
+                                                                            provide details about products, special promotions, or answers to common
+                                                                            questions, helping small businesses manage high call volumes.
+                                                                        </Card.Text>
+                                                                        <Card.Text style={{ color: 'white', fontSize: '18px' }}>
+                                                                            <b>Example:</b> A textile shop uses IVM to keep callers informed if there’s a delay in
+                                                                            answering. When a customer calls during peak hours and no one is available, they
+                                                                            hear, “Thank you for calling! We will be with you shortly. Did you know our new
+                                                                            fabric line is 10% off this month?” This helps keep customers engaged and
+                                                                            informed, even while they wait.
+                                                                        </Card.Text>
+                                                                    </div>
+                                                                </div>
+                                                            </Card.Body>
+                                                        </Card>
+                                                    </Col>
+                                                </Row>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                </Row>
+                            </Card.Body>
+                        </Card>
                 </div>
                 {/** How Sky id works section */}
                 <div style={{marginBottom: '100px'}}>
@@ -261,7 +336,7 @@ export const Home = () => {
                         <div>
                             <Row className="gy-4">
                                 <Col xs={12} md={4}>
-                                    <Card style={{ height:'370px', width: '100%', maxWidth: '320px', backgroundColor: "#ffffff", border: 'none', boxShadow: '0 15px 50px -12px #0000001C', borderRadius:'20px' }}>
+                                    <Card style={{ height:'auto', maxHeight:'360px', width: '100%', maxWidth: '320px', backgroundColor: "#ffffff", border: 'none', boxShadow: '0 15px 50px -12px #0000001C', borderRadius:'20px' }}>
                                         <Card.Body>
                                             <div className='d-flex justify-content-center align-items-center circle-container container'>
                                                 <div className='circle'><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -275,13 +350,14 @@ export const Home = () => {
                                             </div>
                                             <Card.Title className='text-center' style={{ color: "#333333" }}>Customer Service Optimization</Card.Title>
                                             <Card.Text className='text-center' style={{ color: '#5b5b5b', marginTop: "20px", fontSize: '18px' }}>
-                                                Businesses can use SKY ID to provide better customer service by ensuring no calls are missed and employees are reachable without displaying personal numbers.
+                                                Keep customer service seamless by ensuring that calls are
+                                                always answered without exposing personal numbers.
                                             </Card.Text>
                                         </Card.Body>
                                     </Card>
                                 </Col>
                                 <Col xs={12} md={4}>
-                                    <Card style={{ paddingBottom:'17%', width: '100%', maxWidth: '320px', height:'auto',maxHeight:'414px', backgroundColor: "#ffffff", border: 'none', boxShadow: '0 15px 50px -12px #0000001C', borderRadius:'20px' }}>
+                                    <Card style={{ paddingBottom:'9%', width: '100%', maxWidth: '320px', height:'auto', maxHeight:'360px', backgroundColor: "#ffffff", border: 'none', boxShadow: '0 15px 50px -12px #0000001C', borderRadius:'20px' }}>
                                         <Card.Body>
                                             <div className='d-flex justify-content-center align-items-center circle-container container'>
                                                 <div className='circle'>
@@ -302,13 +378,13 @@ export const Home = () => {
                                             </div>
                                             <Card.Title className='text-center' style={{ color: "#333333" }}>Small & Medium Sized Businesses</Card.Title>
                                             <Card.Text className='text-center' style={{ color: '#5b5b5b', marginTop: "20px", fontSize: '18px' }}>
-                                                Helps small businesses maintain a professional identity and contact management through a unified phone number.
+                                            Establish a professional identity with a single, unified phone number.
                                             </Card.Text>
                                         </Card.Body>
                                     </Card>
                                 </Col>
                                 <Col xs={12} md={4}>
-                                    <Card style={{ paddingBottom:'25%',width: '100%', maxWidth: '320px',height:'auto',maxHeight:'414px', backgroundColor: "#ffffff", border: 'none', boxShadow: '0 15px 50px -12px #0000001C', borderRadius:'20px' }}>
+                                    <Card style={{ paddingBottom:'17%',width: '100%', maxWidth: '320px',height:'auto',maxHeight:'360px', backgroundColor: "#ffffff", border: 'none', boxShadow: '0 15px 50px -12px #0000001C', borderRadius:'20px' }}>
                                         <Card.Body>
                                             <div className='d-flex justify-content-center align-items-center circle-container container'>
                                                 <div className='circle'><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -323,7 +399,8 @@ export const Home = () => {
                                             </div>
                                             <Card.Title className='text-center' style={{ color: "#333333" }}>Sales & Support Teams</Card.Title>
                                             <Card.Text className='text-center' style={{ color: '#5b5b5b', marginTop: "20px", fontSize: '18px' }}>
-                                                Teams can ensure that multiple agents receive calls without customers needing to dial multiple numbers.
+                                                Guarantee that customers reach the first available agent without
+                                                needing multiple numbers.
                                             </Card.Text>
                                         </Card.Body>
                                     </Card>
@@ -411,7 +488,7 @@ export const Home = () => {
                 {/** Pricing */}
                     <div id='pricing' style={{marginBottom: '', paddingTop: '17%'}} className='container'>
                         <div className='text-center'>
-                            <h1 style={{fontSize:"60px", color:'#00000099' }}>Choose the Plan for You</h1>
+                            <h1 style={{fontSize:"60px", color:'#00000099' }}>Get your identity and availability </h1>
                         </div>
                         <div className='d-flex justify-content-center' style={{marginTop:"2%"}}>
                             <div style={{width:'auto', maxWidth:'620px'}}>
@@ -420,7 +497,7 @@ export const Home = () => {
                             </div>
                         </div>
                         <div className='d-flex justify-content-center' style={{}}>
-                            <Button href="#" size="lg" className="rounded-button" style={{backgroundColor:'#000000', borderColor:'#000000'}} disabled>
+                            <Button href="#" size="lg" className="rounded-button" style={{backgroundColor:'#000000CC', borderColor:'#000000CC'}} disabled>
                                 Annual Subscription
                             </Button>
                             <style>{`
@@ -432,23 +509,23 @@ export const Home = () => {
                         <div className="container" style={{ marginTop: '3%' }}>
                             <div className="row justify-content-center">
                                 <div className="col-lg-4 col-md-6 col-sm-12 mb-4" style={{paddingRight: '40%'}}>
-                                <Card style={{ height: "auto",maxHeight:'435px', width:'350px', border: "2px solid #D92027", borderRadius: "20px", padding:'20px' , gap:"40px"}}>
+                                <Card style={{ height: "auto",maxHeight:'484px', width:'350px', border: "2px solid #D92027", borderRadius: "20px", padding:'20px' , gap:"40px"}}>
                                     <Card.Body className="d-flex flex-column h-100">
-                                    <Card.Title style={{ fontSize: '20px', textAlign: 'center', color: '#5b5b5b' }}>First Line</Card.Title>
-                                    <Card.Title style={{ fontSize: '32px', textAlign: 'center', padding: '10%', fontWeight: 'bold' }}>20,000/yr</Card.Title>
-                                    <Card.Title style={{ fontSize: '18px', color: '#5b5b5b'}}>
-                                        <svg style={{}} width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Card.Title style={{ fontSize: '20px', textAlign: 'center', color: '#5b5b5b' }}>Vanity Lines</Card.Title>
+                                    <Card.Title style={{ fontSize: '32px', textAlign: 'center', padding: '10%', fontWeight: 'bold' }}>₦20,000/yr</Card.Title>
+                                    <Card.Text style={{fontStyle:'italic'}}>You get a 0700/0800 number (toll free) + one mapping number </Card.Text>
+                                    <Card.Text style={{ fontSize: '18px', color: '#5b5b5b'}}>
+                                        <svg style={{paddingRight:'2%'}} width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 7L12 13" stroke="#000000" strokeWidth="1.6" strokeLinecap="round" className="my-path"></path>
-                                        <path d="M11.9992 15.9414L11.9492 15.9414" stroke="#000000" strokeWidth="1.6" strokeLinecap="round" className="my-path"></path>
-                                        <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#000000" strokeWidth="1.6" className="my-path"></path>
+                                        <path d="M11.9992 15.9414L11.9492 15.9414" stroke="blue" strokeWidth="1.6" strokeLinecap="round" className="my-path"></path>
+                                        <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="blue" strokeWidth="1.6" className="my-path"></path>
                                         </svg>
-                                        Add-Ons priced separately
-                                    </Card.Title>
+                                        <b>Additional Features</b>
+                                    </Card.Text>
                                     <Card.Text>
                                         <ul style={{ fontSize: '18px', color: '#5b5b5b'}}>
-                                        <li style={{ paddingBottom: '4%' }}>Interactive Voice Response</li>
-                                        <li style={{ paddingBottom: '4%' }}>Call Center Solutions</li>
-                                        <li style={{}}>Virtual PBX</li>
+                                            <li style={{ paddingBottom: '4%' }}>IVR ₦20,000/yr</li>
+                                            <li style={{ paddingBottom: '4%' }}>IVM ₦5,000 per upload annually</li>
                                         </ul>
                                     </Card.Text>
                                     <div className="mt-auto">
@@ -460,23 +537,22 @@ export const Home = () => {
                                 </Card>
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
-                                <Card style={{height: "auto",maxHeight:'435px', width:'350px', border: "2px solid #D92027", borderRadius: "20px", padding:'20px' , gap:"40px" }}>
+                                <Card style={{height: "auto", maxHeight:'484px', width:'350px', border: "2px solid #D92027", borderRadius: "20px", padding:'20px' , gap:"40px" }}>
                                     <Card.Body className="d-flex flex-column h-100">
-                                    <Card.Title style={{ fontSize: '20px', textAlign: 'center', color: '#5b5b5b' }}>Additional Lines</Card.Title>
-                                    <Card.Title style={{ fontSize: '32px', textAlign: 'center', padding: '10%', fontWeight: 'bold' }}>15,000/each</Card.Title>
-                                    <Card.Title style={{ fontSize: '18px', color: '#5b5b5b'}}>
-                                        <svg style={{ }} width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Card.Title style={{ fontSize: '20px', textAlign: 'center', color: '#5b5b5b' }}>Eacg Additional Lines</Card.Title>
+                                    <Card.Title style={{ fontSize: '32px', textAlign: 'center', padding: '10%', fontWeight: 'bold' }}>₦15,000/each</Card.Title>
+                                    <Card.Title style={{ fontSize: '18px', color: '#5b5b5b', paddingTop:'25%'}}>
+                                        <svg style={{paddingRight:'2%'}} width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 7L12 13" stroke="#000000" strokeWidth="1.6" strokeLinecap="round" className="my-path"></path>
-                                        <path d="M11.9992 15.9414L11.9492 15.9414" stroke="#000000" strokeWidth="1.6" strokeLinecap="round" className="my-path"></path>
-                                        <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#000000" strokeWidth="1.6" className="my-path"></path>
+                                        <path d="M11.9992 15.9414L11.9492 15.9414" stroke="blue" strokeWidth="1.6" strokeLinecap="round" className="my-path"></path>
+                                        <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="blue" strokeWidth="1.6" className="my-path"></path>
                                         </svg>
-                                        Add-Ons priced separately
+                                        <b>Additional Features</b>
                                     </Card.Title>
                                     <Card.Text>
                                         <ul style={{ fontSize: '18px', color: '#5b5b5b'}}>
-                                        <li style={{ paddingBottom: '4%' }}>Interactive Voice Response</li>
-                                        <li style={{ paddingBottom: '4%' }}>Call Center Solutions</li>
-                                        <li style={{}}>Virtual PBX</li>
+                                            <li style={{ paddingBottom: '4%' }}>IVR ₦20,000/yr</li>
+                                            <li style={{ paddingBottom: '4%' }}>IVM ₦5,000 per upload annually</li>
                                         </ul>
                                     </Card.Text>
                                     <div className="mt-auto">
