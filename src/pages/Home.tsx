@@ -539,7 +539,7 @@ export const Home = () => {
                                 <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
                                 <Card style={{height: "auto", maxHeight:'484px', width:'350px', border: "2px solid #D92027", borderRadius: "20px", padding:'20px' , gap:"40px" }}>
                                     <Card.Body className="d-flex flex-column h-100">
-                                    <Card.Title style={{ fontSize: '20px', textAlign: 'center', color: '#5b5b5b' }}>Eacg Additional Lines</Card.Title>
+                                    <Card.Title style={{ fontSize: '20px', textAlign: 'center', color: '#5b5b5b' }}>Each Additional Lines</Card.Title>
                                     <Card.Title style={{ fontSize: '32px', textAlign: 'center', padding: '10%', fontWeight: 'bold' }}>₦15,000/each</Card.Title>
                                     <Card.Title style={{ fontSize: '18px', color: '#5b5b5b', paddingTop:'25%'}}>
                                         <svg style={{paddingRight:'2%'}} width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -589,7 +589,7 @@ export const Home = () => {
                                         <strong>2. What is call mapping, and why is it beneficial?</strong>
                                     </Accordion.Header>
                                     <Accordion.Body>
-                                        Once your order ships, you will receive a tracking number by email to follow your delivery progress.
+                                        Call mapping allows you to link multiple phone lines to a single 0700 number, ensuring calls reach the next available team member if the primary contact is unavailable.
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
@@ -600,7 +600,7 @@ export const Home = () => {
                                         <strong>3. How does Sky ID improve brand visibility?</strong>
                                     </Accordion.Header>
                                     <Accordion.Body>
-                                        Yes, we offer international shipping to most countries. Shipping fees and times vary by destination.
+                                        Sky ID gives you a unique, easy-to-remember 0700 number, which strengthens your brand by offering a consistent, professional point of contact for customers.
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
@@ -611,7 +611,7 @@ export const Home = () => {
                                         <strong>4. Can I add more lines to my 0700 number?</strong>
                                     </Accordion.Header>
                                     <Accordion.Body>
-                                        Yes, we offer international shipping to most countries. Shipping fees and times vary by destination.
+                                        Yes, you can add multiple lines. The first line is 20,000 NGN, and each additional line is 15,000 NGN annually.
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
@@ -622,7 +622,7 @@ export const Home = () => {
                                            <strong>5. Can I add or change the phone numbers linked to my 0700 number?</strong>
                                     </Accordion.Header>
                                     <Accordion.Body>
-                                        Yes, we offer international shipping to most countries. Shipping fees and times vary by destination.
+                                        Yes, you can update or add new phone numbers.This allows you to ensure the right team members are always accessible through your Sky ID number.
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
@@ -633,7 +633,7 @@ export const Home = () => {
                                         <strong>6. What if a call doesn’t go through to the primary contact?</strong>
                                     </Accordion.Header>
                                     <Accordion.Body>
-                                        Yes, we offer international shipping to most countries. Shipping fees and times vary by destination.
+                                        If the primary contact is unavailable, our system intelligently routes the call to the next available team member to ensure no call goes unanswered.
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
@@ -644,7 +644,7 @@ export const Home = () => {
                                         <strong>7. What additional features does Sky ID offer?</strong>
                                     </Accordion.Header>
                                     <Accordion.Body>
-                                        Yes, we offer international shipping to most countries. Shipping fees and times vary by destination.
+                                        Sky ID includes optional add-ons such as Interactive Voice Response, Call Center Solutions, and Virtual PBX to enhance customer engagement.
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
@@ -655,7 +655,7 @@ export const Home = () => {
                                         <strong>8. How much does the annual subscription cost?</strong>
                                     </Accordion.Header>
                                     <Accordion.Body>
-                                        Yes, we offer international shipping to most countries. Shipping fees and times vary by destination.
+                                        The annual subscription of the lines is 15,000 NGN.
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
@@ -666,7 +666,7 @@ export const Home = () => {
                                         <strong>9. Is technical support available if I have issues?</strong>
                                     </Accordion.Header>
                                     <Accordion.Body>
-                                        Yes, we offer international shipping to most countries. Shipping fees and times vary by destination.
+                                        Yes, we provide dedicated support for setup and troubleshooting. Contact us via phone, email, or live chat for assistance.
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
