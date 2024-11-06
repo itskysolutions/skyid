@@ -25,7 +25,7 @@ import { Header } from "../components/Header";
 //   password: string;
 // }
 
-const Signin: React.FC = () => {
+const ForgotPassword: React.FC = () => {
   // const params = useLocation();
   // const navigation = useNavigate();
   const { control } = useForm();
@@ -127,4 +127,4 @@ const Signin: React.FC = () => {
   );
 };
 
-export default Signin;
+export default ForgotPassword;
