@@ -1,0 +1,255 @@
+export const businessCategory = [
+  {
+    label: "",
+    value: "",
+  },
+  {
+    label: "Education",
+    value: "Education",
+  },
+  {
+    label: "Healthcare",
+    value: "Healthcare",
+  },
+  {
+    label: "Finance",
+    value: "Finance",
+  },
+  {
+    label: "Technology",
+    value: "Technology",
+  },
+  {
+    label: "Retail",
+    value: "Retail",
+  },
+  {
+    label: "Hospitality",
+    value: "Hospitality",
+  },
+  {
+    label: "Transportation",
+    value: "Transportation",
+  },
+  {
+    label: "Construction",
+    value: "Construction",
+  },
+  {
+    label: "Manufacturing",
+    value: "Manufacturing",
+  },
+  {
+    label: "Real Estate",
+    value: "Real Estate",
+  },
+  {
+    label: "Media",
+    value: "Media",
+  },
+  {
+    label: "Entertainment",
+    value: "Entertainment",
+  },
+  {
+    label: "Agriculture",
+    value: "Agriculture",
+  },
+  {
+    label: "Energy",
+    value: "Energy",
+  },
+  {
+    label: "Telecommunications",
+    value: "Telecommunications",
+  },
+  {
+    label: "Legal",
+    value: "Legal",
+  },
+  {
+    label: "Consulting",
+    value: "Consulting",
+  },
+  {
+    label: "Nonprofit",
+    value: "Nonprofit",
+  },
+  {
+    label: "Government",
+    value: "Government",
+  },
+];
+
+export const passportType = [
+  {
+    label: "",
+    value: "",
+  },
+  {
+    label: "Ordinary",
+    value: "Ordinary",
+  },
+  {
+    label: "Official",
+    value: "Official",
+  },
+  {
+    label: "Diplomatic",
+    value: "Diplomatic",
+  },
+];
+
+export const sponsorshipStatus = [
+  {
+    label: "",
+    value: "",
+  },
+  {
+    label: "Self Sponsorship",
+    value: "Self Sponsorship",
+  },
+  {
+    label: "Corporate Sponsorship",
+    value: "Corporate Sponsorship",
+  },
+  {
+    label: "Government Sponsorship",
+    value: "Government Sponsorship",
+  },
+];
+
+export const hajjPreviously = [
+  {
+    label: "",
+    value: "",
+  },
+  {
+    label: "Yes",
+    value: "Yes",
+  },
+  {
+    label: "No",
+    value: "No",
+  },
+];
+
+export const modePayment = [
+  {
+    label: "",
+    value: "",
+  },
+  {
+    label: "Bank Draft",
+    value: "Bank Draft",
+  },
+  {
+    label: "Bank Teller",
+    value: "Bank Teller",
+  },
+  {
+    label: "E-Payment",
+    value: "E-Payment",
+  },
+];
+
+export const maritalStatusData = [
+  {
+    label: "",
+    value: "",
+  },
+  {
+    label: "Single",
+    value: "single",
+  },
+  {
+    label: "Married",
+    value: "married",
+  },
+  {
+    label: "Divorcee",
+    value: "divorcee",
+  },
+  {
+    label: "Widow",
+    value: "widow",
+  },
+];
+
+export const level = [
+  {
+    label: "",
+    value: "",
+  },
+  {
+    label: "Super User",
+    value: "Super User",
+  },
+  {
+    label: "Admin",
+    value: "Admin",
+  },
+  {
+    label: "Agent",
+    value: "Agent",
+  },
+];
+
+export const stateData = [
+  { label: "", value: "" },
+  { label: "FCT", value: "FCT" },
+  { label: "Abia", value: "Abia" },
+  { label: "Adamawa", value: "Adamawa" },
+  { label: "Akwa Ibom", value: "Akwa Ibom" },
+  { label: "Anambra", value: "Anambra" },
+  { label: "Bauchi", value: "Bauchi" },
+  { label: "Bayelsa", value: "Bayelsa" },
+  { label: "Benue", value: "Benue" },
+  { label: "Borno", value: "Borno" },
+  { label: "Cross River", value: "Cross River" },
+  { label: "Delta", value: "Delta" },
+  { label: "Ebonyi", value: "Ebonyi" },
+  { label: "Edo", value: "Edo" },
+  { label: "Ekiti", value: "Ekiti" },
+  { label: "Enugu", value: "Enugu" },
+  { label: "Gombe", value: "Gombe" },
+  { label: "Imo", value: "Imo" },
+  { label: "Jigawa", value: "Jigawa" },
+  { label: "Kaduna", value: "Kaduna" },
+  { label: "Kano", value: "Kano" },
+  { label: "Katsina", value: "Katsina" },
+  { label: "Kebbi", value: "Kebbi" },
+  { label: "Kogi", value: "Kogi" },
+  { label: "Kwara", value: "Kwara" },
+  { label: "Lagos", value: "Lagos" },
+  { label: "Nasarawa", value: "Nasarawa" },
+  { label: "Niger", value: "Niger" },
+  { label: "Ogun", value: "Ogun" },
+  { label: "Ondo", value: "Ondo" },
+  { label: "Osun", value: "Osun" },
+  { label: "Oyo", value: "Oyo" },
+  { label: "Plateau", value: "Plateau" },
+  { label: "Rivers", value: "Rivers" },
+  { label: "Sokoto", value: "Sokoto" },
+  { label: "Taraba", value: "Taraba" },
+  { label: "Yobe", value: "Yobe" },
+  { label: "Zamfara", value: "Zamfara" },
+];
+
+export const undertaking = [
+  "1. That I shall willingly abide by the Board's rules and regulations in Nigeria and the Holy Land;",
+  "2. That I shall willingly accept disqualification by the Board at any stage of preparation to perform the hajj if found wanting;",
+  "3. That I shall willingly accept refund at any stage if found to be unfit to register as a pilgrim with the FCT Muslim Pilgrims Welfare Board;",
+  "4. That the Board has the right to deduct from the hajj fare (in case of withdrawal or replacement) expenses incurred on my behalf;",
+  "5. That I shall be liable to prosecution before a Court of Law or Tribunal for any false information discovered from my registration form; or any misconduct, assault and embarrassment of staff/official of the Board;",
+  "6. That I shall observe the travel schedules assigned to me by the Board, and shall therefore not demand for early return for whatever reason;",
+  "7. That the Board will not bear responsibility for my feeding from loss of my money;",
+  "8. That I will not hold the board responsible for my overstay which may result from technical hitches or natural happenings;",
+  "9. That I shall return the completed form within one week from the date of collection, failure of which the Board shall take any necessary measure as prescribed;",
+  "10. Once MOFA number is approved or VISA issued I agree to bear whatever charges applicable in the event I could not travel for my personal reason;",
+  "11. Should I withdraw from the journey the cost of any material that I collected shall be deducted before the refund of my money;",
+  "12. I accept liability in case of deliberate contravention of standard travel regulations without advance notice or other unethical behavior either here in Nigeria or the Kingdom of Saudi Arabia;",
+  "13. I pledge to present myself in person at any time my attention is needed;",
+  "14. That the Board shall have the right to exercise disciplinary action against me and to impose such sanctions as it deem fit;",
+  "15. That the board shall have the fight to prevent me from performing the pilgrimage in the event of breach of any of these undertakings.",
+];
