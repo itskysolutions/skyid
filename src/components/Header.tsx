@@ -3,8 +3,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
-import logo from "../../public/logo.png";
 import { useNavigate } from "react-router-dom";
+import IMAGES from "../constant/Images";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export const Header = () => {
       <Navbar expand="lg" className="bg-white pb-4 shadow-custom" fixed="top">
         <Container>
           <Navbar.Brand href="/">
-            <img src={logo} alt="logo" style={{ width: "173.05px", height: "50px" }} />
+            <img src={IMAGES.WHITELOGO} alt="logo" style={{ width: "173.05px", height: "50px" }} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
