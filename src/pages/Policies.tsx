@@ -23,7 +23,7 @@ export const Policies =  () => {
             <Header />
         </div>
         <div style={{marginTop:'10%', zIndex: 1, position: 'relative'}}>
-            <Row >
+            <Row  className='page-layout'>
                 <Col xs={12} md={3} className="mb-3 sidebar-custom" >
                     <SideMenuLegal/>
                 </Col>
