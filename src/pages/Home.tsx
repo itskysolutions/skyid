@@ -871,158 +871,183 @@ export const Home = () => {
                                 border-radius: 30px; /* Adjust this value for more or less curve */
                                 padding: 0.5rem 1.5rem; /* Adjust padding for desired size */ }
                             `}</style>
+                        </div>
+                        <div className="container" style={{ marginTop: '3%' }}>
+                            <div className="row justify-content-center">
+                                <div className="col-lg-4 col-md-6 col-sm-12 mb-4" style={{paddingRight: '40%'}}>
+                                <Card style={{ height: "auto",maxHeight:'484px', width:'350px', border: "2px solid #D92027", borderRadius: "20px", padding:'20px' , gap:"40px"}}>
+                                    <Card.Body className="d-flex flex-column h-100">
+                                    <Card.Title style={{ fontSize: '20px', textAlign: 'center', color: '#5b5b5b' }}>Vanity Lines</Card.Title>
+                                    <Card.Title style={{ fontSize: '32px', textAlign: 'center', padding: '10%', fontWeight: 'bold' }}>₦20,000/yr</Card.Title>
+                                    <Card.Text style={{fontStyle:'italic'}}>You get a 0700/0800 number (toll free) + one mapping number </Card.Text>
+                                    <Card.Text style={{ fontSize: '18px', color: '#5b5b5b'}}>
+                                        <svg style={{paddingRight:'2%'}} width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 7L12 13" stroke="#000000" strokeWidth="1.6" strokeLinecap="round" className="my-path"></path>
+                                        <path d="M11.9992 15.9414L11.9492 15.9414" stroke="blue" strokeWidth="1.6" strokeLinecap="round" className="my-path"></path>
+                                        <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="blue" strokeWidth="1.6" className="my-path"></path>
+                                        </svg>
+                                        <b>Additional Features</b>
+                                    </Card.Text>
+                                    <Card.Text>
+                                        <ul style={{ fontSize: '18px', color: '#5b5b5b'}}>
+                                            <li style={{ paddingBottom: '4%' }}>IVR ₦20,000/yr</li>
+                                            <li style={{ paddingBottom: '4%' }}>IVM ₦5,000 per upload annually</li>
+                                        </ul>
+                                    </Card.Text>
+                                    <div className="mt-auto">
+                                        <Button className="w-100 px-4 py-2 text-white rounded-md" style={{ backgroundColor: '#D92027', border: 'none' }} size="lg">
+                                        Get Started
+                                        </Button>
+                                    </div>
+                                    </Card.Body>
+                                </Card>
+                                </div>
+                                <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
+                                <Card style={{height: "auto", maxHeight:'484px', width:'350px', border: "2px solid #D92027", borderRadius: "20px", padding:'20px' , gap:"40px" }}>
+                                    <Card.Body className="d-flex flex-column h-100">
+                                    <Card.Title style={{ fontSize: '20px', textAlign: 'center', color: '#5b5b5b' }}>Eacg Additional Lines</Card.Title>
+                                    <Card.Title style={{ fontSize: '32px', textAlign: 'center', padding: '10%', fontWeight: 'bold' }}>₦15,000/each</Card.Title>
+                                    <Card.Title style={{ fontSize: '18px', color: '#5b5b5b', paddingTop:'25%'}}>
+                                        <svg style={{paddingRight:'2%'}} width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 7L12 13" stroke="#000000" strokeWidth="1.6" strokeLinecap="round" className="my-path"></path>
+                                        <path d="M11.9992 15.9414L11.9492 15.9414" stroke="blue" strokeWidth="1.6" strokeLinecap="round" className="my-path"></path>
+                                        <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="blue" strokeWidth="1.6" className="my-path"></path>
+                                        </svg>
+                                        <b>Additional Features</b>
+                                    </Card.Title>
+                                    <Card.Text>
+                                        <ul style={{ fontSize: '18px', color: '#5b5b5b'}}>
+                                            <li style={{ paddingBottom: '4%' }}>IVR ₦20,000/yr</li>
+                                            <li style={{ paddingBottom: '4%' }}>IVM ₦5,000 per upload annually</li>
+                                        </ul>
+                                    </Card.Text>
+                                    <div className="mt-auto">
+                                        <Button className="w-100 px-4 py-2 text-white rounded-md" style={{ backgroundColor: '#D92027', border: 'none' }} size="lg">
+                                        Get Started
+                                        </Button>
+                                    </div>
+                                    </Card.Body>
+                                </Card>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+                {/** FAQ */}
+                     <div className='container' id='faqs' style={{marginBottom: '100px', paddingTop: '10%'}}>
+                        <div style={{marginTop: '60px', marginBottom:'30px'}}>
+                            <h1 style={{ color:'#00000099'}}>FAQs</h1>
+                        </div>
+                        <div className='' style={{marginTop:"2%"}}>
+                            <Accordion style={{paddingBottom:'2%',width:'auto', maxWidth:'1106px'}}>
+                                <Accordion.Item eventKey="0" style={{border:'2px solid #D3D3D3' }}>
+                                    <Accordion.Header className="custom-header">
+                                        <strong>1. How do I get started with Sky ID for my business?</strong>
+                                    </Accordion.Header>
+                                    <Accordion.Body>
+                                        Our return policy allows returns within 30 days of purchase, provided the item is in original condition.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+                            
+                            <Accordion style={{paddingBottom:'2%'}}>
+                                <Accordion.Item eventKey="1" style={{border:'2px solid #D3D3D3' }}>
+                                    <Accordion.Header>
+                                        <strong>2. What is call mapping, and why is it beneficial?</strong>
+                                    </Accordion.Header>
+                                    <Accordion.Body>
+                                        Once your order ships, you will receive a tracking number by email to follow your delivery progress.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+
+                            <Accordion style={{paddingBottom:'2%'}}>
+                                <Accordion.Item eventKey="2" style={{border:'2px solid #D3D3D3' }}>
+                                    <Accordion.Header>
+                                        <strong>3. How does Sky ID improve brand visibility?</strong>
+                                    </Accordion.Header>
+                                    <Accordion.Body>
+                                        Yes, we offer international shipping to most countries. Shipping fees and times vary by destination.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+
+                            <Accordion style={{paddingBottom:'2%'}}>
+                                <Accordion.Item eventKey="3" style={{border:'2px solid #D3D3D3' }}>
+                                    <Accordion.Header>
+                                        <strong>4. Can I add more lines to my 0700 number?</strong>
+                                    </Accordion.Header>
+                                    <Accordion.Body>
+                                        Yes, we offer international shipping to most countries. Shipping fees and times vary by destination.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+
+                            <Accordion style={{paddingBottom:'2%'}}>
+                                <Accordion.Item eventKey="4" style={{border:'2px solid #D3D3D3' }}>
+                                    <Accordion.Header>
+                                           <strong>5. Can I add or change the phone numbers linked to my 0700 number?</strong>
+                                    </Accordion.Header>
+                                    <Accordion.Body>
+                                        Yes, we offer international shipping to most countries. Shipping fees and times vary by destination.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+
+                            <Accordion style={{paddingBottom:'2%'}}>
+                                <Accordion.Item eventKey="5" style={{border:'2px solid #D3D3D3' }}>
+                                    <Accordion.Header>
+                                        <strong>6. What if a call doesn’t go through to the primary contact?</strong>
+                                    </Accordion.Header>
+                                    <Accordion.Body>
+                                        Yes, we offer international shipping to most countries. Shipping fees and times vary by destination.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+
+                            <Accordion style={{paddingBottom:'2%'}}>
+                                <Accordion.Item eventKey="6" style={{border:'2px solid #D3D3D3' }}>
+                                    <Accordion.Header>
+                                        <strong>7. What additional features does Sky ID offer?</strong>
+                                    </Accordion.Header>
+                                    <Accordion.Body>
+                                        Yes, we offer international shipping to most countries. Shipping fees and times vary by destination.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+
+                            <Accordion style={{paddingBottom:'2%'}}>
+                                <Accordion.Item eventKey="7" style={{border:'2px solid #D3D3D3' }}>
+                                    <Accordion.Header>
+                                        <strong>8. How much does the annual subscription cost?</strong>
+                                    </Accordion.Header>
+                                    <Accordion.Body>
+                                        Yes, we offer international shipping to most countries. Shipping fees and times vary by destination.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+
+                            <Accordion style={{paddingBottom:'5%'}}>
+                                <Accordion.Item eventKey="8" style={{border:'2px solid #D3D3D3' }}>
+                                    <Accordion.Header>
+                                        <strong>9. Is technical support available if I have issues?</strong>
+                                    </Accordion.Header>
+                                    <Accordion.Body>
+                                        Yes, we offer international shipping to most countries. Shipping fees and times vary by destination.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+                            <style>{`
+                                .accordion {
+                                --bs-accordion-btn-color: #5b5b5b;
+                                --bs-accordion-active-bg: #ededed;
+                                --bs-accordion-active-color: #5b5b5b;
+                                }
+                            `}</style>
+                        </div>
+                    </div>
             </div>
-            <div className="container" style={{ marginTop: "3%" }}>
-              <div className="row justify-content-center">
-                <div className="col-lg-4 col-md-6 col-sm-12 mb-4" style={{ paddingRight: "40%" }}>
-                  <Card
-                    style={{
-                      height: "auto",
-                      maxHeight: "484px",
-                      width: "350px",
-                      border: "2px solid #D92027",
-                      borderRadius: "20px",
-                      padding: "20px",
-                      gap: "40px",
-                    }}
-                  >
-                    <Card.Body className="d-flex flex-column h-100">
-                      <Card.Title style={{ fontSize: "20px", textAlign: "center", color: "#5b5b5b" }}>
-                        Vanity Lines
-                      </Card.Title>
-                      <Card.Title style={{ fontSize: "32px", textAlign: "center", padding: "10%", fontWeight: "bold" }}>
-                        ₦20,000/yr
-                      </Card.Title>
-                      <Card.Text style={{ fontStyle: "italic" }}>
-                        You get a 0700/0800 number (toll free) + one mapping number{" "}
-                      </Card.Text>
-                      <Card.Text style={{ fontSize: "18px", color: "#5b5b5b" }}>
-                        <svg
-                          style={{ paddingRight: "2%" }}
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 7L12 13"
-                            stroke="#000000"
-                            strokeWidth="1.6"
-                            strokeLinecap="round"
-                            className="my-path"
-                          ></path>
-                          <path
-                            d="M11.9992 15.9414L11.9492 15.9414"
-                            stroke="blue"
-                            strokeWidth="1.6"
-                            strokeLinecap="round"
-                            className="my-path"
-                          ></path>
-                          <path
-                            d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                            stroke="blue"
-                            strokeWidth="1.6"
-                            className="my-path"
-                          ></path>
-                        </svg>
-                        <b>Additional Features</b>
-                      </Card.Text>
-                      <Card.Text>
-                        <ul style={{ fontSize: "18px", color: "#5b5b5b" }}>
-                          <li style={{ paddingBottom: "4%" }}>IVR ₦20,000/yr</li>
-                          <li style={{ paddingBottom: "4%" }}>IVM ₦5,000 per upload annually</li>
-                        </ul>
-                      </Card.Text>
-                      <div className="mt-auto">
-                        <Button
-                          className="w-100 px-4 py-2 text-white rounded-md"
-                          style={{ backgroundColor: "#D92027", border: "none" }}
-                          size="lg"
-                        >
-                          Get Started
-                        </Button>
-                      </div>
-                    </Card.Body>
-                  </Card>
-                </div>
-                <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
-                  <Card
-                    style={{
-                      height: "auto",
-                      maxHeight: "484px",
-                      width: "350px",
-                      border: "2px solid #D92027",
-                      borderRadius: "20px",
-                      padding: "20px",
-                      gap: "40px",
-                    }}
-                  >
-                    <Card.Body className="d-flex flex-column h-100">
-                      <Card.Title style={{ fontSize: "20px", textAlign: "center", color: "#5b5b5b" }}>
-                        Eacg Additional Lines
-                      </Card.Title>
-                      <Card.Title style={{ fontSize: "32px", textAlign: "center", padding: "10%", fontWeight: "bold" }}>
-                        ₦15,000/each
-                      </Card.Title>
-                      <Card.Title style={{ fontSize: "18px", color: "#5b5b5b", paddingTop: "25%" }}>
-                        <svg
-                          style={{ paddingRight: "2%" }}
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 7L12 13"
-                            stroke="#000000"
-                            strokeWidth="1.6"
-                            strokeLinecap="round"
-                            className="my-path"
-                          ></path>
-                          <path
-                            d="M11.9992 15.9414L11.9492 15.9414"
-                            stroke="blue"
-                            strokeWidth="1.6"
-                            strokeLinecap="round"
-                            className="my-path"
-                          ></path>
-                          <path
-                            d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                            stroke="blue"
-                            strokeWidth="1.6"
-                            className="my-path"
-                          ></path>
-                        </svg>
-                        <b>Additional Features</b>
-                      </Card.Title>
-                      <Card.Text>
-                        <ul style={{ fontSize: "18px", color: "#5b5b5b" }}>
-                          <li style={{ paddingBottom: "4%" }}>IVR ₦20,000/yr</li>
-                          <li style={{ paddingBottom: "4%" }}>IVM ₦5,000 per upload annually</li>
-                        </ul>
-                      </Card.Text>
-                      <div className="mt-auto">
-                        <Button
-                          className="w-100 px-4 py-2 text-white rounded-md"
-                          style={{ backgroundColor: "#D92027", border: "none" }}
-                          size="lg"
-                        >
-                          Get Started
-                        </Button>
-                      </div>
-                    </Card.Body>
-                  </Card>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/** FAQ */}
-          <Faq />
         </div>
-      </div>
-      <Footer />
+        <Footer/>
     </div>
   );
 };
