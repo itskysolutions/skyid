@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import whiteLogo from '../../public/white-logo.png'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -30,10 +31,10 @@ export const Footer = () => {
                     </div>
                     <div className="col-md-2">
                         <h5 style={{fontSize:'14px', color:'#FFFFFFCC'}}>LEGAL</h5>
-                        <p><a style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" href="/policies">Terms of Service </a></p>
-                        <p><a style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0 " href="/policies/#privacy">Privacy Policy</a></p>
-                        <p><a style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" href="/policies/#refund">Refund Policy</a></p>
-                        <p><a style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" href="/policies/#cookie">Cookie Policy</a></p>
+                        <p><Link style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" to="/policies">Terms of Service </Link></p>
+                        <p><Link style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0 " to="/policies/#privacy">Privacy Policy</Link></p>
+                        <p><Link style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" to="/policies/#refund">Refund Policy</Link></p>
+                        <p><Link style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" to="/policies/#cookie">Cookie Policy</Link></p>
                     </div>
                     <div className="col-md-2">
                         <h5 style={{fontSize:'14px', color:'#FFFFFFCC'}}>CONTACT</h5>
