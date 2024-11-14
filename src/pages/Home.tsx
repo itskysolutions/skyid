@@ -140,21 +140,21 @@ export const Home = () => {
         </div>
         {/**Image section */}
         <div
-            className="container space-y-6 transition-all duration-500 justify-content-center"
+            className="container space-y-1 transition-all duration-500 justify-content-center"
         >
             <Image
                 src={IMAGES.YOUTUBE}
                 alt="Layered Image"
                 className="layered-image img-fluid"
-                style={{position: "absolute",top: results ?  "115%": "97%", left: "50%", transform: "translate(-50%, -50%)", width: "100%", maxWidth: "1000px",height: "auto",maxHeight: "466px", borderRadius: "20px",}}
+                style={{position: "relative", marginTop: results ? "20%" : "5%", left: "50%", transform: "translate(-50%, -50%)", width: "100%", maxWidth: "1000px",height: "auto",maxHeight: "466px", borderRadius: "20px",transition: "margin-top 0.5s ease"}}
             rounded/>
             <style>{`
                 .img-fluid {max-width: 100%;height: auto;}
             `}</style>
         </div>
-        <div className="container mt-5"style={{ marginTop: "50%", paddingTop: "25%", width: "auto", maxWidth: "1000px", alignContent:"center" }}>
+        <div className="container"style={{ width: "auto", maxWidth: "1000px", alignContent:"center" }}>
             <div style={{alignContent:"center" }}>
-                <div className="pt-5 text-center"><h1 style={{ fontWeight:"bold",color: "#00000099" }}>ONE CALL CAN CHANGE THE NARRATIVE - MISSING A CALL COULD COST YOU YOUR BUSINESS! </h1></div>
+                <div className="text-center"><h1 style={{ fontWeight:"bold",color: "#00000099" }}>ONE CALL CAN CHANGE THE NARRATIVE - MISSING A CALL COULD COST YOU YOUR BUSINESS! </h1></div>
                     <div className="d-flex justify-content-center" style={{ marginTop: "2%" }}>
                         <div style={{ width: "auto", maxWidth: "620px" }}>
                         <p style={{ textAlign: "center", fontSize: "18px", color: "#5b5b5b" }}>Call mapping is the process of masking/hiding/mapping phone numbers behind a 0700 number. I.e. a business can have a 0700 number and decide to mask his number and his employee’s number behind the 0700 number.</p>
