@@ -55,7 +55,7 @@ export const Footer = () => {
                     <div className="col-sm-3">
                         <h5 style={{fontSize:'14px', color:'#FFFFFFCC', paddingBottom: '1%'}}>LOCATIONS</h5>
                         <div>
-                            <h6>Nigeria</h6>
+                            <h6 style={{color:'#FFFFFFCC'}}>Nigeria</h6>
                             <p className=""><a style={{fontSize:'13px', color:'#FFFFFFCC'}}href="https://www.google.com/maps/place/13+Fredrick+Chiluba,+Asokoro,+Close+900110,+Federal+Capital+Territory/@9.0377073,7.5132066,17z/data=!3m1!4b1!4m6!3m5!1s0x104e0be50f1b7597:0x2c03f407791be6a1!8m2!3d9.0377073!4d7.5157815!16s%2Fg%2F11rgbzj39c?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D" className=" link-underline link-underline-opacity-0">
                                 13B Fredrick Chiluba, Asokoro FCT, Abuja.</a></p>
                         </div>
@@ -64,7 +64,7 @@ export const Footer = () => {
                                 Suite 09, Upland Mall, Ahmed Joda Crescent, Kado Estate, Abuja</a></p>
                         </div>
                         <div>
-                            <h6>United Kingdom</h6>
+                            <h6 style={{color:'#FFFFFFCC'}}>United Kingdom</h6>
                             <p className=""> <a style={{fontSize:'13px', color:'#FFFFFFCC'}}href="https://www.google.com/maps/place/46+Seymour+Gardens,+Ilford,+UK/@51.5658024,0.055186,17z/data=!3m1!4b1!4m5!3m4!1s0x47d8a6faa02bfb7f:0xa37fb5d0d94f5a14!8m2!3d51.5658024!4d0.0577609?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D" className=" link-underline link-underline-opacity-0">
                                 46A Seymour Garden, llford IG1 3LP, London</a></p>
                         </div>   

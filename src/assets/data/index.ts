@@ -253,3 +253,111 @@ export const undertaking = [
   "14. That the Board shall have the right to exercise disciplinary action against me and to impose such sanctions as it deem fit;",
   "15. That the board shall have the fight to prevent me from performing the pilgrimage in the event of breach of any of these undertakings.",
 ];
+
+export const fakeData = [
+  {
+    Number: "07003100015",
+    Type: "Special Number",
+    Date: new Date(),
+    Action: "Created",
+    Status: "Completed",
+  },
+  {
+    Number: "09023507465",
+    Type: "Additional Line",
+    Date: new Date(),
+    Action: "Mapped",
+    Status: "Pending",
+  },
+  {
+    Number: "08189210086",
+    Type: "Additional Line",
+    Date: new Date(),
+    Action: "Deleted",
+    Status: "Failed",
+  },
+];
+
+export const fakeData2 = [
+  {
+    Ref_ID: "089987408572",
+    Type: "Deposit",
+    Date: new Date(),
+    Amount: "80,000.00",
+    Status: "Completed",
+  },
+  {
+    Ref_ID: "089987408574",
+    Type: "Withdraw",
+    Date: new Date(),
+    Amount: "80,000.00",
+    Status: "Completed",
+  },
+  {
+    Ref_ID: "089987408573",
+    Type: "Deposit",
+    Date: new Date(),
+    Amount: "80,000.00",
+    Status: "Pending",
+  },
+  {
+    Ref_ID: "089987408576",
+    Type: "Withdraw",
+    Date: new Date(),
+    Amount: "80,000.00",
+    Status: "Completed",
+  },
+  {
+    Ref_ID: "089987408572",
+    Type: "Deposit",
+    Date: new Date(),
+    Amount: "80,000.00",
+    Status: "Failed",
+  },
+  {
+    Ref_ID: "0899874085790",
+    Type: "Deposit",
+    Date: new Date(),
+    Amount: "80,000.00",
+    Status: "Failed",
+  },
+];
+
+export const fakeData3 = [
+  {
+    Number: "07003100015",
+    IVRstatus: "Awaiting IVR",
+    IVMstatus: "Awaiting IVM",
+    Date: new Date(),
+  },
+  {
+    Number: "09023507465",
+    IVRstatus: "IVR Added",
+    IVMstatus: "IVM Added",
+    Date: new Date(),
+  },
+  {
+    Number: "08189210086",
+    IVRstatus: "No IVR",
+    IVMstatus: "No IVM",
+    Date: new Date(),
+  },
+];
+
+export const availableNumbers = [
+  {
+    Number: "07003100015",
+  },
+  {
+    Number: "08003100015",
+  },
+  {
+    Number: "08009210086",
+  },
+  {
+    Number: "07003100016",
+  },
+  {
+    Number: "07003100017",
+  },
+];

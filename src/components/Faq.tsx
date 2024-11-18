@@ -43,10 +43,6 @@ const data = [
 
 export default function Faq() {
   return (
-    <div className="container" id="faqs" style={{ marginBottom: "100px", paddingTop: "10%" }}>
-      <div style={{ marginTop: "60px", marginBottom: "30px" }}>
-        <h1 style={{ color: "#00000099" }}>FAQs</h1>
-      </div>
       <div className="" style={{ marginTop: "2%" }}>
         {data.map((item, index) => (
           <Accordion key={index} style={{ paddingBottom: "2%" }}>
@@ -66,6 +62,5 @@ export default function Faq() {
           }
         `}</style>
       </div>
-    </div>
   );
 }

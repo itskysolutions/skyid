@@ -9,6 +9,7 @@ interface CustomButton {
   paddingVertical?: string;
   textColor?: string;
   backgroundColor?: string;
+  border?: string;
 }
 
 const CustomButton = ({
@@ -20,6 +21,7 @@ const CustomButton = ({
   paddingVertical,
   textColor,
   backgroundColor,
+  border,
 }: CustomButton) => {
   return (
     <button
@@ -28,10 +30,10 @@ const CustomButton = ({
       type="submit"
       className={`flex items-center justify-center gap-2 rounded-md ${
         disabled ? "bg-[#DCDCDC]" : `${backgroundColor || ""}`
-      } text-base font-inter font-normal ${paddingVertical || "py-2"} ${textColor || ""} ${style}`}
+      } text-base font-inter font-normal ${paddingVertical || "py-2"} ${textColor || "text-white"} ${style} ${border || "border-none"} `} 
     >
-      {name}
       {trailingIcon}
+      {name}
     </button>
   );
 };

@@ -22,7 +22,7 @@ export default function WhyChooseSkyID()  {
          <div className="container justify-content-center" style={{ marginBottom: "100px" }}>
             <Card style={{ width: "100%", maxWidth: "1000px", backgroundColor: "#D92027", borderRadius: "20px" }}>
               <Card.Body>
-                <Card.Title style={{ color: "white", fontSize: "44px", margin: "40px" }}>Why Choose Sky ID</Card.Title>
+                <Card.Title className="responsive-title" style={{color:"white"}}>Why Choose Sky ID</Card.Title>
                 <div className="row row-cols-1 row-cols-md-3 g-3">
                 {data.map((item, index) => (
                   <div className="col d-flex justify-content-center" key={index}>
@@ -43,6 +43,33 @@ export default function WhyChooseSkyID()  {
                 ))}
                 </div>
               </Card.Body>
+              <style>{`
+                .responsive-title {
+                  font-size: 44px; !important;
+                  margin-top: 40px; !important;
+                  margin-bottom: 40px; !important;
+                }
+              .responsive-title > card-title > h5{
+              color:white}
+                @media (max-width: 992px) {
+                  .responsive-title {
+                    font-size: 40px; !important;
+                  }
+                }
+
+                @media (max-width: 768px) {
+                  .responsive-title {
+                    font-size: 40px !important;
+
+                  }
+                }
+
+                @media (max-width: 576px) {
+                  .responsive-title {
+                    font-size: 24px;!important;
+                  }
+                }
+              `}</style>
             </Card>
           </div>
       </div>
