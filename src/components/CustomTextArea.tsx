@@ -28,7 +28,7 @@ const CustomTextArea = ({
   plainText = false,
   asterisk = false,
   valueInput,
-  type = "text",
+  //type = "text",
   plainStyle,
   trailingIcon,
   bgInput,
@@ -37,7 +37,7 @@ const CustomTextArea = ({
   onChange: customOnChange
 }: CustomTextAreaProps) => {
   const [show, setShow] = useState(false);
-  const inputType = type === "password" && !show ? "password" : type || "text";
+  //const inputType = type === "password" && !show ? "password" : type || "text";
 
   return (
     <Controller

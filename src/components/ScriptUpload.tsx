@@ -24,13 +24,13 @@ export const ScriptUpload = () => {
     }
   };
 
-  const handleUpload = () => {
-    if (file) {
-      console.log('Uploading:', file);
-      setSuccess(`File "${file.name}" uploaded successfully!`);
-      setFile(null);
-    }
-  };
+  // const handleUpload = () => {
+  //   if (file) {
+  //     console.log('Uploading:', file);
+  //     setSuccess(`File "${file.name}" uploaded successfully!`);
+  //     setFile(null);
+  //   }
+  // };
 
   const handleDelete = () => {
     setFile(null);

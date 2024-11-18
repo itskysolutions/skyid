@@ -11,7 +11,7 @@ const SelectDateButton = ({ onDateChange }: SelectDateButtonProps) => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
-  const [isSingleDate, setIsSingleDate] = useState<boolean>(false);
+  //const [isSingleDate, setIsSingleDate] = useState<boolean>(false);
 
   const handleDateChange = (dates: [Date | null, Date | null]) => {
     const [start, end] = dates;
@@ -20,13 +20,13 @@ const SelectDateButton = ({ onDateChange }: SelectDateButtonProps) => {
       // If only one date is selected, treat it as a single date
       setStartDate(start);
       setEndDate(null);
-      setIsSingleDate(true);
+      //setIsSingleDate(true);
       onDateChange(start, null, true);  // Pass the single date to parent
     } else if (start && end) {
       // If both start and end dates are selected, treat it as a date range
       setStartDate(start);
       setEndDate(end);
-      setIsSingleDate(false);
+      //setIsSingleDate(false);
       onDateChange(start, end, false);  // Pass the date range to parent
     }
   };

@@ -1,5 +1,3 @@
-import { AddOns } from "../../pages/AddOns";
-
 export const businessCategory = [
   {
     label: "",

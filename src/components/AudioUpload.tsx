@@ -26,14 +26,14 @@ export const AudioUpload = () => {
   };
 
 
-  const handleUpload = () => {
-    if (file) {
-      // Handle the upload logic here
-      console.log('Uploading:', file);
-      alert(`File ${file.name} uploaded successfully!`);
-      setFile(null);
-    }
-  };
+  // const handleUpload = () => {
+  //   if (file) {
+  //     // Handle the upload logic here
+  //     console.log('Uploading:', file);
+  //     alert(`File ${file.name} uploaded successfully!`);
+  //     setFile(null);
+  //   }
+  // };
 
   const handleDelete = () => {
     setFile(null);

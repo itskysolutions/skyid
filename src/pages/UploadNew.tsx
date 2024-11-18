@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import CustomInput from "../components/CustomInput";
 import { useForm } from "react-hook-form";
-import { AudioUpload } from '../components/AudioUpload';
-import { ScriptUpload } from '../components/ScriptUpload';
+//import { AudioUpload } from '../components/AudioUpload';
+//import { ScriptUpload } from '../components/ScriptUpload';
 import CustomButton from "../components/CustomButton";
 import Card from "react-bootstrap/Card";
 

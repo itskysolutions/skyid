@@ -3,7 +3,7 @@ import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
 import { useForm } from "react-hook-form";
 import { Header } from "../components/Header";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 // import { useForm } from "react-hook-form";
 // import { FaArrowRight } from "react-icons/fa6";
 // import CustomButton from "../components/CustomButton";
@@ -30,7 +30,7 @@ const Signin: React.FC = () => {
   // const params = useLocation();
   // const navigation = useNavigate();
   const { control } = useForm();
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   // const onSubmit: SubmitHandler<Props> = (data) => {
   //   registerUser.mutate({
