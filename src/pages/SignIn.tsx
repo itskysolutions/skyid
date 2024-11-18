@@ -81,9 +81,6 @@ const Signin: React.FC = () => {
           <CustomButton
             name="Log in"
             backgroundColor="red"
-            onClick={() => {
-              navigate("app/dashboard");
-            }}
             // trailingIcon={
             //   registerUser.isPending ? (
             //     <div role="status" aria-label="loading">

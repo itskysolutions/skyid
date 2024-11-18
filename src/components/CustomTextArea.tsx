@@ -1,10 +1,8 @@
-// 
-
 import { useState } from "react";
 import { Control, Controller, FieldValues, RegisterOptions } from "react-hook-form";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
-interface CustomInputProps {
+interface CustomTextAreaProps {
   style?: string;
   control: Control<FieldValues, unknown>;
   rules?: Omit<RegisterOptions<FieldValues, string>, "disabled" | "valueAsNumber" | "valueAsDate" | "setValueAs">;
@@ -19,10 +17,10 @@ interface CustomInputProps {
   trailingIcon?: boolean;
   bgInput?: string;
   mainContainer?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
-const CustomInput = ({
+const CustomTextArea = ({
   control,
   name,
   label,
@@ -37,7 +35,7 @@ const CustomInput = ({
   style,
   mainContainer,
   onChange: customOnChange
-}: CustomInputProps) => {
+}: CustomTextAreaProps) => {
   const [show, setShow] = useState(false);
   const inputType = type === "password" && !show ? "password" : type || "text";
 
@@ -55,13 +53,12 @@ const CustomInput = ({
             className={
               plainText
                 ? `${plainStyle || "bg-[#eaeaea] border border-[#eaeaea] rounded-md font-extrabold flex-1"} p-[10px] font-inter text-base`
-                : `flex flex-row items-center p-2 border border-gray-300 rounded-lg outline-none focus:bg-[#eaeaea] ${style}`
+                : `flex flex-col p-2 border border-gray-300 rounded-lg outline-none focus:bg-[#eaeaea] ${style}`
             }
           >
-            <input
-              type={inputType}
-              disabled={plainText}
+            <textarea
               placeholder={placeholder}
+              disabled={plainText}
               className={`${bgInput || "bg-white"} rounded-md outline-none flex-1`}
               value={valueInput || value}
               onBlur={onBlur}
@@ -69,13 +66,19 @@ const CustomInput = ({
                 onChange(e);
                 customOnChange && customOnChange(e); // Call custom onChange if provided
               }}
+              style={{
+                width: "800px",  // Custom width
+                height: "207px", // Custom height
+                resize: "none",  // Disable resizing
+              }}
             />
-            {trailingIcon &&
-              (show ? (
+            {trailingIcon && (
+              show ? (
                 <FiEye onClick={() => setShow(!show)} className="cursor-pointer ml-2" />
               ) : (
                 <FiEyeOff onClick={() => setShow(!show)} className="cursor-pointer ml-2" />
-              ))}
+              )
+            )}
           </div>
           {error && <p className="text-left mt-1 text-[red] text-sm font-inter font-normal">{error.message}</p>}
         </div>
@@ -84,4 +87,4 @@ const CustomInput = ({
   );
 };
 
-export default CustomInput;
+export default CustomTextArea;
