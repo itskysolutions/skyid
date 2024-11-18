@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Form, FormControl, Button, InputGroup, Card } from "react-bootstrap";
-import Image from "react-bootstrap/Image";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import IMAGES from "../constant/Images";
@@ -166,19 +165,32 @@ export const Home = () => {
                 `}</style>
             </div>
         </div>
-        {/**Image section */}
+        {/**Video section */}
         <div
             className="container space-y-1 transition-all duration-500 justify-content-center"
         >
-            <Image
-                src={IMAGES.YOUTUBE}
-                alt="Layered Image"
-                className="layered-image img-fluid"
-                style={{position: "relative", marginTop: results ? "25%" : "5%", left: "50%", transform: "translate(-50%, -50%)", width: "100%", maxWidth: "1000px",height: "auto",maxHeight: "466px", borderRadius: "20px",transition: "margin-top 0.5s ease"}}
-            rounded/>
-            <style>{`
-                .img-fluid {max-width: 100%;height: auto;}
-            `}</style>
+            <div style={{ position: "relative", marginTop: results ? "25%" : "5%", left: "50%", transform: "translate(-50%, -50%)", width: "100%", maxWidth: "1000px", height: "auto", maxHeight: "1000px", borderRadius: "20px", transition: "margin-top 0.5s ease" }}>
+                <div className="ratio ratio-21x9">
+                    <iframe 
+                    width="560" 
+                    height="500" 
+                    src="https://www.youtube.com/embed/8OsAxwyXheE?si=vGtPOdD2OEfP1xji" 
+                    title="YouTube video player" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerPolicy="strict-origin-when-cross-origin" 
+                    allowFullScreen
+                    style={{
+                        borderRadius: "20px"
+                    }}></iframe> 
+                </div>
+            </div>
+                <style>{`
+                iframe {
+                    max-width: 100%;
+                    height: auto;
+                }
+                `}</style>
         </div>
         <div className="container"style={{ width: "auto", maxWidth: "1000px", alignContent:"center" }}>
             <div style={{alignContent:"center" }}>
