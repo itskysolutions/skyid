@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, FormControl, Button, InputGroup, Card, ListGroup } from "react-bootstrap";
+import { Form, FormControl, Button, InputGroup, Card } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
@@ -12,6 +12,7 @@ import UseCase from "../components/UseCase";
 import AdditionalFeatures from "../components/AdditionalFeatures";
 import Features from "../components/Features";
 import {useNavigate } from "react-router-dom";
+import {availableNumbers} from "../assets/data/index"
 
 type Results = { found: true; number: number } | { found: false; suggestions: number[] } | null;
 
@@ -20,28 +21,29 @@ export const Home = () => {
     const [results, setResults] = useState<Results>(null);
     const navigate = useNavigate();
   
-    const availableNumbers = [1234, 5678, 91011, 1213, 1415]; // Replace with actual data
-  
     const handleSearch = () => {
-      const parsedQuery = parseInt(query, 10);
-      if (availableNumbers.includes(parsedQuery)) {
-        setResults({ found: true, number: parsedQuery });
-      } else {
-        const suggestions = availableNumbers
-          .filter(num => Math.abs(num - parsedQuery) <= 10)
-          .slice(0, 3); // Suggest up to 3 closest numbers
-        setResults({ found: false, suggestions });
-      }
-    };
+        const parsedQuery = parseInt(query, 10);
+  
+        if (availableNumbers.some(num => parseInt(num.Number, 10) === parsedQuery)) {
+          setResults({ found: true, number: parsedQuery });
+        } else {
+          const suggestions = availableNumbers
+            .filter(num => Math.abs(parseInt(num.Number, 10) - parsedQuery) <= 10)
+            .slice(0, 3)
+            .map(num => parseInt(num.Number, 10)); // Convert suggestions to numbers
+            
+          setResults({ found: false, suggestions });
+        }
+      };
 
   return (
     <div style={{minHeight: "100vh",display: "flex",flexDirection: "column", minWidth: "100%",fontFamily: "Poppins, sans-serif",}}>
         <Header />
         <div>
         {/** Home Page */}
-        <div className="text-center"style={{backgroundColor: "#ededed",backgroundImage: `url(${IMAGES.BACKGROUND})`,width: "auto",maxWidth: "100%",paddingTop: "2rem",boxSizing: "border-box",height: "638.85px",backgroundPosition: "center",backgroundSize: "cover",marginTop: "5%",}}>
+        <div className="text-center "style={{backgroundColor: "#ededed",backgroundImage: `url(${IMAGES.BACKGROUND})`,width: "auto",maxWidth: "100%",paddingTop: "2rem",boxSizing: "border-box",height: "638.85px",backgroundPosition: "center",backgroundSize: "cover",marginTop: "2%",}}>
             <div className="" style={{ marginTop: "100px" }}>
-                <h1 className="text-center mb-4" style={{ textDecoration: "bold", fontSize: "60px" }}>My Identity, My Availability</h1>
+                <h1 className="text-center mb-4 responsive-title">My Identity, My Availability</h1>
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <p className="mb-2"style={{color: "#5b5b5b",fontSize: "18px",width: "100%",maxWidth: "750px",height: "auto",maxHeight: "81px",margin: "0 auto", textAlign: "center", }}>
                     Sky ID offers businesses a unique 0700 toll number that can map multiple lines, ensuring that your
@@ -49,12 +51,14 @@ export const Home = () => {
                     numbers.</p>
                 </div>
                 <div className=" mt-4 ms-3 d-flex justify-content-center">
-                    <Form className="d-flex flex-wrap justify-content-center" style={{ width: "55%" }}onSubmit={(e) => e.preventDefault()}>
+                <Form className="d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center" style={{ width: "100%", maxWidth: "800px" }} onSubmit={(e) => e.preventDefault()}>
                         <InputGroup className="w-100">
-                            <InputGroup.Text style={{borderTopLeftRadius: "10px", borderBottomLeftRadius:'10px'}}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18.5 18.5L21 21" stroke="black" stroke-width="null" stroke-linecap="round" className="my-path"></path>
-                                <path d="M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="black" stroke-width="null" className="my-path"></path>
-                            </svg></InputGroup.Text>
+                            <InputGroup.Text style={{ borderTopLeftRadius: "10px", borderBottomLeftRadius: '10px' }}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.5 18.5L21 21" stroke="black" strokeWidth="1" strokeLinecap="round" className="my-path"></path>
+                                <path d="M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="black" strokeWidth="1" className="my-path"></path>
+                            </svg>
+                            </InputGroup.Text>
                             <FormControl 
                                 type="search"
                                 placeholder="Search For Availability"
@@ -65,7 +69,7 @@ export const Home = () => {
                             <Button 
                                 onClick={handleSearch}
                                 className="rounded-md"
-                                style={{backgroundColor: "#515151",color: "white",borderColor: "#515151",minWidth: "120px",height: "56px",borderRadius: "20px",marginTop: "5px",}}>
+                                style={{backgroundColor: "#515151",color: "white",borderColor: "#515151",minWidth: "120px",height: "56px",borderRadius: "10px",marginTop: "5px",}}>
                             {" "}Search</Button>
                         </InputGroup>
                         {results && (
@@ -98,36 +102,34 @@ export const Home = () => {
                                 </div>
                             ) : (
                             <>
-                                <Card.Body>The number is not available.</Card.Body>
+                             <Card.Body>
+                                The number is not available.
+                                </Card.Body>
                                 {results.suggestions.length > 0 ? (
                                 <>
                                     <Card.Body>Suggested available numbers:</Card.Body>
-                                    <ListGroup>
+                                    <div className="d-flex flex-row flex-wrap gap-3 justify-content-center">
                                     {results.suggestions.map((num, index) => (
-                                        <ListGroup.Item key={index} style={{ backgroundColor: "#e9ecef" }}>
-                                            <div className="d-flex justify-content-between align-items-center">
-                                            <span>
-                                            {num}
-                                            </span>
-                                            <div className="">
-                                                <Button
-                                                className="px-4 py-2 rounded-md"
-                                                onClick={() => navigate("/signup")}
-                                                style={{
-                                                    backgroundColor: "#D92027",
-                                                    border: "none",
-                                                }}
-                                                >
-                                                Continue
-                                                </Button>
-                                            </div>
-                                        </div>
-                                        </ListGroup.Item>
+                                        <Card key={index} style={{ width: '14rem', backgroundColor: "#e9ecef" }}>
+                                        <Card.Body className="d-flex flex-column align-items-center">
+                                            <span className="mb-3">{num}</span>
+                                            <Button
+                                            className="px-4 py-2 rounded-md"
+                                            onClick={() => navigate("/signup")}
+                                            style={{
+                                                backgroundColor: "#D92027",
+                                                border: "none",
+                                            }}
+                                            >
+                                            Continue
+                                            </Button>
+                                        </Card.Body>
+                                        </Card>
                                     ))}
-                                    </ListGroup>
+                                    </div>
                                 </>
                                 ) : (
-                                <Card.Body>No similar numbers available.</Card.Body>
+                                <Card.Body>This number is not within our range!!! Search again!!!</Card.Body>
                                 )}
                             </>
                             )}
@@ -136,6 +138,32 @@ export const Home = () => {
                         )}
                     </Form>
                 </div>
+                <style>{`
+                .responsive-title {
+                    font-size: 60px;
+                    text-align: center;
+                    font-weight: bold; /* Adjusts 'bold' to actual font-weight */
+                    margin-bottom: 1rem;
+                }
+
+                @media (max-width: 992px) { /* For tablets and small laptops */
+                    .responsive-title {
+                        font-size: 48px;
+                    }
+                }
+
+                @media (max-width: 768px) { /* For mobile devices */
+                    .responsive-title {
+                        font-size: 40px;
+                    }
+                }
+
+                @media (max-width: 576px) { /* For smaller mobile devices */
+                    .responsive-title {
+                        font-size: 40px;
+                    }
+                }
+                `}</style>
             </div>
         </div>
         {/**Image section */}
@@ -146,7 +174,7 @@ export const Home = () => {
                 src={IMAGES.YOUTUBE}
                 alt="Layered Image"
                 className="layered-image img-fluid"
-                style={{position: "relative", marginTop: results ? "20%" : "5%", left: "50%", transform: "translate(-50%, -50%)", width: "100%", maxWidth: "1000px",height: "auto",maxHeight: "466px", borderRadius: "20px",transition: "margin-top 0.5s ease"}}
+                style={{position: "relative", marginTop: results ? "25%" : "5%", left: "50%", transform: "translate(-50%, -50%)", width: "100%", maxWidth: "1000px",height: "auto",maxHeight: "466px", borderRadius: "20px",transition: "margin-top 0.5s ease"}}
             rounded/>
             <style>{`
                 .img-fluid {max-width: 100%;height: auto;}
@@ -157,7 +185,8 @@ export const Home = () => {
                 <div className="text-center"><h1 style={{ fontWeight:"bold",color: "#00000099" }}>ONE CALL CAN CHANGE THE NARRATIVE - MISSING A CALL COULD COST YOU YOUR BUSINESS! </h1></div>
                     <div className="d-flex justify-content-center" style={{ marginTop: "2%" }}>
                         <div style={{ width: "auto", maxWidth: "620px" }}>
-                        <p style={{ textAlign: "center", fontSize: "18px", color: "#5b5b5b" }}>Call mapping is the process of masking/hiding/mapping phone numbers behind a 0700 number. I.e. a business can have a 0700 number and decide to mask his number and his employee’s number behind the 0700 number.</p>
+                        <p style={{ textAlign: "center", fontSize: "18px", color: "#5b5b5b" }}>Call Mapping typically refers to the process of routing or forwarding calls based on certain rules or conditions, often used in call centers, VOIP systems, or PBX systems,  where a central phone number (like a 0700 number) is used to mask or forward calls to various internal or employee phone numbers. This is often used by businesses to provide more control, privacy, and flexibility in their communications.I.e. a business can have a 0700 number and decide to map its number and its employee’s number behind the 0700 number.</p>
+                        {/* Call mapping is the process of routing or forwarding calls based on certians rules using the 0700 number. I.e. a business can have a 0700 number and decide to map its number and its employee’s number behind the 0700 number. */}
                     </div>
                 </div>
             </div>

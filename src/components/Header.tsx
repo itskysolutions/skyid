@@ -14,14 +14,13 @@ export const Header = () => {
       <Navbar expand="lg" className="bg-white pb-4 shadow-custom" fixed="top">
         <Container>
           <Navbar.Brand href="/">
-          <Link to={"/"}>
-          <img src={IMAGES.LOGO} alt="logo" style={{ width: "173.05px", height: "50px" }} />
-          </Link>
-           
+            <Link to={"/"}>
+              <img src={IMAGES.LOGO} alt="logo" style={{ width: "173.05px", height: "50px" }} />
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto mt-2">
+            <Nav className="ms-auto mt-3">
               {/* <Nav.Link href="/" className="me-5 text-black">Home</Nav.Link> */}
               <Nav.Link href="/#features" className="me-5 text-black">
                 Features
