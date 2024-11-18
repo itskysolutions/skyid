@@ -184,9 +184,8 @@ export const Home = () => {
             <div style={{alignContent:"center" }}>
                 <div className="text-center"><h1 style={{ fontWeight:"bold",color: "#00000099" }}>ONE CALL CAN CHANGE THE NARRATIVE - MISSING A CALL COULD COST YOU YOUR BUSINESS! </h1></div>
                     <div className="d-flex justify-content-center" style={{ marginTop: "2%" }}>
-                        <div style={{ width: "auto", maxWidth: "620px" }}>
-                        <p style={{ textAlign: "center", fontSize: "18px", color: "#5b5b5b" }}>Call Mapping typically refers to the process of routing or forwarding calls based on certain rules or conditions, often used in call centers, VOIP systems, or PBX systems,  where a central phone number (like a 0700 number) is used to mask or forward calls to various internal or employee phone numbers. This is often used by businesses to provide more control, privacy, and flexibility in their communications.I.e. a business can have a 0700 number and decide to map its number and its employee’s number behind the 0700 number.</p>
-                        {/* Call mapping is the process of routing or forwarding calls based on certians rules using the 0700 number. I.e. a business can have a 0700 number and decide to map its number and its employee’s number behind the 0700 number. */}
+                        <div style={{ width: "auto", maxWidth: "800px" }}>
+                        <p style={{ textAlign: "center", fontSize: "18px", color: "#5b5b5b" }}>Call Mapping typically refers to the process of routing or forwarding calls based on certain rules or conditions, often used in call centers, VOIP systems, or PBX systems,  where a central phone number (like a 0700 / 0800 number) is used to mask or forward calls to various internal or employee phone numbers. This is often used by businesses to provide more control, privacy, and flexibility in their communications.I.e. a business can have a 0700 number and decide to map its number and its employee’s number behind the 0700 number.</p>
                     </div>
                 </div>
             </div>

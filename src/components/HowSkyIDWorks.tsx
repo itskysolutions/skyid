@@ -9,8 +9,8 @@ export default function HowSkyIDWorks() {
             <div className="" style={{ marginTop: "60px", marginBottom: "30px" }}>
               <h1 className="text-center" style={{ color: "#00000099" }}>How Sky ID Works </h1>
               <p  style={{ marginTop: "20px", color: "#5b5b5b", fontSize: "18px", textAlign: "center" }}>
-                With a Sky ID 0700/0800 number, you can map several lines, so when a customer calls, the system routes the
-                call to primary contact. If the primary contact is unavailable , the system intelligently redirects the
+                With a Sky ID (0700/0800 number), you can map several lines, so when a customer calls, the system routes the
+                call to primary contact. If the primary contact is unavailable, the system intelligently redirects the
                 call to the next available team member.
               </p>
             </div>
