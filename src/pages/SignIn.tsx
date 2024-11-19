@@ -1,7 +1,7 @@
 import React from "react";
 import CustomInput from "../components/CustomInput";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { ErrorResponse, Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import IMAGES from "../constant/Images";
 import Colors from "../constant/Colors";
 import Logo from "../../public/logo.png";
@@ -13,6 +13,9 @@ import { toast } from "sonner";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation } from "@tanstack/react-query";
 
+interface ErrorResponse {
+  message: string;
+}
 const Signin: React.FC = () => {
   // const params = useLocation();
   //const navigate = useNavigate();
