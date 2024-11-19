@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import whiteLogo from '../../public/white-logo.png'
+import IMAGES from "../constant/Images";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
@@ -10,7 +10,7 @@ export const Footer = () => {
             <div className="container p-4" style={{marginTop: '79px'}}>
                 <div className="row">
                     <div className="col-md-4" style={{paddingBottom:'3%'}}>
-                        <img src={whiteLogo} alt="logo" style={{width:'173.05px', height:'55.6px'}} />
+                        <img src={IMAGES.WHITELOGO} alt="logo" style={{width:'173.05px', height:'55.6px'}} />
                         <div className="social-icons" style={{paddingTop:'5%'}}>
                             <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
                                 <i className="bi bi-whatsapp" style={{paddingRight:'5%', color:'#FFFFFFCC'}}></i>

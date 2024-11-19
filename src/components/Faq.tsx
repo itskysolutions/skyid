@@ -7,7 +7,7 @@ const data = [
       "",
   },
   {
-    title: "2. What is call mapping, and why is it beneficial?",
+    title: "2. What are the benefits of using call mapping for my business?",
     description: "Call mapping allows you to link multiple phone lines to a single 0700 number, ensuring calls reach the next available team member if the primary contact is unavailable.​",
   },
   {

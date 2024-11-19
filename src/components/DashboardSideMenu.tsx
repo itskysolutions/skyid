@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 const data = [
   {
     title: "Dashboard",
-    link: "Dashboard",
+    link: "dashboard/chooseSpecialNumber",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-house" viewBox="0 0 16 16">
         <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
@@ -11,7 +11,7 @@ const data = [
   },
   {
     title: "Manage Numbers",
-    link: "ManageNumbers",
+    link: "manageNumbers",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-sim" viewBox="0 0 16 16">
         <path d="M2 1.5A1.5 1.5 0 0 1 3.5 0h7.086a1.5 1.5 0 0 1 1.06.44l1.915 1.914A1.5 1.5 0 0 1 14 3.414V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5zM3.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V3.414a.5.5 0 0 0-.146-.353l-1.915-1.915A.5.5 0 0 0 10.586 1z"/>
@@ -21,7 +21,7 @@ const data = [
   },
   {
     title: "Add Ons",
-    link: "AddOns",
+    link: "addOns",
     icon: (
       <svg width="20" height="20" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -53,7 +53,7 @@ const data = [
   },
   {
     title: "Wallet",
-    link: "Wallet",
+    link: "wallet",
     icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M3 6V17C3 18.8856 3 19.8284 3.58579 20.4142C4.17157 21 5.11438 21 7 21H17C18.8856 21 19.8284 21 20.4142 20.4142C21 19.8284 21 18.8856 21 17V12C21 10.1144 21 9.17157 20.4142 8.58579C19.8284 8 18.8856 8 17 8H7.82843C6.67474 8 6.0979 8 5.56035 7.84678C5.26506 7.7626 4.98044 7.64471 4.71212 7.49543C4.22367 7.22367 3.81578 6.81578 3 6ZM3 6C3 5.06812 3 4.60218 3.15224 4.23463C3.35523 3.74458 3.74458 3.35523 4.23463 3.15224C4.60218 3 5.06812 3 6 3H14C15.1046 3 16 3.89543 16 5" 
@@ -78,11 +78,12 @@ const data = [
 
 export const DashboardSideMenu = () => {
   return (
-    <div className="w-full flex-col flex justify-between">
-      <ul className="flex-col gap-1 flex mt-8">
+    <div className="w-full flex-col flex justify-between ">
+      <div className="w-full flex-col gap-1 flex mt-8">
         {data.map((item, index) => (
-          <li key={index}>
+          <div key={index} className="w-full">
             <NavLink
+            onClick={() =>console.log("testing")}
               to={item.link}
               style={({ isActive }) => {
                 return {
@@ -90,7 +91,7 @@ export const DashboardSideMenu = () => {
                   background: isActive ? "#FFFFFF" : "#D92027",
                 };
               }}
-              className={`cursor-pointer flex py-3 px-3 items-center gap-3 rounded-lg no-underline`}
+              className={`cursor-pointer flex py-3 px-3 items-center gap-3 no-underline bg-slate-300`}
             >
               <div
                 className="relative">
@@ -98,56 +99,10 @@ export const DashboardSideMenu = () => {
               </div>
               {item.title}
             </NavLink>
-          </li>
+          </div>
         ))}
-      </ul>
-      {/* <div className="flex-col flex p-3 bg-white rounded-lg">
-        <div className="h-5 gap-3 flex">
-          <div className="relative">
-          </div>
-          <a className="text-red-500 text-sm font-medium leading-snug" href="/app/support">Support</a>
-        </div>
-      </div> */}
-      {/* <div className="flex-col flex p-3rounded-lg">
-        <div className="gap-3 flex">
-          <div className="relative">
-            <svg width="20" height="20" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M7 4C4.58803 5.66502 3 8.50052 3 11.7185C3 16.8445 7.02944 21 12 21C16.9706 21 21 16.8445 21 11.7185C21 8.50052 19.412 5.66502 17 4"
-                stroke="red"
-                strokeWidth="null"
-                strokeLinecap="round"
-                className="my-path"
-              ></path>
-              <path d="M12 3L12 10" stroke="red" strokeWidth="null" strokeLinecap="round" className="my-path"></path>
-            </svg>
-          </div>
-          <NavLink
-              to={"/app/logout"}
-              style={({ isActive }) => {
-                return {
-                  color: isActive ? "#D92027" : "#FFFFFF",
-                  background: isActive ? "#FFFFFF" : "#D92027",
-                };
-              }}
-              className={`cursor-pointer flex py-3 px-3 items-center gap-3 rounded-lg`}
-            >
-              <div className={`relative`}><svg width="20" height="20" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M7 4C4.58803 5.66502 3 8.50052 3 11.7185C3 16.8445 7.02944 21 12 21C16.9706 21 21 16.8445 21 11.7185C21 8.50052 19.412 5.66502 17 4"
-                  stroke="red"
-                  strokeWidth="null"
-                  strokeLinecap="round"
-                  className="my-path"
-                ></path>
-                <path d="M12 3L12 10" stroke="red" strokeWidth="null" strokeLinecap="round" className="my-path"></path>
-              </svg></div>
-              Log Out
-            </NavLink>
-        </div>
-      </div> */}
+      </div>
     </div>
-    
   );
 };
 

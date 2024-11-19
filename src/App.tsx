@@ -5,7 +5,6 @@ import Signin from "./pages/SignIn";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import Verification from "./pages/Verification";
-//import {Dashboard} from "./pages/Dashboard";
 import {ManageNumbers} from "./pages/ManageNumbers";
 import {Support} from "./pages/Support";
 import { ProtectedRoutes } from "./utils/ProtectedRoutes";
@@ -128,7 +127,7 @@ function App() {
           ]
         },
         {
-          path: "LogOut",
+          path: "logOut",
           element: <LogOut />,
         },
       ],

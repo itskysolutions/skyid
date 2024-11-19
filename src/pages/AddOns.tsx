@@ -6,7 +6,7 @@ import { useState } from 'react';
 import SelectDateButton from "../components/SelectDateButton";
 import { NestedDropdown } from "../components/NestedDropdown";
 
-export const  AddOns = () => {
+ export const  AddOns = () => {
 
   const Statusoptions = [
     { id: 'all', label: 'All', value: "all", children: [] },
@@ -45,7 +45,6 @@ export const  AddOns = () => {
   };
 
   const handleFilterChange = (selectedFilters: { [key: string]: boolean }) => {
-    // Create a mapping of filter IDs to their corresponding values
     const filterMapping: { [key: string]: string } = {
       '3': 'Awaiting IVR',
       '4': 'IVR Added',
@@ -54,15 +53,12 @@ export const  AddOns = () => {
       '8': 'IVM Added',
       '9': 'No IVM',
     };
-  
-    // Get active filters based on selected checkboxes
+
     const activeFilters = Object.keys(selectedFilters).filter((key) => selectedFilters[key]);
   
     if (activeFilters.length === 0 || activeFilters.includes("all")) {
-      // If no filters are selected or "all" is selected, show all data
       setFilteredData(fakeData3);
     } else {
-      // Filter the data based on the active filters and their corresponding values
       setFilteredData(
         fakeData3.filter((item) =>
           activeFilters.some((filterId) => {
@@ -76,25 +72,23 @@ export const  AddOns = () => {
   
   const handleDateChange = (startDate: Date | null, endDate: Date | null, isSingleDate: boolean) => {
     if (isSingleDate && startDate) {
-      // Filter by the single date
       const filtered = fakeData3.filter(item => {
         const itemDate = new Date(item.Date);
-        return itemDate.toDateString() === startDate.toDateString();  // Compare only date part
+        return itemDate.toDateString() === startDate.toDateString();
       });
       setFilteredData(filtered);
     } else if (startDate && endDate) {
-      // Filter by the date range
       const filtered = fakeData3.filter(item => {
         const itemDate = new Date(item.Date);
         return itemDate >= startDate && itemDate <= endDate;
       });
       setFilteredData(filtered);
     } else {
-      setFilteredData(fakeData3);  // No date selected, show all data
+      setFilteredData(fakeData3);  
     }
   };
   
-    return (
+    return ( 
       <div>
         <div style={{paddingTop:"5%"}}>
             <h2><b>Add Ons</b></h2>
@@ -115,7 +109,7 @@ export const  AddOns = () => {
                             </InputGroup>
                         </Form>
                     </Col>
-                <Col md="auto">
+                 <Col md="auto">
                     <NestedDropdown options={Statusoptions} onFilterChange={handleFilterChange}/>
                 </Col>
                 <Col md="auto">

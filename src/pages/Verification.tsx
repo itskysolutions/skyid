@@ -3,7 +3,7 @@ import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import Logo from "../../public/logo.png";
+import IMAGES from "../constant/Images";
 import Select from "react-select";
 import { businessCategory } from "../assets/data";
 import countryOptions from "../utils/countries";
@@ -63,7 +63,7 @@ const Verification: React.FC = () => {
   return (
     <div className="flex flex-col h-screen">
       <div className="flex flex-row justify-between items-center px-8 pt-4">
-        <img src={Logo} className="h-[60] w-[100]" />
+        <img src={IMAGES.LOGO} className="h-[60] w-[100]" />
         <div
           onClick={() => navigate("/")}
           className="py-2 px-4 rounded border border-red-700 hover:bg-red-600 hover:text-white cursor-pointer"

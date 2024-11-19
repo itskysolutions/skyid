@@ -1,5 +1,6 @@
 import { AddNew } from "../pages/AddNew";
 import { UploadNew } from "../pages/UploadNew";
+import { BuyNew } from "../pages/BuyNew";
 
 interface TableDataItem {
     Number: string;
@@ -78,52 +79,17 @@ export const AddOnsTable = ({ Data }: TableProps) => {
                       {item.IVMstatus}
                     </td>
                     <td className="p-3 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">{item.Date.toLocaleDateString()}</td>
-                    {/* <td className="p-1 whitespace-nowrap text-sm leading-6 font-medium text-gray-900">
-                      <div
-                        className={` 
-
-                          // item.status === "success"
-                            // ? "text-emerald-600"
-                            // : item.status === "failed"
-                            // ? "text-red-600"
-                            // : "bg-amber-50 "
-                        
-                    
-                      rounded-full flex justify-center w-20 items-center gap-1`}
-                      >
-                        <span
-                          className={`font-medium text-xs ${
-                            item.Status === "Active"
-                              ? "text-emerald-600"
-                              : item.Status === "Not Active"
-                              ? "text-red-600"
-                              : item.Status === "Pending"
-                              ? "text-amber-600 "
-                              : ""
-                          }`}
-                        >
-                          {item.Status}
-                        </span>
-                      </div>
-                    </td> */}
                     <td className="flex pt-3 items-center gap-0.5">
                         {item.IVMstatus === "Awaiting IVM" && item.IVRstatus === "Awaiting IVR" ? (
                            <div className=""><AddNew/></div>
+                          //  <AddNew/>
                         ) : item.IVMstatus === "IVM Added" && item.IVRstatus === "IVR Added" ? (
                           <div style={{display:"flex"}}>
                            <div className=""><UploadNew/></div>
                         </div>
                         ) : (
-                          <div style={{display:"flex"}}>
-                           <button className="p-2 rounded-md bg-[#D92027] group transition-all duration-500 hover:bg-[#D92027] flex item-center text-white">
-                            Buy
-                          </button>
-                          <button className="p-2  ms-2 rounded-md bg-[#00000099] group transition-all duration-500 hover:bg-[#000000CC] flex item-center text-white">
-                            View more
-                          </button>
-                         </div>
+                          <div> <BuyNew/></div>
                         )}
-                        {/* {item.userID === "user" ? ( */}
                     </td>
                   </tr>
                 ))
