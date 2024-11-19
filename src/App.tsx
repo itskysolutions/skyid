@@ -6,26 +6,26 @@ import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import Verification from "./pages/Verification";
 //import {Dashboard} from "./pages/Dashboard";
-import {ManageNumbers} from "./pages/ManageNumbers";
-import {Support} from "./pages/Support";
+import { ManageNumbers } from "./pages/ManageNumbers";
+import { Support } from "./pages/Support";
 import { ProtectedRoutes } from "./utils/ProtectedRoutes";
 import { SupportRoute } from "./utils/SupportRoute";
 import { DashboardRoute } from "./utils/DashboardRoute";
 import { WalletRoute } from "./utils/WalletRoute";
-import {FAQs} from "./pages/FAQs";
-import {Email} from "./pages/Email";
-import {Wallet} from "./pages/Wallet";
-import {Deposit} from "./pages/Deposit";
-import {Withdraw} from "./pages/Withdraw";
-import {AddOns} from "./pages/AddOns";
-import {LogOut} from "./pages/LogOut";
-import {NumberMapping} from "./components/NumberMapping"
+import { FAQs } from "./pages/FAQs";
+import { Email } from "./pages/Email";
+import { Wallet } from "./pages/Wallet";
+import { Deposit } from "./pages/Deposit";
+import { Withdraw } from "./pages/Withdraw";
+import { AddOns } from "./pages/AddOns";
+import { LogOut } from "./pages/LogOut";
+import { NumberMapping } from "./components/NumberMapping";
 import { DashboardAddOns } from "./components/DashboardAddOns";
 import { CheckOut } from "./components/CheckOut";
 import { Completed } from "./components/Completed";
 import { ChooseSpecialNumber } from "./components/ChooseSpecialNumber";
-
-
+import SigninOtp from "./pages/SignInOtp";
+import SigninOtpSuccess from "./pages/SignInOtpSuccess";
 
 function App() {
   const router = createBrowserRouter([
@@ -40,6 +40,14 @@ function App() {
     {
       path: "/signin",
       element: <Signin />,
+    },
+    {
+      path: "/signinotp",
+      element: <SigninOtp />,
+    },
+    {
+      path: "/signinotpsuccess",
+      element: <SigninOtpSuccess />,
     },
     {
       path: "/signup",
@@ -60,28 +68,28 @@ function App() {
         {
           path: "dashboard",
           element: <DashboardRoute />,
-          children:[
+          children: [
             {
               path: "chooseSpecialNumber",
-              element: <ChooseSpecialNumber />
+              element: <ChooseSpecialNumber />,
             },
             {
               path: "numberMapping",
-              element: <NumberMapping />
+              element: <NumberMapping />,
             },
             {
               path: "dashboardAddOns",
-              element: <DashboardAddOns />
+              element: <DashboardAddOns />,
             },
             {
               path: "checkOut",
-              element: <CheckOut />
+              element: <CheckOut />,
             },
             {
               path: "completed",
-              element: <Completed />
+              element: <Completed />,
             },
-          ]
+          ],
         },
         {
           path: "manageNumbers",
@@ -98,16 +106,16 @@ function App() {
         {
           path: "wallet",
           element: <WalletRoute />,
-          children:[
+          children: [
             {
               path: "deposit",
-              element: <Deposit />
+              element: <Deposit />,
             },
             {
               path: "withdraw",
-              element: <Withdraw />
+              element: <Withdraw />,
             },
-          ]
+          ],
         },
         {
           path: "support",
@@ -125,7 +133,7 @@ function App() {
               path: "email",
               element: <Email />,
             },
-          ]
+          ],
         },
         {
           path: "LogOut",
@@ -133,7 +141,6 @@ function App() {
         },
       ],
     },
-
   ]);
 
   return <RouterProvider router={router} />;

@@ -1,8 +1,9 @@
-// 
+//
 
 import { useState } from "react";
 import { Control, Controller, FieldValues, RegisterOptions } from "react-hook-form";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import Colors from "../constant/Colors";
 
 interface CustomInputProps {
   style?: string;
@@ -36,7 +37,7 @@ const CustomInput = ({
   bgInput,
   style,
   mainContainer,
-  onChange: customOnChange
+  onChange: customOnChange,
 }: CustomInputProps) => {
   const [show, setShow] = useState(false);
   const inputType = type === "password" && !show ? "password" : type || "text";
@@ -54,8 +55,10 @@ const CustomInput = ({
           <div
             className={
               plainText
-                ? `${plainStyle || "bg-[#eaeaea] border border-[#eaeaea] rounded-md font-extrabold flex-1"} p-[10px] font-inter text-base`
-                : `flex flex-row items-center p-2 border border-gray-300 rounded-lg outline-none focus:bg-[#eaeaea] ${style}`
+                ? `${
+                    plainStyle || "bg-[#eaeaea] border border-[#eaeaea] rounded-md font-extrabold flex-1"
+                  } p-[10px] font-inter text-base`
+                : `flex flex-row items-center p-2 border border-[${Colors.black}] rounded-lg outline-none focus:bg-[#eaeaea] ${style}`
             }
           >
             <input

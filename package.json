@@ -10,21 +10,29 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
     "@pdftron/webviewer": "^11.0.0",
+    "@tanstack/react-query": "^5.60.5",
+    "aos": "^2.3.4",
+    "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "pdfjs-dist": "^4.8.69",
+    "prop-types": "^15.8.1",
     "pspdfkit": "^2024.7.0",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.5",
     "react-datepicker": "^7.5.0",
     "react-dom": "^18.3.1",
-    "react-hook-form": "^7.53.1",
+    "react-hook-form": "^7.53.2",
     "react-icons": "^5.3.0",
+    "react-otp-input": "^3.1.1",
     "react-pdf": "^9.1.1",
     "react-responsive": "^10.0.0",
     "react-router-dom": "^6.27.0",
-    "react-select": "^5.8.2"
+    "react-select": "^5.8.2",
+    "sonner": "^1.7.0",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
