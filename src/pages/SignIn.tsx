@@ -1,15 +1,49 @@
 import React from "react";
 import CustomInput from "../components/CustomInput";
-import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { ErrorResponse, Link, useNavigate } from "react-router-dom";
 import IMAGES from "../constant/Images";
 import Colors from "../constant/Colors";
 import Logo from "../../public/logo.png";
+import { signin } from "../services/Endpoints";
+import Authentication from "../validations/Authentication";
+import { ISignIn } from "../types";
+import { AxiosError } from "axios";
+import { toast } from "sonner";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useMutation } from "@tanstack/react-query";
 
 const Signin: React.FC = () => {
   // const params = useLocation();
   //const navigate = useNavigate();
-  const { control } = useForm();
+
+  const { control, handleSubmit, watch } = useForm<ISignIn>({
+    resolver: yupResolver(Authentication.LoginValidation),
+  });
+
+  const onSubmit: SubmitHandler<ISignIn> = (data: ISignIn) => {
+    registerUser.mutate({
+      email: data.email,
+      password: data.password,
+    });
+  };
+
+  const registerUser = useMutation({
+    mutationFn: (payload: ISignIn) => {
+      return signin(payload);
+    },
+
+    onError: (error: AxiosError<ErrorResponse>) => {
+      toast.error(error.response?.data.message as never);
+    },
+
+    onSuccess: (data) => {
+      if (data.data.message === "success") {
+        localStorage.setItem("token", JSON.stringify(data.data.accessToken));
+        navigate("/signinotp", { state: { type: watch("email") } });
+      }
+    },
+  });
 
   const navigate = useNavigate();
   return (
@@ -23,14 +57,12 @@ const Signin: React.FC = () => {
           Sign up
         </div>
       </div>
-      {/* <Header /> */}
       <form className="flex flex-col items-center mt-40">
         <div className="w-[30%]">
           <div className="flex flex-row justify-center my-[30px]" data-aos="fade-up">
             <Link to={"/"}>
               <img src={IMAGES.LOGO} alt="logo" style={{ width: "310px", height: "113px" }} />
             </Link>
-            {/* <label className="text-left font-inter font-semibold text-[20px]">Log In to your Account</label> */}
           </div>
           <div className="mb-[40px]">
             <CustomInput name="email" label={"Email"} asterisk control={control as never} />
@@ -53,10 +85,37 @@ const Signin: React.FC = () => {
           </div>
 
           <div
-            onClick={() => navigate("/signinotp")}
-            className={`flex flex-row justify-center items-center gap-1  mt-[16px] bg-[${Colors.black}] py-2 rounded text-white`}
+            onClick={handleSubmit(onSubmit)}
+            className={`flex flex-row justify-center items-center gap-1  mt-[16px] bg-[#515151] py-2 rounded text-white`}
           >
-            <label className="font-inter font-normal text-[18px]">Log In</label>
+            {registerUser.isPending ? (
+              <div role="status" aria-label="loading">
+                <svg
+                  className="w-6 h-6 stroke-[white] animate-spin "
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_9023_61563)">
+                    <path
+                      d="M14.6437 2.05426C11.9803 1.2966 9.01686 1.64245 6.50315 3.25548C1.85499 6.23817 0.504864 12.4242 3.48756 17.0724C6.47025 21.7205 12.6563 23.0706 17.3044 20.088C20.4971 18.0393 22.1338 14.4793 21.8792 10.9444"
+                      stroke="stroke-current"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                      className="my-path"
+                    ></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_9023_61563">
+                      <rect width="24" height="24" fill="white"></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span className="sr-only">Loading...</span>
+              </div>
+            ) : (
+              <label className="font-inter font-normal text-[18px]">Log In</label>
+            )}
           </div>
           <div className="mb-[40px]" />
         </div>

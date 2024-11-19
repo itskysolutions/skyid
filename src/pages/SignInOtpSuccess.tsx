@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Colors from "../constant/Colors";
 import OtpSuccess from "../../public/otp-success.png";
 
 const SigninOtpSuccess: React.FC = () => {
@@ -17,7 +16,7 @@ const SigninOtpSuccess: React.FC = () => {
           <div className="my-[40px]" />
           <div
             onClick={() => navigate("/app/dashboard")}
-            className={`flex flex-row justify-center items-center gap-1  mt-[16px] bg-[${Colors.black}] py-2 rounded text-white`}
+            className={`flex flex-row justify-center items-center gap-1  mt-[16px] bg-[#515151] py-2 rounded text-white`}
           >
             <label className="font-inter font-normal text-[18px]">Access my Dashboard</label>
           </div>

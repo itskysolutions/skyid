@@ -65,7 +65,7 @@ const SigninOtp: React.FC = () => {
 
           <div
             onClick={() => navigate("/signinotpSuccess")}
-            className={`flex flex-row justify-center items-center gap-1  mt-[16px] bg-[${Colors.black}] py-2 rounded text-white`}
+            className={`flex flex-row justify-center items-center gap-1  mt-[16px] bg-[#515151] py-2 rounded text-white`}
           >
             <label className="font-inter font-normal text-[18px]">Verify Code</label>
           </div>

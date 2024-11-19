@@ -27,6 +27,12 @@ import { ChooseSpecialNumber } from "./components/ChooseSpecialNumber";
 import SigninOtp from "./pages/SignInOtp";
 import SigninOtpSuccess from "./pages/SignInOtpSuccess";
 
+import { Toaster } from "sonner";
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -143,7 +149,12 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Toaster position="top-right" />
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 }
 
 export default App;
