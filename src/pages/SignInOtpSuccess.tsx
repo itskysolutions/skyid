@@ -15,7 +15,7 @@ const SigninOtpSuccess: React.FC = () => {
           </div>
           <div className="my-[40px]" />
           <div
-            onClick={() => navigate("/app/dashboard")}
+            onClick={() => navigate("/app/dashboard/chooseSpecialNumber")}
             className={`flex flex-row justify-center items-center gap-1  mt-[16px] bg-[#515151] py-2 rounded text-white`}
           >
             <label className="font-inter font-normal text-[18px]">Access my Dashboard</label>
