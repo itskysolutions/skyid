@@ -44,7 +44,7 @@ export const SuccessComponent = ({
                   ></path>
                 </svg>
               </div>
-              <div className="flex justify-content-center mb-1">
+              <div className="flex justify-content-center mb-1 text-center">
                 <h5>{label}</h5>
               </div>
               <div className="flex justify-content-center text-center">
