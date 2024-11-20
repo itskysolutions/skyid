@@ -167,14 +167,14 @@ export const Home = () => {
         </div>
         {/**Video section */}
         <div
-            className="container space-y-1 transition-all duration-500 justify-content-center"
+            className="container transition-all duration-500 justify-content-center"
         >
-            <div style={{ position: "relative", marginTop: results ? "25%" : "5%", left: "50%", transform: "translate(-50%, -50%)", width: "100%", maxWidth: "1000px", height: "auto", maxHeight: "1000px", borderRadius: "20px", transition: "margin-top 0.5s ease" }}>
+            <div style={{ position: "relative", marginTop: results ? "25%" : "5%", left: "50%", transform: "translate(-50%, -50%)", width: "100%", maxWidth: "1000px", height: "auto", borderRadius: "20px", transition: "margin-top 0.5s ease" }}>
                 <div className="ratio ratio-21x9">
                     <iframe 
                     width="560" 
                     height="500" 
-                    src="https://www.youtube.com/embed/8OsAxwyXheE?si=vGtPOdD2OEfP1xji" 
+                    src="https://www.youtube.com/embed/8OsAxwyXheE?si=vGtPOdD2OEfP1xji&rel=0" 
                     title="YouTube video player" 
                     frameBorder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -190,9 +190,10 @@ export const Home = () => {
                     max-width: 100%;
                     height: auto;
                 }
+
                 `}</style>
         </div>
-        <div className="container"style={{ width: "auto", maxWidth: "1000px", alignContent:"center" }}>
+        <div className="container" style={{ width: "auto", maxWidth: "1000px", alignContent:"center" }}>
             <div style={{alignContent:"center" }}>
                 <div className="text-center"><h1 style={{ fontWeight:"bold",color: "#00000099" }}>ONE CALL CAN CHANGE THE NARRATIVE - MISSING A CALL COULD COST YOU YOUR BUSINESS! </h1></div>
                     <div className="d-flex justify-content-center" style={{ marginTop: "2%" }}>
@@ -202,7 +203,9 @@ export const Home = () => {
                 </div>
             </div>
                 {/**Features section */}
-                <Features />
+                <div id="features">
+                    <Features />
+                </div>
 
                 {/** Additional features explanation */}
                 <AdditionalFeatures />
@@ -220,7 +223,7 @@ export const Home = () => {
                 <Pricing /> 
 
                 {/** FAQ */}
-                <div className="container" id="faqs" style={{ marginBottom: "100px", paddingTop: "10%" }}>
+                <div className="container" id="faqs" style={{ marginBottom: "50px", paddingTop: "6%" }}>
                     <div style={{ marginTop: "60px", marginBottom: "30px" }}>
                         <h1 style={{ color: "#00000099" }}>FAQs</h1>
                     </div>

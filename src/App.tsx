@@ -5,13 +5,14 @@ import Signin from "./pages/SignIn";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import Verification from "./pages/Verification";
-//import {Dashboard} from "./pages/Dashboard";
 import { ManageNumbers } from "./pages/ManageNumbers";
 import { Support } from "./pages/Support";
 import { ProtectedRoutes } from "./utils/ProtectedRoutes";
 import { SupportRoute } from "./utils/SupportRoute";
 import { DashboardRoute } from "./utils/DashboardRoute";
+import { VSORoute } from "./utils/VSORoute";
 import { WalletRoute } from "./utils/WalletRoute";
+import {ChannelPartnersRoute} from "./utils/ChannelPartnersRoute"
 import { FAQs } from "./pages/FAQs";
 import { Email } from "./pages/Email";
 import { Wallet } from "./pages/Wallet";
@@ -26,10 +27,13 @@ import { Completed } from "./components/Completed";
 import { ChooseSpecialNumber } from "./components/ChooseSpecialNumber";
 import SigninOtp from "./pages/SignInOtp";
 import SigninOtpSuccess from "./pages/SignInOtpSuccess";
+import  {ManageVSOs}  from "./pages/CPs/ManageVSOs";
+import  {AddNewVSO}  from "./pages/CPs/AddNewVSO";
 
 import { Toaster } from "sonner";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Success } from "./pages/Sucess";
 
 const queryClient = new QueryClient();
 
@@ -147,6 +151,30 @@ function App() {
         },
       ],
     },
+    {
+      path: "channelPartners",
+      element: <ChannelPartnersRoute/>,
+      children: [
+        {
+          path: "manageVSOs",
+          element: <ManageVSOs/>,
+        },
+      ],
+    },
+    {
+      path: "manageVSOs",
+      element: <VSORoute/>,
+      children:[
+        {
+          path: "addNewVSO",
+          element:<AddNewVSO/>,
+        }
+      ]
+    },
+    {
+      path: "success",
+      element: <Success/>
+    }
   ]);
 
   return (

@@ -24,7 +24,7 @@ const Profileoptions =[
 export const DashboardHeader = () => {
 
     return (
-      <header className="bg-[#ffffff] grid grid-cols-12 shadow-md">
+      <header className="bg-[#ffffff] grid grid-cols-12 shadow-md sticky top-0 z-50">
             <div className="flex flex-row justify-center items-center col-span-2">
                 <img src={IMAGES.LOGO} alt="logo" style={{ width: "173.05px", height: "50px" }} />
             </div>

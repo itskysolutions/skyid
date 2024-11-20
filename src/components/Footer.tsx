@@ -5,9 +5,9 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export const Footer = () => {
   return (
-    <footer style={{ marginTop: "auto", height:"478px" }} className="p-4">
+    <footer style={{ marginTop: "auto", height:"418px" }} className="p-4">
         <div className='text-white' style={{backgroundColor: '#373737', borderRadius:'20px'}}>
-            <div className="container p-4" style={{marginTop: '79px'}}>
+            <div className="container p-4" style={{marginTop: '30px'}}>
                 <div className="row">
                     <div className="col-md-4" style={{paddingBottom:'3%'}}>
                         <img src={IMAGES.WHITELOGO} alt="logo" style={{width:'173.05px', height:'55.6px'}} />

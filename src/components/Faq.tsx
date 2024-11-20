@@ -43,7 +43,7 @@ const data = [
 
 export default function Faq() {
   return (
-      <div className="" style={{ marginTop: "2%" }}>
+      <div>
         {data.map((item, index) => (
           <Accordion key={index} style={{ paddingBottom: "2%" }}>
             <Accordion.Item eventKey="1" style={{ border: "2px solid #D3D3D3" }}>
