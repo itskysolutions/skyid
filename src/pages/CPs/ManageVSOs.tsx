@@ -3,7 +3,7 @@
 import { Row, Col } from "react-bootstrap";
 import Select from "react-select";
 import { useState, useEffect } from 'react';
-import { Form, FormControl, Button, InputGroup } from "react-bootstrap";
+import { Form, FormControl, InputGroup } from "react-bootstrap";
 import { VSOData } from "../../assets/data";
 import { VSOTable } from "../../components/CPComponents/VSOTable";
 
