@@ -20,7 +20,7 @@ const Signin: React.FC = () => {
   //const navigate = useNavigate();
 
   const { control, handleSubmit, watch } = useForm<ISignIn>({
-    resolver: yupResolver(Authentication.LoginValidation),
+    resolver: yupResolver(Authentication.LoginValidation as never),
   });
 
   const onSubmit: SubmitHandler<ISignIn> = (data: ISignIn) => {
@@ -42,7 +42,7 @@ const Signin: React.FC = () => {
     onSuccess: (data) => {
       if (data.data.message === "success") {
         localStorage.setItem("token", JSON.stringify(data.data.accessToken));
-        navigate("/signinotp", { state: { type: watch("email") } });
+        navigate("/app/dashboard/chooseSpecialNumber", { state: { type: watch("email") } });
       }
     },
   });
@@ -81,7 +81,10 @@ const Signin: React.FC = () => {
           <div className="my-[40px]" />
 
           <div className="flex flex-row justify-end items-center gap-1  mt-[16px]">
-            <label onClick={() => {}} className={`font-inter font-semibold text-[${Colors.primary}] text-[14px]`}>
+            <label
+              onClick={() => navigate("/forgot-password")}
+              className={`font-inter font-semibold text-[${Colors.primary}] text-[14px]`}
+            >
               Forgot Password?
             </label>
           </div>

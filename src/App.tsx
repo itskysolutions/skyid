@@ -26,9 +26,12 @@ import { CheckOut } from "./components/CheckOut";
 import { Completed } from "./components/Completed";
 import { ChooseSpecialNumber } from "./components/ChooseSpecialNumber";
 import SigninOtp from "./pages/SignInOtp";
+import ResetPassword from "./pages/ResetPassword";
+import UpdatePassword from "./pages/UpdatePassword";
 import SigninOtpSuccess from "./pages/SignInOtpSuccess";
 import  {ManageVSOs}  from "./pages/CPs/ManageVSOs";
 import  {AddNewVSO}  from "./pages/CPs/AddNewVSO";
+
 
 import { Toaster } from "sonner";
 
@@ -55,17 +58,22 @@ function App() {
       path: "/signinotp",
       element: <SigninOtp />,
     },
-    {
-      path: "/signinotpsuccess",
-      element: <SigninOtpSuccess />,
-    },
+
     {
       path: "/signup",
       element: <Signup />,
     },
     {
-      path: "/forgotpassword",
+      path: "/forgot-password",
       element: <ForgotPassword />,
+    },
+    {
+      path: "/reset-password",
+      element: <ResetPassword />,
+    },
+    {
+      path: "/update-password",
+      element: <UpdatePassword />,
     },
     {
       path: "/verification",
@@ -179,7 +187,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Toaster position="top-right" />
+      <Toaster richColors position="top-center" />
       <RouterProvider router={router} />
     </QueryClientProvider>
   );
