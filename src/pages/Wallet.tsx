@@ -5,8 +5,7 @@ import Select from "react-select";
 import SelectDateButton from "../components/SelectDateButton";
 import { useState, useEffect } from 'react';
 import { WalletTable } from '../components/WalletTable';
-import {fakeData2 } from "../assets/data/index";
-//import { useForm } from 'react-hook-form'; 
+import {fakeData2 } from "../assets/data/index"; 
 import { Form, FormControl, Button, InputGroup } from "react-bootstrap";
 
 export  const Wallet = () => {

@@ -4,7 +4,7 @@ export default function Features () {
     return (
       <div>
         {/**Features section */}
-        <div id="features" style={{ paddingTop: "9%", paddingBottom: "10%" }}>
+        <div style={{ paddingTop: "9%", paddingBottom: "10%" }}>
               <Card style={{ border: "none", width: "auto", maxWidth: "1000px", height: "auto", maxHeight: "100%" }}>
                 <Card.Body style={{ background: "#04D02A0F", borderRadius: "20px" }}>
                   <Card.Title className="text-2xl font-semibold" style={{ color: "#333333" }}><h2 className="text-2xl font-semibold ps-4 pt-3" style={{ color: "#333333" }}>The Benefits</h2></Card.Title>
