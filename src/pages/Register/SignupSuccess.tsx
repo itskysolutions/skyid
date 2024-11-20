@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import OtpSuccess from "../../public/otp-success.png";
+import OtpSuccess from "../../../public/otp-success.png";
 
-const SigninOtpSuccess: React.FC = () => {
+const SignupSuccess: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div className="bg-[#fff]">
@@ -27,4 +27,4 @@ const SigninOtpSuccess: React.FC = () => {
   );
 };
 
-export default SigninOtpSuccess;
+export default SignupSuccess;

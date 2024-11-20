@@ -16,8 +16,7 @@ interface ErrorResponse {
   message: string;
 }
 const Signin: React.FC = () => {
-  // const params = useLocation();
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { control, handleSubmit, watch } = useForm<ISignIn>({
     resolver: yupResolver(Authentication.LoginValidation as never),
@@ -47,16 +46,15 @@ const Signin: React.FC = () => {
     },
   });
 
-  const navigate = useNavigate();
   return (
     <div className="bg-[#fff]">
       <div className="flex flex-row justify-between items-center px-8 pt-4">
         <img src={IMAGES} className="h-[60] w-[100]" />
         <div
-          onClick={() => navigate("/signup")}
+          onClick={() => navigate("/")}
           className="py-2 px-4 rounded border border-red-700 hover:bg-red-600 hover:text-white cursor-pointer"
         >
-          Sign up
+          Go to website
         </div>
       </div>
       <form className="flex flex-col items-center mt-40">

@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Policies } from "./pages/Policies";
 import Signin from "./pages/SignIn";
-import Signup from "./pages/Signup";
+import Signup from "./pages/Register/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import Verification from "./pages/Verification";
 import { ManageNumbers } from "./pages/ManageNumbers";
@@ -12,7 +12,7 @@ import { SupportRoute } from "./utils/SupportRoute";
 import { DashboardRoute } from "./utils/DashboardRoute";
 import { VSORoute } from "./utils/VSORoute";
 import { WalletRoute } from "./utils/WalletRoute";
-import {ChannelPartnersRoute} from "./utils/ChannelPartnersRoute"
+import { ChannelPartnersRoute } from "./utils/ChannelPartnersRoute";
 import { FAQs } from "./pages/FAQs";
 import { Email } from "./pages/Email";
 import { Wallet } from "./pages/Wallet";
@@ -28,10 +28,10 @@ import { ChooseSpecialNumber } from "./components/ChooseSpecialNumber";
 import SigninOtp from "./pages/SignInOtp";
 import ResetPassword from "./pages/ResetPassword";
 import UpdatePassword from "./pages/UpdatePassword";
-import SigninOtpSuccess from "./pages/SignInOtpSuccess";
-import  {ManageVSOs}  from "./pages/CPs/ManageVSOs";
-import  {AddNewVSO}  from "./pages/CPs/AddNewVSO";
-
+import { ManageVSOs } from "./pages/CPs/ManageVSOs";
+import { AddNewVSO } from "./pages/CPs/AddNewVSO";
+import VerifyNewUser from "./pages/Register/VerifyNewUser";
+import SignupSuccess from "./pages/Register/SignupSuccess";
 
 import { Toaster } from "sonner";
 
@@ -62,6 +62,14 @@ function App() {
     {
       path: "/signup",
       element: <Signup />,
+    },
+    {
+      path: "/verify-new-user",
+      element: <VerifyNewUser />,
+    },
+    {
+      path: "/signup-success",
+      element: <SignupSuccess />,
     },
     {
       path: "/forgot-password",
@@ -161,28 +169,28 @@ function App() {
     },
     {
       path: "channelPartners",
-      element: <ChannelPartnersRoute/>,
+      element: <ChannelPartnersRoute />,
       children: [
         {
           path: "manageVSOs",
-          element: <ManageVSOs/>,
+          element: <ManageVSOs />,
         },
       ],
     },
     {
       path: "manageVSOs",
-      element: <VSORoute/>,
-      children:[
+      element: <VSORoute />,
+      children: [
         {
           path: "addNewVSO",
-          element:<AddNewVSO/>,
-        }
-      ]
+          element: <AddNewVSO />,
+        },
+      ],
     },
     {
       path: "success",
-      element: <Success/>
-    }
+      element: <Success />,
+    },
   ]);
 
   return (

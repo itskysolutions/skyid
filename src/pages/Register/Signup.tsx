@@ -1,12 +1,10 @@
-import React from "react";
-import CustomInput from "../components/CustomInput";
-import CustomButton from "../components/CustomButton";
+import React, { useState } from "react";
+import CustomInput from "../../components/CustomInput";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import IMAGES from "../constant/Images";
+import IMAGES from "../../constant/Images";
 import Select from "react-select";
-import { businessCategory } from "../assets/data";
-import countryOptions from "../utils/countries";
+import { businessCategory } from "../../assets/data";
 // import { useForm } from "react-hook-form";
 // import { FaArrowRight } from "react-icons/fa6";
 // import CustomButton from "../components/CustomButton";
@@ -33,6 +31,7 @@ const Signup: React.FC = () => {
   // const params = useLocation();
   // const navigation = useNavigate();
   const { control } = useForm();
+  const navigate = useNavigate();
 
   // const onSubmit: SubmitHandler<Props> = (data) => {
   //   registerUser.mutate({
@@ -58,7 +57,7 @@ const Signup: React.FC = () => {
   //   },
   // });
 
-  const navigate = useNavigate();
+  const [step, setStep] = useState(1);
 
   return (
     <div className="flex flex-col h-screen">
@@ -72,34 +71,34 @@ const Signup: React.FC = () => {
         </div>
       </div>
       <form className="flex flex-col items-center">
-        <div className="w-[40%]">
-          <Select
-            isClearable={false}
-            className=""
-            id="currency"
-            options={countryOptions}
-            styles={{
-              option: (provided, state: { isFocused: unknown }) => ({
-                ...provided,
-                color: state.isFocused ? "white" : "black",
-                backgroundColor: state.isFocused ? "#C20308" : "white",
-              }),
-
-              singleValue: (provided) => ({
-                ...provided,
-                color: "black",
-              }),
-              // Add more styles as needed
-            }} // Add this line
-            onChange={(option) => {
-              console.log(option, "optionss");
-              // setCurrency(option?.value ?? "");
-              // resetAmount();
-            }}
-          />
-          <div className="flex flex-row my-[30px]">
-            <label className="text-left font-inter font-semibold text-[28px]">
+        <div className="w-[50%]">
+          <div className="flex flex-col my-[30px]">
+            <label className="text-left font-raleway font-semibold text-[28px]">
               Create your <label className="text-red-600">SkyID</label> account
+            </label>
+
+            <div className="flex flex-row items-center border-b-4 border-[#D92027] my-4">
+              <div
+                className={`p-3 px-4 ${step === 1 ? "bg-[#D92027] text-white" : "bg-[#eeeeee] text-black"}`}
+                onClick={() => setStep(1)}
+                style={{ borderTopLeftRadius: 10, borderTopRightRadius: 10, cursor: "pointer" }}
+              >
+                Business Owner
+              </div>
+
+              <div
+                className={`p-3 px-4 ${step === 2 ? "bg-[#D92027] text-white" : "bg-[#eeeeee] text-black"}`}
+                onClick={() => setStep(2)}
+                style={{ borderTopLeftRadius: 10, borderTopRightRadius: 10, cursor: "pointer" }}
+              >
+                Channel Partner
+              </div>
+            </div>
+
+            <label className="text-left font-raleway font-medium text-[16px]">
+              {step === 1
+                ? "Registering with SKY ID lets business owners quickly find and secure unique business numbers to enhance brand visibility and customer reach. With easy payments and options like IVR, SKY ID ensures your business stays accessible and connected."
+                : "Empower your network and maximize your earnings by becoming a SKY ID Channel Partner! Unlock opportunities with tools to seamlessly manage VSOs, track sales, and grow your agent network effortlessly. Lead the way in number solutions with full control over allocations, wallet discounts, and agent activities, all while enjoying percentage-based commissions on every transaction."}
             </label>
           </div>
 
@@ -112,13 +111,13 @@ const Signup: React.FC = () => {
               Sign in.
             </label>
           </div>
-          <div className="mt-[40px] mb-[40px]">
-            <div className="flex flex-row gap-10 my-[20px]">
+
+          <div className="my-[40px]">
+            <div className="flex flex-row flex-1">
               <CustomInput name="firstName" label={"First name"} asterisk control={control as never} />
               <CustomInput name="lastName" label={"Last name"} asterisk control={control as never} />
             </div>
             <CustomInput name="businessName" label={"Business name"} asterisk control={control as never} />
-            <div className="my-[14px]" />
             {/* <CustomSelect
               name="businessCategory"
               label={"Business category"}
@@ -151,9 +150,7 @@ const Signup: React.FC = () => {
                 // resetAmount();
               }}
             />
-            <div className="my-[14px]" />
             <CustomInput name="email" label={"Email"} asterisk control={control as never} />
-            <div className="my-[14px]" />
             <CustomInput
               type="password"
               name="password"
@@ -187,40 +184,17 @@ const Signup: React.FC = () => {
             </label>
           </div>
 
-          <CustomButton
-            name="Create an account"
-            backgroundColor="red"
-            // trailingIcon={
-            //   registerUser.isPending ? (
-            //     <div role="status" aria-label="loading">
-            //       <svg
-            //         className="w-6 h-6 stroke-[white] animate-spin "
-            //         viewBox="0 0 24 24"
-            //         fill="none"
-            //         xmlns="http://www.w3.org/2000/svg"
-            //       >
-            //         <g clip-path="url(#clip0_9023_61563)">
-            //           <path
-            //             d="M14.6437 2.05426C11.9803 1.2966 9.01686 1.64245 6.50315 3.25548C1.85499 6.23817 0.504864 12.4242 3.48756 17.0724C6.47025 21.7205 12.6563 23.0706 17.3044 20.088C20.4971 18.0393 22.1338 14.4793 21.8792 10.9444"
-            //             stroke="stroke-current"
-            //             stroke-width="1.4"
-            //             stroke-linecap="round"
-            //             className="my-path"
-            //           ></path>
-            //         </g>
-            //         <defs>
-            //           <clipPath id="clip0_9023_61563">
-            //             <rect width="24" height="24" fill="white"></rect>
-            //           </clipPath>
-            //         </defs>
-            //       </svg>
-            //       <span className="sr-only">Loading...</span>
-            //     </div>
-            //   ) : (
-            //     <FaArrowRight />
-            //   )
-            // }
-          />
+          <div
+            onClick={() => navigate("/verify-new-user")}
+            // onClick={handleSubmit(onSubmit)}
+            className={`flex flex-row justify-center items-center gap-1 mt-[40px] bg-[#515151] py-2 rounded text-white`}
+          >
+            {/* {mutateUpdatePassword.isPending ? (
+              <Spinner />
+            ) : (
+            )} */}
+            <label className="font-poppins font-medium text-[18px]">Continue</label>
+          </div>
           <div className="mb-[40px]" />
         </div>
       </form>
