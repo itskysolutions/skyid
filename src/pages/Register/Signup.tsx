@@ -1,48 +1,69 @@
 import React, { useState } from "react";
 import CustomInput from "../../components/CustomInput";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import IMAGES from "../../constant/Images";
-import Select from "react-select";
 import { businessCategory } from "../../assets/data";
-// import { useForm } from "react-hook-form";
-// import { FaArrowRight } from "react-icons/fa6";
-// import CustomButton from "../components/CustomButton";
-// import CustomInput from "../components/CustomInput";
-// import { useLocation, useNavigate } from "react-router-dom";
-// import CustomInput from "../components/CustomInput";
-// import { yupResolver } from "@hookform/resolvers/yup";
-// import { loginFormSchema } from "../models";
-// import { useMutation } from "@tanstack/react-query";
-// import { ISignIn } from "../types";
-// import { signin } from "../services/Endpoints";
-// import { AxiosError } from "axios";
-// import { toast } from "sonner";
+import countryOptions from "../../utils/countries";
+import Authentication from "../../validations/Authentication";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { ISignUp, IVerifyNewUser } from "../../types";
+import Spinner from "../../components/shared/spinner";
+import { useMutation } from "@tanstack/react-query";
+import { AxiosError } from "axios";
+import { toast } from "sonner";
+import { verifyEmail } from "../../services/Endpoints";
+import CustomSelection from "../../components/CustomSelection";
 
-// interface ErrorResponse {
-//   message: string;
-// }
-// interface Props {
-//   email: string;
-//   password: string;
-// }
+interface ErrorResponse {
+  message: string;
+}
 
 const Signup: React.FC = () => {
-  // const params = useLocation();
-  // const navigation = useNavigate();
-  const { control } = useForm();
+  const [step, setStep] = useState(1);
+  const { control, handleSubmit, watch } = useForm<ISignUp>({
+    resolver: yupResolver(Authentication.SignupValidation as never),
+  });
   const navigate = useNavigate();
 
-  // const onSubmit: SubmitHandler<Props> = (data) => {
-  //   registerUser.mutate({
-  //     email: data.email,
-  //     password: data.password,
-  //   });
-  // };
+  const onSubmit: SubmitHandler<ISignUp> = (data) => {
+    verifyingUser.mutate({
+      email: data.email,
+      firstName: data.firstName,
+    });
+  };
 
+  const verifyingUser = useMutation({
+    mutationFn: (payload: IVerifyNewUser) => {
+      return verifyEmail(payload);
+    },
+
+    onError: (error: AxiosError<ErrorResponse>) => {
+      toast.error(error.response?.data.message);
+    },
+
+    onSuccess: (data) => {
+      if (data.data.message === "success") {
+        navigate("/verify-new-user", {
+          state: {
+            firstName: watch("firstName"),
+            lastName: watch("lastName"),
+            country: watch("country"),
+            businessName: watch("businessName"),
+            businessType: watch("businessType"),
+            agentCode: watch("agentCode"),
+            email: watch("email"),
+            phoneNumber: watch("phoneNumber"),
+            password: watch("password"),
+            accountType: step === 1 ? "business owner" : "channel partner",
+          },
+        });
+      }
+    },
+  });
   // const registerUser = useMutation({
-  //   mutationFn: (payload: ISignIn) => {
-  //     return signin(payload);
+  //   mutationFn: (payload: ISignUp) => {
+  //     return signup(payload);
   //   },
 
   //   onError: (error: AxiosError<ErrorResponse>) => {
@@ -51,13 +72,14 @@ const Signup: React.FC = () => {
 
   //   onSuccess: (data) => {
   //     if (data.data.message === "success") {
-  //       localStorage.setItem("token", JSON.stringify(data.data.accessToken));
-  //       navigation("/dashboard", { state: { type: params.state.type } });
+  //       console.log("testing");
+  //       // onClick={() => navigate("/verify-new-user")}
+  //       // localStorage.setItem("token", JSON.stringify(data.data.accessToken));
+  //       // navigate("/dashboard", { state: { type: params.state.type } });
+  //       // navigate("/dashboard");
   //     }
   //   },
   // });
-
-  const [step, setStep] = useState(1);
 
   return (
     <div className="flex flex-col h-screen">
@@ -117,40 +139,29 @@ const Signup: React.FC = () => {
               <CustomInput name="firstName" label={"First name"} asterisk control={control as never} />
               <CustomInput name="lastName" label={"Last name"} asterisk control={control as never} />
             </div>
-            <CustomInput name="businessName" label={"Business name"} asterisk control={control as never} />
-            {/* <CustomSelect
-              name="businessCategory"
-              label={"Business category"}
+            <CustomSelection
+              name="country"
+              label={"Country"}
+              options={countryOptions}
               asterisk
               control={control as never}
-              options={businessCategory}
-            /> */}
-
-            <Select
-              isClearable={false}
-              className=""
-              id="currency"
-              options={businessCategory}
-              styles={{
-                option: (provided, state: { isFocused: unknown }) => ({
-                  ...provided,
-                  color: state.isFocused ? "white" : "black",
-                  backgroundColor: state.isFocused ? "#C20308" : "white",
-                }),
-
-                singleValue: (provided) => ({
-                  ...provided,
-                  color: "black",
-                }),
-                // Add more styles as needed
-              }} // Add this line
-              onChange={(option) => {
-                console.log(option, "optionss");
-                // setCurrency(option?.value ?? "");
-                // resetAmount();
-              }}
             />
+            <CustomInput name="businessName" label={"Business name"} asterisk control={control as never} />
+
+            <CustomSelection
+              name="businessType"
+              label={"Business Type"}
+              options={businessCategory}
+              asterisk
+              control={control as never}
+            />
+
+            <CustomInput name="agentCode" label={"Agent Code"} control={control as never} />
+            <div className="my-[40px]" />
             <CustomInput name="email" label={"Email"} asterisk control={control as never} />
+            <div className="my-[40px]" />
+            <CustomInput name="phoneNumber" label={"Phone Number"} asterisk control={control as never} />
+            <div className="my-[40px]" />
             <CustomInput
               type="password"
               name="password"
@@ -162,7 +173,7 @@ const Signup: React.FC = () => {
             <div className="my-[14px]" />
             <CustomInput
               type="password"
-              name="password"
+              name="confirmPassword"
               label={"Confirm Password"}
               asterisk
               control={control as never}
@@ -177,7 +188,7 @@ const Signup: React.FC = () => {
               className="font-inter font-normal text-[14px]"
               // onClick={() => navigation("/signup", { state: { type: params.state.type } })}
             >
-              I agree to Kirani’s
+              I agree to Sky ID’s?
               <Link to={"#"}> Privacy Policy </Link>
               and
               <Link to={"#"}> Terms of Use.</Link>
@@ -185,15 +196,14 @@ const Signup: React.FC = () => {
           </div>
 
           <div
-            onClick={() => navigate("/verify-new-user")}
-            // onClick={handleSubmit(onSubmit)}
+            onClick={handleSubmit(onSubmit)}
             className={`flex flex-row justify-center items-center gap-1 mt-[40px] bg-[#515151] py-2 rounded text-white`}
           >
-            {/* {mutateUpdatePassword.isPending ? (
+            {verifyingUser.isPending ? (
               <Spinner />
             ) : (
-            )} */}
-            <label className="font-poppins font-medium text-[18px]">Continue</label>
+              <label className="font-poppins font-medium text-[18px]">Continue</label>
+            )}
           </div>
           <div className="mb-[40px]" />
         </div>

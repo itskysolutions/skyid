@@ -34,8 +34,19 @@ export default {
     otp: yup.string().min(6, "Otp must be 6 digits").required("Otp is required"),
   }),
   SignupValidation: yup.object({
+    firstName: yup.string().required("First name is required"),
+    lastName: yup.string().required("Last name is required"),
+    country: yup.string().required("Last name is required"),
+    businessName: yup.string().required("Business name is required"),
+    businessType: yup.string().required("Business type is required"),
+    agentCode: yup.string(),
     email: yup.string().email("Invalid email").required("Email is required"),
+    phoneNumber: yup.string().required("Phone number is required"),
     password: yup.string().required("password is required"),
+    confirmPassword: yup
+      .string()
+      .oneOf([yup.ref("password")], "Passwords must match")
+      .required("Please confirm your password"),
   }),
 };
 

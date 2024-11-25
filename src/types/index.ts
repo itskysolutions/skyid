@@ -13,10 +13,21 @@ export interface IMakePaymentForm {
   phoneNumber: string;
 }
 
+export type IVerifyNewUser = {
+  firstName?: string;
+  email?: string;
+  otp?: string;
+};
+
 export type ISignUp = {
-  email: string;
   firstName: string;
   lastName: string;
+  businessType?: string;
+  businessName?: string;
+  country?: string;
+  agentCode?: string;
+  accountType?: string;
+  email: string;
   password: string;
   phoneNumber: string;
 };
