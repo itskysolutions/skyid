@@ -78,7 +78,6 @@ const CustomPhone = ({
                   paddingTop: 4,
                   paddingBottom: 4,
                 }),
-                // Add more styles as needed
               }} // Add this line
               onChange={(option) => onChange(option?.value)}
             />
