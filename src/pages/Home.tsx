@@ -5,7 +5,6 @@ import { Footer } from "../components/Footer";
 import IMAGES from "../constant/Images";
 import Faq from "../components/Faq";
 import Pricing from "../components/Pricing";
-import WhyChooseSkyID from "../components/WhyChooseSkyID";
 import HowSkyIDWorks from "../components/HowSkyIDWorks";
 import UseCase from "../components/UseCase";
 import AdditionalFeatures from "../components/AdditionalFeatures";
@@ -19,7 +18,6 @@ export const Home = () => {
     const [query, setQuery] = useState('');
     const [results, setResults] = useState<Results>(null);
     const navigate = useNavigate();
-  
     const handleSearch = () => {
         const parsedQuery = parseInt(query, 10);
   
@@ -40,13 +38,16 @@ export const Home = () => {
         <Header />
         <div>
         {/** Home Page */}
-        <div className="text-center "style={{backgroundColor: "#ededed",backgroundImage: `url(${IMAGES.BACKGROUND})`,width: "auto",maxWidth: "100%",paddingTop: "2rem",boxSizing: "border-box",height: "638.85px",backgroundPosition: "center",backgroundSize: "cover",marginTop: "2%",}}>
+        <div className="text-center "style={{width: "auto",maxWidth: "100%",paddingTop: "2rem",boxSizing: "border-box",height: "500px",backgroundPosition: "center",backgroundSize: "cover",marginTop: "2%",}}>
             <div className="" style={{ marginTop: "100px" }}>
-                <h1 className="text-center mb-4 responsive-title">My Identity, My Availability</h1>
+                <div className="font-anjaEliane flex flex-col sm:flex-row justify-center items-center mb-4 responsive-title">
+                    <p>My Identity,</p>
+                    <p className="text-[#D92027] sm:ms-3 sm:mt-0 mt-2">My Availability</p>
+                </div>
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <p className="mb-2"style={{color: "#5b5b5b",fontSize: "18px",width: "100%",maxWidth: "750px",height: "auto",maxHeight: "81px",margin: "0 auto", textAlign: "center", }}>
                     Sky ID offers businesses a unique 0700 toll number that can map multiple lines, ensuring that your
-                    business is always available with an easy-to-remember number without displaying numerous contact
+                    business is always available with a number without displaying numerous contact
                     numbers.</p>
                 </div>
                 <div className=" mt-4 ms-3 d-flex justify-content-center">
@@ -141,8 +142,8 @@ export const Home = () => {
                 .responsive-title {
                     font-size: 60px;
                     text-align: center;
-                    font-weight: bold; /* Adjusts 'bold' to actual font-weight */
                     margin-bottom: 1rem;
+                    color: #00000099
                 }
 
                 @media (max-width: 992px) { /* For tablets and small laptops */
@@ -166,39 +167,47 @@ export const Home = () => {
             </div>
         </div>
         {/**Video section */}
-        <div
-            className="container transition-all duration-500 justify-content-center"
-        >
-            <div style={{ position: "relative", marginTop: results ? "25%" : "5%", left: "50%", transform: "translate(-50%, -50%)", width: "100%", maxWidth: "1000px", height: "auto", borderRadius: "20px", transition: "margin-top 0.5s ease" }}>
+        <div className="container d-flex justify-content-center align-items-center transition-all duration-500 " style={{paddingBottom:"5%"}}>
+            <div
+                style={{
+                marginTop: results ? "25%" : "2%",
+                width: "100%",
+                maxWidth: "1000px",
+                height: "auto",
+                borderRadius: "20px",
+                transition: "margin-top 0.5s ease",
+                }}
+            >
                 <div className="ratio ratio-21x9">
-                    <iframe 
-                    width="560" 
-                    height="500" 
-                    src="https://www.youtube.com/embed/8OsAxwyXheE?si=vGtPOdD2OEfP1xji&rel=0" 
-                    title="YouTube video player" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerPolicy="strict-origin-when-cross-origin" 
+                <iframe
+                    width="560"
+                    height="500"
+                    src="https://www.youtube.com/embed/8OsAxwyXheE?si=vGtPOdD2OEfP1xji&rel=0"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
                     style={{
-                        borderRadius: "20px"
-                    }}></iframe> 
+                    borderRadius: "20px",
+                    }}
+                ></iframe>
                 </div>
             </div>
-                <style>{`
+            <style>{`
                 iframe {
-                    max-width: 100%;
-                    height: auto;
+                max-width: 100%;
+                height: auto;
                 }
-
-                `}</style>
+            `}</style>
         </div>
         <div className="container" style={{ width: "auto", maxWidth: "1000px", alignContent:"center" }}>
             <div style={{alignContent:"center" }}>
-                <div className="text-center"><h1 style={{ fontWeight:"bold",color: "#00000099" }}>ONE CALL CAN CHANGE THE NARRATIVE - MISSING A CALL COULD COST YOU YOUR BUSINESS! </h1></div>
+                <div className="font-anjaEliane text-center"><h1 style={{ fontWeight:"bold",color: "#00000099" }}>MISSING A CALL COULD COST YOU! </h1></div>
                     <div className="d-flex justify-content-center" style={{ marginTop: "2%" }}>
                         <div style={{ width: "auto", maxWidth: "800px" }}>
-                        <p style={{ textAlign: "center", fontSize: "18px", color: "#5b5b5b" }}>Call Mapping typically refers to the process of routing or forwarding calls based on certain rules or conditions, often used in call centers, VOIP systems, or PBX systems,  where a central phone number (like a 0700 / 0800 number) is used to mask or forward calls to various internal or employee phone numbers. This is often used by businesses to provide more control, privacy, and flexibility in their communications.I.e. a business can have a 0700 number and decide to map its number and its employee’s number behind the 0700 number.</p>
+                            <div className="flex" style={{ textAlign: "center", fontSize: "18px", color: "#5b5b5b" }}>
+                                <p>With call mapping, you can route multiple phone numbers through a single (0700/ 0800) number.</p>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -216,11 +225,10 @@ export const Home = () => {
                 {/**Use case section */}
                 <UseCase />
 
-                {/** Why choose Sky ID */}
-                <WhyChooseSkyID /> 
-
                 {/**pricing */}
-                <Pricing /> 
+                <div id="pricing" className="pt-[10%]">
+                    <Pricing /> 
+                </div>
 
                 {/** FAQ */}
                 <div className="container" id="faqs" style={{ marginBottom: "50px", paddingTop: "6%" }}>
@@ -234,7 +242,7 @@ export const Home = () => {
                 
             </div>
         </div>
-        <Footer/>
+            <Footer/>
     </div>
   );
 };
