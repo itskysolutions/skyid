@@ -4,15 +4,15 @@ const data = [
   {
     title: "1. How do I get started with Sky ID for my business?",
     description:
-      "",
+      "Sign up, fill in your details, choose your number and make payment",
   },
   {
-    title: "2. What are the benefits of using call mapping for my business?",
+    title: "2. What is Call Mapping?",
     description: "Call mapping allows you to link multiple phone lines to a single 0700 number, ensuring calls reach the next available team member if the primary contact is unavailable.​",
   },
   {
     title: "3. How does Sky ID improve brand visibility?​",
-    description: "Sky ID gives you a unique, easy-to-remember 0700 number, which strengthens your brand by offering a consistent, professional point of contact for customers.",
+    description: "Sky ID gives you a unique 0700 number, which strengthens your brand by offering a consistent, professional point of contact for customers.",
   },
   {
     title: "4. Can I add more lines to my 0700 number??​",
@@ -27,15 +27,11 @@ const data = [
     description: "If the primary contact is unavailable, our system intelligently routes the call to the next available team member to ensure no call goes unanswered.",
   },
   {
-    title: "7. What additional features does Sky ID offer?​",
-    description: "Sky ID includes optional add-ons such as Interactive Voice Response, Call Center Solutions, and Virtual PBX to enhance customer engagement.",
-  },
-  {
-    title: "8. How much does the annual subscription cost? ​",
+    title: "7. How much does the annual subscription cost? ​",
     description: "The annual subscription of the lines is 15,000 NGN.",
   },
   {
-    title: "9. Is technical support available if I have issues?​",
+    title: "8. Is technical support available if I have issues?​",
     description: "  - Yes, we provide dedicated support for setup and troubleshooting. Contact us via phone, email, or live chat for assistance.",
   },
 

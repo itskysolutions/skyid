@@ -4,8 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["Poppins", "serif"], // Ensure fonts with spaces have " " surrounding it.
-        raleway: ["Raleway", "serif"], // Ensure fonts with spaces have " " surrounding it.
+        poppins: ["Poppins", "serif"], 
+        raleway: ["Raleway", "serif"],
+        anjaEliane: ["AnjaEliane"]
       },
     },
   },

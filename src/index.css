@@ -4,3 +4,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "AnjaEliane";
+  src: local("AnjaEliane"),
+    url("./assets/fonts/AnjaEliane.ttf") format("truetype");
+}

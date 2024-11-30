@@ -5,7 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export const Footer = () => {
   return (
-    <footer style={{ marginTop: "auto", height:"418px" }} className="p-4">
+    <footer  style={{ marginTop: "auto", height:"418px", marginBottom:"2.7%" }} className="p-4">
         <div className='text-white' style={{backgroundColor: '#373737', borderRadius:'20px'}}>
             <div className="container p-4" style={{marginTop: '30px'}}>
                 <div className="row">
@@ -31,7 +31,7 @@ export const Footer = () => {
                     </div>
                     <div className="col-md-2">
                         <h5 style={{fontSize:'14px', color:'#FFFFFFCC'}}>LEGAL</h5>
-                        <p><Link style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" to="/policies">Terms of Service </Link></p>
+                        <p><Link style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" to="/policies/#tos">Terms of Service </Link></p>
                         <p><Link style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0 " to="/policies/#privacy">Privacy Policy</Link></p>
                         <p><Link style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" to="/policies/#refund">Refund Policy</Link></p>
                         <p><Link style={{fontSize:'13px', color:'#FFFFFFCC'}}className="link-offset-2 link-underline link-underline-opacity-0" to="/policies/#cookie">Cookie Policy</Link></p>

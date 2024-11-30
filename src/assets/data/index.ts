@@ -445,3 +445,187 @@ export const VSOData = [
     TotalSales: 900,
   },
 ];
+
+export const ActivityData = [
+  {
+    Date: '2024-11-18',
+    ActivityType: 'Sale Completed',
+    NumbersSold: 25,
+    ApprovalStatus: 'Completed',
+    TotalSales: 157634,
+  },
+  {
+    Date: '2024-11-17',
+    ActivityType: 'Sale Failed',
+    NumbersSold: 12,
+    ApprovalStatus: 'Failed',
+    TotalSales: 345782,
+  },
+  {
+    Date: '2024-11-16',
+    ActivityType: 'Sale Pending',
+    NumbersSold: 45,
+    ApprovalStatus: 'Pending',
+    TotalSales: 763921,
+  },
+  {
+    Date: '2024-11-15',
+    ActivityType: 'Sale Failed',
+    NumbersSold: 30,
+    ApprovalStatus: 'Failed',
+    TotalSales: 432198,
+  },
+  {
+    Date: '2024-11-14',
+    ActivityType: 'Sale Completed',
+    NumbersSold: 19,
+    ApprovalStatus: 'Completed',
+    TotalSales: 875124,
+  },
+  {
+    Date: '2024-11-13',
+    ActivityType: 'Sale Pending',
+    NumbersSold: 28,
+    ApprovalStatus: 'Pending',
+    TotalSales: 692314,
+  },
+  {
+    Date: '2024-11-12',
+    ActivityType: 'Sale Failed',
+    NumbersSold: 14,
+    ApprovalStatus: 'Failed',
+    TotalSales: 523476,
+  },
+  {
+    Date: '2024-11-11',
+    ActivityType: 'Sale Completed',
+    NumbersSold: 35,
+    ApprovalStatus: 'Completed',
+    TotalSales: 987456,
+  },
+  {
+    Date: '2024-11-10',
+    ActivityType: 'Sale Failed',
+    NumbersSold: 22,
+    ApprovalStatus: 'Failed',
+    TotalSales: 456372,
+  },
+  {
+    Date: '2024-11-09',
+    ActivityType: 'Sale Completed',
+    NumbersSold: 40,
+    ApprovalStatus: 'Completed',
+    TotalSales: 764231,
+  },
+];
+
+export const BusinessData = [
+  {
+    BusinessName: "Tech Solutions Ltd.",
+    Email: "info@techsolutions.com",
+    PhoneNumber: "123-456-7890",
+    Status: "Active",
+    Ratio: 5,
+    TotalSales: 1500,
+  },
+  {
+    BusinessName: "Smith & Co.",
+    Email: "contact@smithandco.com",
+    PhoneNumber: "234-567-8901",
+    Status: "Blocked",
+    Ratio: 10,
+    TotalSales: 1200,
+  },
+  {
+    BusinessName: "Brown Enterprises",
+    Email: "support@brownenterprises.com",
+    PhoneNumber: "345-678-9012",
+    Status: "Active",
+    Ratio: 5,
+    TotalSales: 2500,
+  },
+  {
+    BusinessName: "Davis Logistics",
+    Email: "hello@davislogistics.com",
+    PhoneNumber: "456-789-0123",
+    Status: "Blocked",
+    Ratio: 10,
+    TotalSales: 3000,
+  },
+  {
+    BusinessName: "Johnson Industries",
+    Email: "info@johnsonindustries.com",
+    PhoneNumber: "567-890-1234",
+    Status: "Active",
+    Ratio: 5,
+    TotalSales: 2000,
+  },
+  {
+    BusinessName: "Wilson Retail Group",
+    Email: "sales@wilsonretail.com",
+    PhoneNumber: "678-901-2345",
+    Status: "Blocked",
+    Ratio: 10,
+    TotalSales: 1000,
+  },
+  {
+    BusinessName: "Martinez Corp.",
+    Email: "contact@martinezcorp.com",
+    PhoneNumber: "789-012-3456",
+    Status: "Active",
+    Ratio: 10,
+    TotalSales: 1800,
+  },
+  {
+    BusinessName: "Garcia Solutions",
+    Email: "info@garciasolutions.com",
+    PhoneNumber: "890-123-4567",
+    Status: "Blocked",
+    Ratio: 5,
+    TotalSales: 4000,
+  },
+  {
+    BusinessName: "Lee Technologies",
+    Email: "support@leetech.com",
+    PhoneNumber: "901-234-5678",
+    Status: "Active",
+    Ratio: 5,
+    TotalSales: 2200,
+  },
+  {
+    BusinessName: "Clark Innovations",
+    Email: "hello@clarkinnovations.com",
+    PhoneNumber: "012-345-6789",
+    Status: "Blocked",
+    Ratio: 10,
+    TotalSales: 900,
+  },
+];
+
+export const PendingData = [
+  {requestID: 1, Date: '23/11/2024', userLevel: 'Channel Partner', Name: 'Riley Smith', status: 'Pending', Amount: 627.11},
+  {requestID: 2, Date: '17/11/2024', userLevel: 'VSO', Name: 'Alex Smith', status: 'Pending', Amount: 637.62},
+  {requestID: 3, Date: '17/11/2024', userLevel: 'Channel Partner', Name: 'Morgan Harris', status: 'Pending', Amount: 264.24},
+  {requestID: 4, Date: '22/11/2024', userLevel: 'VSO', Name: 'Avery Taylor', status: 'Pending', Amount: 937.99},
+  {requestID: 5, Date: '15/11/2024', userLevel: 'VSO', Name: 'Jordan Allen', status: 'Pending', Amount: 619.48},
+  {requestID: 6, Date: '15/11/2024', userLevel: 'VSO', Name: 'Jordan Lee', status: 'Pending', Amount: 240.73},
+  {requestID: 7, Date: '23/11/2024', userLevel: 'VSO', Name: 'Jordan Taylor', status: 'Pending', Amount: 699.78},
+  {requestID: 8, Date: '15/11/2024', userLevel: 'Channel Partner', Name: 'Casey Anderson', status: 'Pending', Amount: 499.74},
+  {requestID: 9, Date: '25/11/2024', userLevel: 'Channel Partner', Name: 'Casey Harris', status: 'Pending', Amount: 301.31},
+  {requestID: 10, Date: '19/11/2024', userLevel: 'VSO', Name: 'Casey Allen', status: 'Pending', Amount: 579.25}
+];
+
+
+export const CompletedData = [
+  {requestID: 1, Date: '23/11/2024', userLevel: 'Channel Partner', Name: 'Riley Smith', status: 'Completed', Amount: 627.11},
+  {requestID: 2, Date: '17/11/2024', userLevel: 'VSO', Name: 'Alex Smith', status: 'Completed', Amount: 637.62},
+  {requestID: 3, Date: '17/11/2024', userLevel: 'Channel Partner', Name: 'Morgan Harris', status: 'Completed', Amount: 264.24},
+  {requestID: 4, Date: '22/11/2024', userLevel: 'VSO', Name: 'Avery Taylor', status: 'Completed', Amount: 937.99},
+  {requestID: 5, Date: '15/11/2024', userLevel: 'VSO', Name: 'Jordan Allen', status: 'Completed', Amount: 619.48},
+  {requestID: 6, Date: '15/11/2024', userLevel: 'VSO', Name: 'Jordan Lee', status: 'Completed', Amount: 240.73},
+  {requestID: 7, Date: '23/11/2024', userLevel: 'VSO', Name: 'Jordan Taylor', status: 'Completed', Amount: 699.78},
+  {requestID: 8, Date: '15/11/2024', userLevel: 'Channel Partner', Name: 'Casey Anderson', status: 'Completed', Amount: 499.74},
+  {requestID: 9, Date: '25/11/2024', userLevel: 'Channel Partner', Name: 'Casey Harris', status: 'Completed', Amount: 301.31},
+  {requestID: 10, Date: '19/11/2024', userLevel: 'VSO', Name: 'Casey Allen', status: 'Completed', Amount: 579.25}
+];
+
