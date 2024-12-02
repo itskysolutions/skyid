@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import OtpSuccess from "../../public/otp-success.png";
+import IMAGES from "../constant/Images";
 
 const SigninOtpSuccess: React.FC = () => {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const SigninOtpSuccess: React.FC = () => {
       <form className="flex flex-col items-center mt-20">
         <div className="w-[30%]">
           <div className="mb-[40px]">
-            <img src={OtpSuccess} className="h-[60] w-[100]" />
+            <img src={IMAGES.OTP_SUCCESS_LOGO} className="h-[60] w-[100]" />
           </div>
           <div className="my-[40px]" />
           <div
