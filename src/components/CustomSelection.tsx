@@ -2,6 +2,11 @@
 import Select, { GroupBase, OptionsOrGroups } from "react-select";
 import { Control, Controller, FieldValues, RegisterOptions } from "react-hook-form";
 
+interface OptionType {
+  value: string;
+  label: string;
+}
+
 interface CustomInputProps {
   style?: string;
   control: Control<FieldValues, unknown>;
@@ -18,7 +23,7 @@ interface CustomInputProps {
   bgInput?: string;
   mainContainer?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  options?: OptionsOrGroups<unknown, GroupBase<unknown>>;
+  options?: OptionsOrGroups<OptionType, GroupBase<OptionType>>;
 }
 
 const CustomSelection = ({
@@ -53,7 +58,6 @@ const CustomSelection = ({
           >
             <Select
               name={name}
-              // value={value}
               isClearable={false}
               className=""
               id="currency"
