@@ -1,4 +1,4 @@
-// 
+//
 
 import { useState } from "react";
 import { Control, Controller, FieldValues, RegisterOptions } from "react-hook-form";
@@ -36,7 +36,6 @@ const CustomInput = ({
   bgInput,
   style,
   mainContainer,
-  onChange: customOnChange
 }: CustomInputProps) => {
   const [show, setShow] = useState(false);
   const inputType = type === "password" && !show ? "password" : type || "text";
@@ -54,7 +53,9 @@ const CustomInput = ({
           <div
             className={
               plainText
-                ? `${plainStyle || "bg-[#eaeaea] border border-[#eaeaea] rounded-md font-extrabold flex-1"} p-[10px] font-inter text-base`
+                ? `${
+                    plainStyle || "bg-[#eaeaea] border border-[#eaeaea] rounded-md font-extrabold flex-1"
+                  } p-[10px] font-inter text-base`
                 : `flex flex-row items-center p-2 border border-gray-300 rounded-lg outline-none focus:bg-[#eaeaea] ${style}`
             }
           >
@@ -67,7 +68,6 @@ const CustomInput = ({
               onBlur={onBlur}
               onChange={(e) => {
                 onChange(e);
-                customOnChange && customOnChange(e); // Call custom onChange if provided
               }}
             />
             {trailingIcon &&

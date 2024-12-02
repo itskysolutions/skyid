@@ -5,6 +5,8 @@ const data = [
   { title: "Number Mapping", link: "numberMapping" },
   { title: "Add Ons", link: "dashboardAddOns" },
   { title: "Checkout", link: "checkOut" },
+  { title: "KYC", link: "KYC" },
+  { title: "KYC", link: "KYCForBusiness" },
   { title: "Completed", link: "completed" },
 ];
 
@@ -15,7 +17,7 @@ const StepperNavbar = () => {
   const currentStep = data.findIndex((step) => location.pathname.includes(step.link));
 
   return (
-    <div className="flex items-center justify-between px-8 py-4 ">
+    <div className="flex flex-col md:flex-row items-center justify-between px-4 md:px-8 py-4 space-y-4 md:space-y-0">
       {data.map((step, index) => {
         const isCompleted = currentStep > index;
         const isActive = currentStep === index;
@@ -23,8 +25,8 @@ const StepperNavbar = () => {
         return (
           <div
             key={step.link}
-            className="flex items-center gap-2 cursor-pointer"
-            onClick={() => navigate(`/app/dashboard/${step.link}`)}
+            className="flex flex-col md:flex-row items-center gap-2 cursor-pointer w-full md:w-auto"
+            onClick={() => navigate(`/app/buyNumber/${step.link}`)}
           >
             {/* Step Indicator */}
             <div
@@ -66,7 +68,7 @@ const StepperNavbar = () => {
             {/* Divider Line */}
             {index < data.length - 1 && (
               <div
-                className={`h-1 w-10 ${
+                className={`hidden md:block h-1 w-10 ${
                   isCompleted ? "bg-[#12A53E]" : "bg-gray-300"
                 }`}
               />

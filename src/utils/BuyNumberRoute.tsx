@@ -1,8 +1,8 @@
 import { Outlet, Navigate } from "react-router-dom";
 import StepperNavbar from "../components/StepperNavbar";
 
-export const DashboardRoute = () => {
-  const DashboardLayout = () => {
+export const BuyNumberRoute = () => {
+  const BuyNumberLayout = () => {
 
 
     return (
@@ -19,5 +19,5 @@ export const DashboardRoute = () => {
   };
 
   const user = true;
-  return user ? <DashboardLayout /> : <Navigate to={"/"} replace={true} />;
+  return user ? <BuyNumberLayout /> : <Navigate to={"/"} replace={true} />;
 };

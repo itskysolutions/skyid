@@ -49,9 +49,9 @@ export const BuyNew = () => {
         >
           Buy
         </button>
-        <button className="p-2 ms-2 rounded-md bg-[#00000099] group transition-all duration-500 hover:bg-[#000000CC] flex item-center text-white">
+        {/* <button className="p-2 ms-2 rounded-md bg-[#00000099] group transition-all duration-500 hover:bg-[#000000CC] flex item-center text-white">
           View more
-        </button>
+        </button> */}
       </div>
 
       {isOpen && (

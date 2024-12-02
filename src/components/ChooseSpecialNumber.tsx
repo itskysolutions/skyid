@@ -32,7 +32,7 @@ export const ChooseSpecialNumber = () => {
     >
       <div className="d-flex flex-column align-items-center justify-content-center">
         <div style={{ paddingBottom: '2%', paddingRight:'25%' }}>
-          Check for your Sky ID number availability
+          Check for your Sky ID Number availability
         </div>
 
 
@@ -67,7 +67,7 @@ export const ChooseSpecialNumber = () => {
             </div>
             {results && (
             <Card 
-            className="mt-4" 
+            className="mt-4 mb-4" 
             style={{ width: '100%', backgroundColor: results.found ? '#E0FFE6CC' : '#f8d7da', color: results.found ? '#155724' : '#721c24', borderColor: results.found ? '#c3e6cb' : '#f5c6cb' }}
             >
             <Card.Body>
@@ -111,7 +111,7 @@ export const ChooseSpecialNumber = () => {
                             <div >
                               <Button
                                 className="px-4 py-2 rounded-md text-white w-[150px] h-[56px]"
-                                onClick={() => navigate("/app/dashboard/numberMapping")}
+                                onClick={() => navigate("/app/buyNumber/numberMapping")}
                                 style={{
                                   backgroundColor: "#D92027",
                                   border: "none",
@@ -173,7 +173,7 @@ export const ChooseSpecialNumber = () => {
                                   {/* <span className="mb-3">{num}</span> */}
                                   <Button
                                     className="px-4 py-2 rounded-md text-white w-[100px] h-[56px]"
-                                    onClick={() => navigate("/app/dashboard/numberMapping")}
+                                    onClick={() => navigate("/app/buyNumber/numberMapping")}
                                     style={{
                                       backgroundColor: "#D92027",
                                       border: "none",

@@ -41,9 +41,9 @@ export const UploadNew = () => {
         >
           Edit
         </button>
-        <button className="p-2 ms-2 rounded-md bg-[#00000099] group transition-all duration-500 hover:bg-[#000000CC] flex items-center text-white">
+        {/* <button className="p-2 ms-2 rounded-md bg-[#00000099] group transition-all duration-500 hover:bg-[#000000CC] flex items-center text-white">
           View more
-        </button>
+        </button> */}
       </div>
 
       {isOpen && (

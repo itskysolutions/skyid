@@ -9,7 +9,7 @@ export const ProtectedRoutes = () => {
         <DashboardHeader />
 
         <div className="w-screen h-screen grid grid-cols-12" >
-          <div className="hidden md:flex col-span-2 border-t-[1px] border-r-[1px] border-gray-300" style={{backgroundColor:'#D92027'}}>
+          <div className="hidden md:flex col-span-2 border-t-[1px] border-gray-300" style={{backgroundColor:'#D92027'}}>
           <DashboardSideMenu />
           </div>
 

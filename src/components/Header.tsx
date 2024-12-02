@@ -11,7 +11,7 @@ export const Header = () => {
 
   return (
     <div className="bg-white">
-      <Navbar expand="lg" className="bg-white pb-4 shadow-custom" fixed="top">
+      <Navbar expand="lg" className="bg-white  shadow-custom" fixed="top">
         <Container>
           <Navbar.Brand href="/">
             <Link to={"/"}>

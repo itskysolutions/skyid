@@ -3,7 +3,7 @@ import { AddOnsTable } from "../components/AddOnsTable";
 import { Row, Col } from "react-bootstrap";
 import { Form, FormControl, InputGroup } from "react-bootstrap";
 import { useState } from 'react';
-import SelectDateButton from "../components/SelectDateButton";
+//import SelectDateButton from "../components/SelectDateButton";
 import { NestedDropdown } from "../components/NestedDropdown";
 
  export const  AddOns = () => {
@@ -69,25 +69,6 @@ import { NestedDropdown } from "../components/NestedDropdown";
       );
     }
   };
-  
-  const handleDateChange = (startDate: Date | null, endDate: Date | null, isSingleDate: boolean) => {
-    if (isSingleDate && startDate) {
-      const filtered = fakeData3.filter(item => {
-        const itemDate = new Date(item.Date);
-        return itemDate.toDateString() === startDate.toDateString();
-      });
-      setFilteredData(filtered);
-    } else if (startDate && endDate) {
-      const filtered = fakeData3.filter(item => {
-        const itemDate = new Date(item.Date);
-        return itemDate >= startDate && itemDate <= endDate;
-      });
-      setFilteredData(filtered);
-    } else {
-      setFilteredData(fakeData3);  
-    }
-  };
-  
     return ( 
       <div>
         <div style={{paddingTop:"5%"}}>
@@ -95,13 +76,14 @@ import { NestedDropdown } from "../components/NestedDropdown";
         </div>
         <div style={{paddingTop:"2%"}}>
             <Row className="d-flex ">
-                 <Col md="auto">
+                 <Col md="auto" className="mb-2">
                     <Form className="d-flex">
                         <InputGroup>
                             <FormControl
                             type="text"
                             placeholder="Search"
                             value={searchItem}
+                            style={{width:"616px"}}
                             onChange={handleInputChange}
                             aria-label="Search"
                             className="pb-3"
@@ -111,9 +93,6 @@ import { NestedDropdown } from "../components/NestedDropdown";
                     </Col>
                  <Col md="auto">
                     <NestedDropdown options={Statusoptions} onFilterChange={handleFilterChange}/>
-                </Col>
-                <Col md="auto">
-                  <SelectDateButton onDateChange={handleDateChange} />
                 </Col>
             </Row>
         </div>

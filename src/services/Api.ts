@@ -1,10 +1,8 @@
 import axios from "axios";
 
 const Api = axios.create({
-  // http://localhost:8000/
-  // baseURL: "http://localhost:8000/api/v1/",
-  baseURL: "http://allied-danita-itskysolutions-b39591d7.koyeb.app/api/v1/",
-  // baseURL: "https://koyeb-db-preview-app-aoomle.koyeb.app/api/v1/",
+  baseURL: "https://sea-turtle-app-5cmm8.ondigitalocean.app/api/v1/",
+  // baseURL: "http://allied-danita-itskysolutions-b39591d7.koyeb.app/api/v1/",
 });
 
 Api.interceptors.request.use(
