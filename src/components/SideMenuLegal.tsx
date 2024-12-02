@@ -80,7 +80,7 @@ export const SideMenuLegal = () => {
                     <Offcanvas.Body>
                         <Nav className="flex-column mt-4 nav nav-tabs vertical-tabs" style={{ width: '250px' }} role="tablist">
                             <Nav.Item>
-                                <div style={{ width: '100%', borderBottom: '2px solid #ccc', paddingBottom: '10px', boxSizing: 'border-box', paddingLeft: '5%' }}>
+                                <div style={{ width: '100%', borderBottom: 'px solid #ccc', paddingBottom: '10px', boxSizing: 'border-box', paddingLeft: '5%' }}>
                                     <h4>Site Policy</h4>
                                 </div>
                                 <div style={{ paddingBottom: '1%' }}>

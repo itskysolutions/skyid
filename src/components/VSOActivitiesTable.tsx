@@ -1,13 +1,10 @@
 import { useState } from "react";
-import { ManageButton } from "../../pages/CPs/ManageButton";
-import { ViewActivitesButton } from "../ViewActivitiesButton";
 
 interface VSOTableDataItem {
-  Name: string;
-  Email: string;
-  PhoneNumber: string;
-  Status: string;
-  Ratio: number;
+  Date: string;
+  ActivityType: string;
+  NumbersSold: number;
+  ApprovalStatus: string;
   TotalSales: number;
 }
 
@@ -15,7 +12,7 @@ interface VSOTableProps {
   Data: VSOTableDataItem[];
 }
 
-export const VSOTable = ({ Data }: VSOTableProps) => {
+export const VSOActivitiesTable = ({ Data }: VSOTableProps) => {
     const [currentPage, setCurrentPage] = useState(1);
     const rowsPerPage = 10;
 
@@ -46,7 +43,7 @@ export const VSOTable = ({ Data }: VSOTableProps) => {
           <table className="w-full table-auto border-collapse rounded-sm">
             <thead>
               <tr className="bg-gray-100">
-                {["Name", "Email", "Phone", "Status", "Ratio(%)", "Total Sales", "Action"].map((header, idx) => (
+                {["Date", "Activity Type", "Numbers Sold", "Approval Status", "Total Sales"].map((header, idx) => (
                   <th
                     key={idx}
                     scope="col"
@@ -65,36 +62,29 @@ export const VSOTable = ({ Data }: VSOTableProps) => {
                     className="bg-white transition-all duration-300 hover:bg-gray-50"
                   >
                     <td className="py-3 px-4 text-sm text-gray-900 capitalize">
-                      {item.Name}
+                      {item.Date}
                     </td>
                     <td className="py-3 px-4 text-sm text-gray-900">
-                      <a href={`mailto:${item.Email}`}>{item.Email}</a>
+                      {item.ActivityType}
                     </td>
                     <td className="py-3 px-4 text-sm text-gray-900">
-                      {item.PhoneNumber}
+                      {item.NumbersSold}
                     </td>
                     <td className="py-3 px-4 text-sm">
                       <span
                         className={`font-medium text-xs ${
-                          item.Status === "Active"
+                          item.ApprovalStatus === "Completed"
                             ? "text-emerald-600"
-                            : "text-red-600"
+                            : item.ApprovalStatus === "Failed"
+                            ? "text-red-600"
+                            : "text-amber-600"
                         }`}
                       >
-                        {item.Status}
+                        {item.ApprovalStatus}
                       </span>
                     </td>
                     <td className="py-3 px-4 text-sm text-gray-900">
-                      {item.Ratio}
-                    </td>
-                    <td className="py-3 px-4 text-sm text-gray-900">
                       {item.TotalSales}
-                    </td>
-                    <td className="py-3 px-4">
-                      <div className="flex gap-3">
-                        <div><ManageButton/></div>
-                        <div><ViewActivitesButton/></div>
-                      </div>
                     </td>
                   </tr>
                 ))

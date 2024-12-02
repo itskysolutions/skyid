@@ -2,13 +2,13 @@ import { Row, Col } from "react-bootstrap";
 import Select from "react-select";
 import { useState, useEffect } from 'react';
 import { Form, FormControl, InputGroup } from "react-bootstrap";
-import { VSOData } from "../../assets/data";
-import { VSOTable } from "../../components/CPComponents/VSOTable";
+import { BusinessData } from "../../assets/data";
+import { BusinessTable } from "../../components/VSOComponents/BusinessTable";
 
-export const ManageVSOs = () => {
+export const ManageCustomers = () => {
     type OptionType = { value: string; label: string };
     const [searchItem, setSearchItem] = useState('')
-    const [filteredData, setFilteredData] = useState(VSOData);
+    const [filteredData, setFilteredData] = useState(BusinessData);
     const [selectedOption, setSelectedOption1] = useState<OptionType | null>(null);
     const [selectedSalesFilterOption, setSelectedSalesFilterOption] = useState<OptionType | null>(null);
     const [maxRatio, setMaxRatio] = useState(10);
@@ -18,8 +18,8 @@ export const ManageVSOs = () => {
         const searchTerm = e.target.value.toLowerCase();
         setSearchItem(searchTerm);
     
-        const filteredItems = VSOData.filter((item) =>
-          item.Name.toLowerCase().includes(searchTerm)
+        const filteredItems = BusinessData.filter((item) =>
+          item.BusinessName.toLowerCase().includes(searchTerm)
         );
     
         setFilteredData(filteredItems);
@@ -46,7 +46,7 @@ export const ManageVSOs = () => {
     };
 
     useEffect(() => {
-        let data = VSOData;
+        let data = BusinessData;
 
         if (selectedOption && selectedOption.value !== 'all') {
             data = data.filter(item => item.Status === selectedOption.value);
@@ -83,10 +83,7 @@ export const ManageVSOs = () => {
     return(
         <div>
             <div style={{paddingTop:"5%"}}>
-            <h2><b>Manage VSO's</b></h2>
-            </div>
-            <div className="mt-4">
-               <a href="/app/manageVSOs/addNewVSO" className="no-underline"> <button className="bg-[#277CFA] p-3 text-white rounded-md w-[205px] h-[56px]">Add New VSO</button></a>
+            <h2><b>Manage Customers</b></h2>
             </div>
             <div style={{paddingTop:"2%"}}>
             <Row className="d-flex ">
@@ -113,7 +110,7 @@ export const ManageVSOs = () => {
                         styles={customStyles}
                     />
                 </Col>
-                <Col md="auto" className='mb-2'>
+                <Col md="auto">
                     <Select
                         value={selectedSalesFilterOption}
                         onChange={handleSalesFilterChange}
@@ -177,7 +174,7 @@ export const ManageVSOs = () => {
                     </Col>
             </Row>
         </div>
-        <div style={{paddingTop:"3%"}}><VSOTable Data={filteredData}/></div>
+        <div style={{paddingTop:"3%"}}><BusinessTable Data={filteredData}/></div>
      </div>
     )
 }

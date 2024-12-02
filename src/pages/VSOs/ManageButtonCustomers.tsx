@@ -2,15 +2,15 @@
 import { useState } from "react";
 import Select from "react-select";
 import CustomButton from "../../components/CustomButton";
-import { VSOData } from "../../assets/data";
+import { BusinessData } from "../../assets/data";
 import Card from "react-bootstrap/Card";
 
-export const ManageButton = () => {
+export const ManageButtonCustomers = () => {
   type OptionType = { value: string; label: string };
 
   const [popupState, setPopupState] = useState<"block" | "unblock" | "successblock" | "sucessunblock" | null>(null);
   const [timeOption, setTimeOption] = useState<OptionType | null>(null);
-  const [blockedVSO, setBlockedVSO] = useState<any>(null);
+  const [blockedbusiness, setBlockedbusiness] = useState<any>(null);
 
   const Timeoptions = [
     { value: "24", label: "24 Hours" },
@@ -30,21 +30,21 @@ export const ManageButton = () => {
 
   const handleBlock = () => {
     if (!timeOption) return alert("Please select a time period.");
-    const updatedVSO = { ...VSOData[0], Status: "Blocked", blockDuration: timeOption.label };
-    setBlockedVSO(updatedVSO);
+    const updatedbusiness = { ...BusinessData[0], Status: "Blocked", blockDuration: timeOption.label };
+    setBlockedbusiness(updatedbusiness);
     setPopupState("successblock");
   };
 
   const handleUnblock = () => {
-    if (blockedVSO) {
-      const updatedVSO = { ...blockedVSO, Status: "Active" };
-      setBlockedVSO(updatedVSO);
+    if (blockedbusiness) {
+      const updatedbusiness = { ...blockedbusiness, Status: "Active" };
+      setBlockedbusiness(updatedbusiness);
       setPopupState("unblock");
       setPopupState("sucessunblock");
     }
   };
 
-  const currentStatus = blockedVSO?.Status || VSOData[0]?.Status;
+  const currentStatus = blockedbusiness?.Status || BusinessData[0]?.Status;
 
   return (
     <div>
@@ -61,7 +61,7 @@ export const ManageButton = () => {
                 <button onClick={() => setPopupState(null)} className="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
                     ✕
                 </button>
-                <h2 className="text-xl font-semibold mb-4">Manage VSO</h2>
+                <h2 className="text-xl font-semibold mb-4">Manage Businesses</h2>
                 <div className='flex'>
                     <div className='me-2'>
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +69,7 @@ export const ManageButton = () => {
                         </svg>
                     </div>
                     <div className='mt-1'>
-                        <p>John Doe</p>
+                        <p>Tech Solutions Limited</p>
                     </div>
                 </div>
                 <div className="mt-4" style={{display:"flex"}}> 
@@ -78,7 +78,7 @@ export const ManageButton = () => {
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0002 2.2002C6.5878 2.2002 2.2002 6.5878 2.2002 12.0002C2.2002 17.4126 6.5878 21.8002 12.0002 21.8002C17.4126 21.8002 21.8002 17.4126 21.8002 12.0002C21.8002 6.5878 17.4126 2.2002 12.0002 2.2002ZM12.0502 16.8239C11.6083 16.8239 11.2502 16.4658 11.2502 16.0239V10.0239C11.2502 9.5821 11.6083 9.22393 12.0502 9.22393C12.492 9.22393 12.8502 9.5821 12.8502 10.0239V16.0239C12.8502 16.4658 12.492 16.8239 12.0502 16.8239ZM12.0001 6.00012C11.4478 6.00012 11.0001 6.44784 11.0001 7.00012C11.0001 7.55241 11.4478 8.00012 12.0001 8.00012H12.0501C12.6024 8.00012 13.0501 7.55241 13.0501 7.00012C13.0501 6.44784 12.6024 6.00012 12.0501 6.00012H12.0001Z" fill="#5A9CFF" className="my-path"></path>
                         </svg>
                     </div>
-                    <p style={{color:"#00000080"}}>You can block VSO for specific time period until an issue is resolved and also unblock them when desired.</p>
+                    <p style={{color:"#00000080"}}>You can block the business for specific time period until an issue is resolved and also unblock them when desired.</p>
                 </div>
                 <div>
                     <Select 
@@ -103,7 +103,7 @@ export const ManageButton = () => {
                 >
                     ✕
                 </button>
-                <h2 className="text-xl font-semibold mb-4">Manage VSO</h2>
+                <h2 className="text-xl font-semibold mb-4">Manage Businesses</h2>
                 <div className='flex'>
                     <div className='me-2'>
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -111,12 +111,12 @@ export const ManageButton = () => {
                         </svg>
                     </div>
                     <div className='mt-1'>
-                        <strong>{blockedVSO?.Name || "Unknown VSO"}</strong>
+                        <strong>{blockedbusiness?.BusinessName || "Unknown VSO"}</strong>
                     </div>
                 </div>
                 <div className="mt-3" style={{display:"flex"}}>
                     <button className='bg-[#FFC5C7] text-[#D92027] rounded-lg p-1 h-[30px]'>Blocked</button>
-                    <div className="ms-4 mt-1"><p><strong style={{color:"#00000099"}}><strong>{blockedVSO?.blockDuration || "Unknown duration"}</strong>.</strong></p></div>
+                    <div className="ms-4 mt-1"><p><strong style={{color:"#00000099"}}><strong>{blockedbusiness?.BusinessName || "Unknown duration"}</strong>.</strong></p></div>
                 </div>
                 <div className="mt-4" style={{display:"flex"}}> 
                     <div className='me-2'>
@@ -124,7 +124,7 @@ export const ManageButton = () => {
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0002 2.2002C6.5878 2.2002 2.2002 6.5878 2.2002 12.0002C2.2002 17.4126 6.5878 21.8002 12.0002 21.8002C17.4126 21.8002 21.8002 17.4126 21.8002 12.0002C21.8002 6.5878 17.4126 2.2002 12.0002 2.2002ZM12.0502 16.8239C11.6083 16.8239 11.2502 16.4658 11.2502 16.0239V10.0239C11.2502 9.5821 11.6083 9.22393 12.0502 9.22393C12.492 9.22393 12.8502 9.5821 12.8502 10.0239V16.0239C12.8502 16.4658 12.492 16.8239 12.0502 16.8239ZM12.0001 6.00012C11.4478 6.00012 11.0001 6.44784 11.0001 7.00012C11.0001 7.55241 11.4478 8.00012 12.0001 8.00012H12.0501C12.6024 8.00012 13.0501 7.55241 13.0501 7.00012C13.0501 6.44784 12.6024 6.00012 12.0501 6.00012H12.0001Z" fill="#5A9CFF" className="my-path"></path>
                         </svg>
                     </div>
-                    <p style={{color:"#00000080"}}>You can block VSO for specific time period until an issue is resolved and also unblock them when desired.</p>
+                    <p style={{color:"#00000080"}}>You can block the business for specific time period until an issue is resolved and also unblock them when desired.</p>
                 </div>
                 <div className="mt-4">
                     <CustomButton
@@ -170,12 +170,12 @@ export const ManageButton = () => {
                     </div>
                     <div className="flex justify-content-center mb-1 text-center">
                         <h5><p>
-                        You have successfully blocked <strong> VSO {blockedVSO?.Name || "Unknown VSO"}</strong> for{" "}
-                        <strong> {blockedVSO?.blockDuration || "Unknown duration"}</strong>.
+                        You have successfully blocked <strong> {blockedbusiness?.BusinessName || "Unknown Business"}</strong> for{" "}
+                        <strong> {blockedbusiness?.blockDuration || "Unknown duration"}</strong>.
                         </p></h5>
                     </div>
                     <div className="flex justify-content-center text-center">
-                        <p>The blocked VSO will be automatically unblocked after the time period has elapsed</p>
+                        <p>The blocked business will be automatically unblocked after the time period has elapsed</p>
                     </div>
                 </Card.Body>
             </Card>
@@ -220,8 +220,8 @@ export const ManageButton = () => {
                     </div>
                     <div className="flex justify-content-center mb-1 text-center">
                         <h5><p>
-                        You have successfully unblocked <strong> VSO {blockedVSO?.Name || "Unknown VSO"}</strong> for{" "}
-                        <strong> {blockedVSO?.blockDuration || "Unknown duration"}</strong>.
+                        You have successfully unblocked <strong> {blockedbusiness?.BusinessName || "Unknown Business"}</strong> for{" "}
+                        <strong> {blockedbusiness?.blockDuration || "Unknown duration"}</strong>.
                         </p></h5>
                     </div>
                 </Card.Body>

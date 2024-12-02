@@ -28,9 +28,9 @@ export const AddNew = () => {
               className="p-2 rounded-md bg-[#ffffff] group transition-all duration-500 hover:bg-[#db9fa1] flex item-center text-[#D92027] border-2 border-[#D92027]" >
             Add
           </button>
-          <button className="p-2 ms-2 rounded-md bg-[#00000099] group transition-all duration-500 hover:bg-[#000000CC] flex item-center text-white">
+          {/* <button className="p-2 ms-2 rounded-md bg-[#00000099] group transition-all duration-500 hover:bg-[#000000CC] flex item-center text-white">
             View more
-          </button>
+          </button> */}
         </div>
       </div>
       {isOpen && (

@@ -9,10 +9,9 @@ import { ManageNumbers } from "./pages/ManageNumbers";
 import { Support } from "./pages/Support";
 import { ProtectedRoutes } from "./utils/ProtectedRoutes";
 import { SupportRoute } from "./utils/SupportRoute";
-import { DashboardRoute } from "./utils/DashboardRoute";
+import { BuyNumberRoute } from "./utils/BuyNumberRoute";
 import { VSORoute } from "./utils/VSORoute";
 import { WalletRoute } from "./utils/WalletRoute";
-import {ChannelPartnersRoute} from "./utils/ChannelPartnersRoute"
 import { FAQs } from "./pages/FAQs";
 import { Email } from "./pages/Email";
 import { Wallet } from "./pages/Wallet";
@@ -28,15 +27,24 @@ import { ChooseSpecialNumber } from "./components/ChooseSpecialNumber";
 import SigninOtp from "./pages/SignInOtp";
 import ResetPassword from "./pages/ResetPassword";
 import UpdatePassword from "./pages/UpdatePassword";
-import SigninOtpSuccess from "./pages/SignInOtpSuccess";
+//import SigninOtpSuccess from "./pages/SignInOtpSuccess";
 import  {ManageVSOs}  from "./pages/CPs/ManageVSOs";
 import  {AddNewVSO}  from "./pages/CPs/AddNewVSO";
-
-
+import { ViewProfile } from "./pages/ViewProfile";
+import { EditProfile } from "./pages/EditProfile";
+import { SuccessPassword } from "./pages/SuccessPassword";
 import { Toaster } from "sonner";
-
+import { ManageCustomers } from "./pages/VSOs/ManageCustomers";
+import { GenerateReports } from "./pages/Finance/GenerateReports";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Success } from "./pages/Sucess";
+import { ViewActivities } from "./pages/CPs/ViewActivites";
+import { UpdateCurrentPassword } from "./pages/UpdateCurrentPassword";
+import { BusinessRoute } from "./utils/BusinessRoute";
+import { ManageRequests } from "./pages/Finance/ManageRequests";
+import { Dashboard } from "./pages/Dashboard";
+import { KYC } from "./components/KYC";
+import { KYCForBusiness } from "./components/VSOComponents/KYCForBusiness";
 
 const queryClient = new QueryClient();
 
@@ -85,7 +93,11 @@ function App() {
       children: [
         {
           path: "dashboard",
-          element: <DashboardRoute />,
+          element: <Dashboard />,
+        },
+        {
+          path: "buyNumber",
+          element: <BuyNumberRoute />,
           children: [
             {
               path: "chooseSpecialNumber",
@@ -104,6 +116,14 @@ function App() {
               element: <CheckOut />,
             },
             {
+              path: "KYC",
+              element: <KYC />,
+            },
+            {
+              path: "KYCForBusiness",
+              element: <KYCForBusiness />,
+            },
+            {
               path: "completed",
               element: <Completed />,
             },
@@ -112,6 +132,38 @@ function App() {
         {
           path: "manageNumbers",
           element: <ManageNumbers />,
+        },
+        {
+          path: "manageVSOs",
+          element: <ManageVSOs/>,
+        },
+        {
+          path: "manageVSOs",
+          element: <VSORoute/>,
+          children:[
+            {
+              path: "addNewVSO",
+              element:<AddNewVSO/>,
+            },
+            {
+              path: "viewActivities",
+              element:<ViewActivities/>,
+            }
+          ]
+        },
+        {
+          path: "manageCustomers",
+          element: <ManageCustomers/>,
+        },
+        {
+          path: "manageBusinesses",
+          element: <BusinessRoute/>,
+          children:[
+            {
+              path: "viewActivitiesBusiness",
+              element:<ViewActivities/>,
+            }
+          ]
         },
         {
           path: "addOns",
@@ -157,31 +209,35 @@ function App() {
           path: "LogOut",
           element: <LogOut />,
         },
-      ],
-    },
-    {
-      path: "channelPartners",
-      element: <ChannelPartnersRoute/>,
-      children: [
         {
-          path: "manageVSOs",
-          element: <ManageVSOs/>,
+          path: "viewProfile",
+          element: <ViewProfile/>,
+        },
+        {
+          path: "editProfile",
+          element: <EditProfile/>,
+        },
+        {
+          path: "updateCurrentPassword",
+          element: <UpdateCurrentPassword/>,
+        },
+        {
+          path: "manageRequests",
+          element: <ManageRequests/>,
+        },
+        {
+          path: "generateReports",
+          element: <GenerateReports/>,
         },
       ],
     },
     {
-      path: "manageVSOs",
-      element: <VSORoute/>,
-      children:[
-        {
-          path: "addNewVSO",
-          element:<AddNewVSO/>,
-        }
-      ]
-    },
-    {
       path: "success",
       element: <Success/>
+    },
+    {
+      path: "successPassword",
+      element: <SuccessPassword/>
     }
   ]);
 

@@ -105,24 +105,24 @@ export  const Wallet = () => {
         </div>
         <div>
             <Row className="d-flex justify-content-end">
-                <Col md="auto">
+                <Col md="auto" className='mb-2'>
                     <CustomButton
                         name="Deposit"
                         backgroundColor="bg-[#D92027]"
                         textColor="text-white"
-                        style="w-[160px]" 
+                        style="w-[160px] h-[55.47px]" 
                         onClick={() => navigate("/app/wallet/deposit")}
                         trailingIcon={<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-left" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M2 13.5a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 0-1H3.707L13.854 2.854a.5.5 0 0 0-.708-.708L3 12.293V7.5a.5.5 0 0 0-1 0z"/>
                           </svg>}
                     />
                 </Col>
-                <Col md="auto">
+                <Col md="auto" className='mb-2'>
                     <CustomButton
                         name="Withdraw"
                         backgroundColor="bg-[#ffffff]"
                         textColor="text-[#D92027]"
-                        style="w-[160px]" 
+                        style="w-[160px] h-[55.47px]" 
                         border="border-2 border-[#D92027]"
                         onClick={() => navigate("/app/wallet/withdraw")}
                         trailingIcon={<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-up-right" viewBox="0 0 16 16">
@@ -175,7 +175,7 @@ export  const Wallet = () => {
                             </InputGroup>
                         </Form>
                     </Col>
-                <Col md="auto">
+                <Col md="auto" className='mb-2'>
                     <Select 
                         value={selectedOption1}
                         onChange={handleChange1}
@@ -184,7 +184,7 @@ export  const Wallet = () => {
                         styles={customStyles}
                     />
                 </Col>
-                <Col md="auto">
+                <Col md="auto" className='mb-2'>
                     <Select 
                         value={selectedOption2}
                         onChange={handleChange2}

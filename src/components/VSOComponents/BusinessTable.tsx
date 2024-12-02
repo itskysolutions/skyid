@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { ManageButton } from "../../pages/CPs/ManageButton";
-import { ViewActivitesButton } from "../ViewActivitiesButton";
+import { ManageButtonCustomers } from "../../pages/VSOs/ManageButtonCustomers";
+import { ViewActivitesBusiness } from "../ViewActivitiesBusiness";
 
-interface VSOTableDataItem {
-  Name: string;
+interface BusinessTableDataItem {
+  BusinessName: string;
   Email: string;
   PhoneNumber: string;
   Status: string;
@@ -11,18 +11,16 @@ interface VSOTableDataItem {
   TotalSales: number;
 }
 
-interface VSOTableProps {
-  Data: VSOTableDataItem[];
+interface BusinessTableProps {
+  Data: BusinessTableDataItem[];
 }
 
-export const VSOTable = ({ Data }: VSOTableProps) => {
+export const BusinessTable = ({ Data }: BusinessTableProps) => {
     const [currentPage, setCurrentPage] = useState(1);
     const rowsPerPage = 10;
 
-    // Calculate total pages
     const totalPages = Math.ceil(Data.length / rowsPerPage);
 
-    // Get current page data
     const currentData = Data.slice(
         (currentPage - 1) * rowsPerPage,
         currentPage * rowsPerPage
@@ -46,7 +44,7 @@ export const VSOTable = ({ Data }: VSOTableProps) => {
           <table className="w-full table-auto border-collapse rounded-sm">
             <thead>
               <tr className="bg-gray-100">
-                {["Name", "Email", "Phone", "Status", "Ratio(%)", "Total Sales", "Action"].map((header, idx) => (
+                {["Business Name", "Email", "Phone", "Status", "Ratio(%)", "Total Sales", "Action"].map((header, idx) => (
                   <th
                     key={idx}
                     scope="col"
@@ -65,7 +63,7 @@ export const VSOTable = ({ Data }: VSOTableProps) => {
                     className="bg-white transition-all duration-300 hover:bg-gray-50"
                   >
                     <td className="py-3 px-4 text-sm text-gray-900 capitalize">
-                      {item.Name}
+                      {item.BusinessName}
                     </td>
                     <td className="py-3 px-4 text-sm text-gray-900">
                       <a href={`mailto:${item.Email}`}>{item.Email}</a>
@@ -92,8 +90,8 @@ export const VSOTable = ({ Data }: VSOTableProps) => {
                     </td>
                     <td className="py-3 px-4">
                       <div className="flex gap-3">
-                        <div><ManageButton/></div>
-                        <div><ViewActivitesButton/></div>
+                        <div><ManageButtonCustomers/></div>
+                        <div><ViewActivitesBusiness/></div>
                       </div>
                     </td>
                   </tr>

@@ -1,11 +1,12 @@
 import Card from "react-bootstrap/Card";
 import CustomButton from "./CustomButton";
+import { Link } from "react-router-dom";
 
 
 export const Completed = () =>  {
     return (
-        <div>
-            <div className="d-flex flex-column align-items-center justify-content-center">
+        <div className="container" style={{maxWidth:"500px"}}>
+            <div className="d-flex flex-column align-items-center justify-content-center w-full mb-5">
                 <div style={{ paddingBottom:'5%' }}><h4><b>Completed</b></h4> </div>
                 <Card style={{borderRadius:"20px"}}>
                     <Card.Body className="w-[390px]">
@@ -16,9 +17,9 @@ export const Completed = () =>  {
                         </svg></div>
                         <p className="flex justify-content-center"><h5>Your payment has been confirmed</h5></p>
                         <p className="mt-3" style={{color:"#00000099"}}>Access the Manage Numbers tab to manage your numbers.</p> 
+                        <div className="mt-[40px]"><Link to="/app/buyNumber/chooseSpecialNumber" className="no-underline"><CustomButton name="Return to Dashboard" backgroundColor="bg-[#D92027]" textColor="text-white" style="w-full max-w-[500px] p-3 mx-auto" /></Link></div>
                     </Card.Body>
                 </Card>
-                <div className="mt-[40px]"><CustomButton name="Return to Dashboard" backgroundColor="bg-[#D92027]" textColor="text-[#ffffff]" style="w-[500px]" /></div>
             </div>
         </div>
     )

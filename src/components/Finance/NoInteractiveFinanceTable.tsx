@@ -1,21 +1,20 @@
 import { useState } from "react";
-import { ManageButton } from "../../pages/CPs/ManageButton";
-import { ViewActivitesButton } from "../ViewActivitiesButton";
+import CustomButton from "../CustomButton";
 
-interface VSOTableDataItem {
+interface NoInteractiveFinanceTableDataItem {
+  requestID: number;
+  Date: string;
+  userLevel: string;
   Name: string;
-  Email: string;
-  PhoneNumber: string;
-  Status: string;
-  Ratio: number;
-  TotalSales: number;
+  status: string;
+  Amount: number;
 }
 
-interface VSOTableProps {
-  Data: VSOTableDataItem[];
+interface NoInteractiveFinanceTableProps {
+  Data: NoInteractiveFinanceTableDataItem[];
 }
 
-export const VSOTable = ({ Data }: VSOTableProps) => {
+export const NoInteractiveFinanceTable = ({ Data }: NoInteractiveFinanceTableProps) => {
     const [currentPage, setCurrentPage] = useState(1);
     const rowsPerPage = 10;
 
@@ -46,7 +45,7 @@ export const VSOTable = ({ Data }: VSOTableProps) => {
           <table className="w-full table-auto border-collapse rounded-sm">
             <thead>
               <tr className="bg-gray-100">
-                {["Name", "Email", "Phone", "Status", "Ratio(%)", "Total Sales", "Action"].map((header, idx) => (
+                {["Request ID", "Date", "User Level", "Name", "Status", "Amount"].map((header, idx) => (
                   <th
                     key={idx}
                     scope="col"
@@ -65,36 +64,30 @@ export const VSOTable = ({ Data }: VSOTableProps) => {
                     className="bg-white transition-all duration-300 hover:bg-gray-50"
                   >
                     <td className="py-3 px-4 text-sm text-gray-900 capitalize">
+                      {item.requestID}
+                    </td>
+                    <td className="py-3 px-4 text-sm text-gray-900">
+                     {item.Date}
+                    </td>
+                    <td className="py-3 px-4 text-sm text-gray-900">
+                      {item.userLevel}
+                    </td>
+                    <td className="py-3 px-4 text-sm text-gray-900">
                       {item.Name}
-                    </td>
-                    <td className="py-3 px-4 text-sm text-gray-900">
-                      <a href={`mailto:${item.Email}`}>{item.Email}</a>
-                    </td>
-                    <td className="py-3 px-4 text-sm text-gray-900">
-                      {item.PhoneNumber}
                     </td>
                     <td className="py-3 px-4 text-sm">
                       <span
                         className={`font-medium text-xs ${
-                          item.Status === "Active"
-                            ? "text-emerald-600"
-                            : "text-red-600"
+                          item.status === "Pending"
+                            ? "text-red-600"
+                            : "text-green-600"
                         }`}
                       >
-                        {item.Status}
+                        {item.status}
                       </span>
                     </td>
                     <td className="py-3 px-4 text-sm text-gray-900">
-                      {item.Ratio}
-                    </td>
-                    <td className="py-3 px-4 text-sm text-gray-900">
-                      {item.TotalSales}
-                    </td>
-                    <td className="py-3 px-4">
-                      <div className="flex gap-3">
-                        <div><ManageButton/></div>
-                        <div><ViewActivitesButton/></div>
-                      </div>
+                      {item.Amount}
                     </td>
                   </tr>
                 ))

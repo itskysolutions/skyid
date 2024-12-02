@@ -1,6 +1,5 @@
 import {Header} from '../components/Header';
 import {SideMenuLegal} from '../components/SideMenuLegal';
-import {Row, Col } from 'react-bootstrap';
 import {useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -17,17 +16,17 @@ export const Policies =  () => {
         }
         }
     }, [location]);
+    2
     return (
-      <div>
-        <div className='navbar-custom'>
-            <Header />
-        </div>
-        <div style={{marginTop:'10%', zIndex: 1, position: 'relative'}}>
-            <Row  className='page-layout'>
-                <Col xs={12} md={3} className="mb-3 sidebar-custom" >
+        <div className="h-screen w-screen flex flex-col bg-white">
+            <div>
+                <Header />
+            </div>
+            <div style={{marginTop:'10%'}} className='w-screen h-screen grid grid-cols-12'>
+                <div className="hidden md:flex col-span-2">
                     <SideMenuLegal/>
-                </Col>
-                <Col xs={12} md={9} className="container content-custom">
+                </div>
+                <div className=" container col-span-12 md:col-span-10 px-4">
                    <div>
                         <ol type='1' style={{marginTop:'5%'}}>
                           <div style={{marginTop:"5%"}}>
@@ -372,8 +371,8 @@ export const Policies =  () => {
                             </li>
                         </ol>
                    </div>
-                </Col>
-            </Row>
+                </div>
+            
         </div>
       </div>
     )
