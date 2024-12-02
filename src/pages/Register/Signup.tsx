@@ -1,19 +1,19 @@
 import React, { useState } from "react";
+import CustomInput from "../../components/CustomInput";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import IMAGES from "../../constant/Images";
+import { businessCategory } from "../../assets/data";
+import countryOptions from "../../utils/countries";
+import Authentication from "../../validations/Authentication";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { ISignUp, IVerifyNewUser } from "../../types";
+import Spinner from "../../components/shared/spinner";
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 import { toast } from "sonner";
-import { verifyEmail } from "../services/Endpoints";
-import CustomSelection from "../components/CustomSelection";
-import { ISignUp, IVerifyNewUser } from "../types";
-import CustomInput from "../components/CustomInput";
-import Spinner from "../components/shared/spinner";
-import { businessCategory } from "../assets/data";
-import countryOptions from "../utils/countries";
-import Authentication from "../validations/Authentication";
-import IMAGES from "../constant/Images";
+import { verifyEmail } from "../../services/Endpoints";
+import CustomSelection from "../../components/CustomSelection";
 
 interface ErrorResponse {
   message: string;

@@ -28,8 +28,8 @@ import SigninOtp from "./pages/SignInOtp";
 import ResetPassword from "./pages/ResetPassword";
 import UpdatePassword from "./pages/UpdatePassword";
 //import SigninOtpSuccess from "./pages/SignInOtpSuccess";
-import  {ManageVSOs}  from "./pages/CPs/ManageVSOs";
-import  {AddNewVSO}  from "./pages/CPs/AddNewVSO";
+import { ManageVSOs } from "./pages/CPs/ManageVSOs";
+import { AddNewVSO } from "./pages/CPs/AddNewVSO";
 import { ViewProfile } from "./pages/ViewProfile";
 import { EditProfile } from "./pages/EditProfile";
 import { SuccessPassword } from "./pages/SuccessPassword";
@@ -45,6 +45,8 @@ import { ManageRequests } from "./pages/Finance/ManageRequests";
 import { Dashboard } from "./pages/Dashboard";
 import { KYC } from "./components/KYC";
 import { KYCForBusiness } from "./components/VSOComponents/KYCForBusiness";
+import VerifyNewUser from "./pages/Register/VerifyNewUser";
+import SignupSuccess from "./pages/Register/SignupSuccess";
 
 const queryClient = new QueryClient();
 
@@ -70,6 +72,14 @@ function App() {
     {
       path: "/signup",
       element: <Signup />,
+    },
+    {
+      path: "/verify-new-user",
+      element: <VerifyNewUser />,
+    },
+    {
+      path: "/signup-success",
+      element: <SignupSuccess />,
     },
     {
       path: "/forgot-password",
@@ -135,35 +145,35 @@ function App() {
         },
         {
           path: "manageVSOs",
-          element: <ManageVSOs/>,
+          element: <ManageVSOs />,
         },
         {
           path: "manageVSOs",
-          element: <VSORoute/>,
-          children:[
+          element: <VSORoute />,
+          children: [
             {
               path: "addNewVSO",
-              element:<AddNewVSO/>,
+              element: <AddNewVSO />,
             },
             {
               path: "viewActivities",
-              element:<ViewActivities/>,
-            }
-          ]
+              element: <ViewActivities />,
+            },
+          ],
         },
         {
           path: "manageCustomers",
-          element: <ManageCustomers/>,
+          element: <ManageCustomers />,
         },
         {
           path: "manageBusinesses",
-          element: <CustomerRoute/>,
-          children:[
+          element: <CustomerRoute />,
+          children: [
             {
               path: "viewActivitiesBusiness",
-              element:<ViewActivities/>,
-            }
-          ]
+              element: <ViewActivities />,
+            },
+          ],
         },
         {
           path: "addOns",
@@ -211,34 +221,34 @@ function App() {
         },
         {
           path: "viewProfile",
-          element: <ViewProfile/>,
+          element: <ViewProfile />,
         },
         {
           path: "editProfile",
-          element: <EditProfile/>,
+          element: <EditProfile />,
         },
         {
           path: "updateCurrentPassword",
-          element: <UpdateCurrentPassword/>,
+          element: <UpdateCurrentPassword />,
         },
         {
           path: "manageRequests",
-          element: <ManageRequests/>,
+          element: <ManageRequests />,
         },
         {
           path: "generateReports",
-          element: <GenerateReports/>,
+          element: <GenerateReports />,
         },
       ],
     },
     {
       path: "success",
-      element: <Success/>
+      element: <Success />,
     },
     {
       path: "successPassword",
-      element: <SuccessPassword/>
-    }
+      element: <SuccessPassword />,
+    },
   ]);
 
   return (
