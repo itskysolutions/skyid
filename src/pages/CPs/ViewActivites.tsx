@@ -100,7 +100,7 @@ export const ViewActivities = () => {
     return (
         <div className="container">
             <div className="mt-5 ">
-                <h3><b>VSO's Activities</b></h3>
+                <h3><b>Business Activities</b></h3>
             </div>
             <div className='flex mt-4 mb-4'>
                 <div className='me-2'>

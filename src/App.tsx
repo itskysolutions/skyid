@@ -40,7 +40,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Success } from "./pages/Sucess";
 import { ViewActivities } from "./pages/CPs/ViewActivites";
 import { UpdateCurrentPassword } from "./pages/UpdateCurrentPassword";
-import { BusinessRoute } from "./utils/BusinessRoute";
+import { CustomerRoute } from "./utils/CustomerRoute";
 import { ManageRequests } from "./pages/Finance/ManageRequests";
 import { Dashboard } from "./pages/Dashboard";
 import { KYC } from "./components/KYC";
@@ -157,7 +157,7 @@ function App() {
         },
         {
           path: "manageBusinesses",
-          element: <BusinessRoute/>,
+          element: <CustomerRoute/>,
           children:[
             {
               path: "viewActivitiesBusiness",
